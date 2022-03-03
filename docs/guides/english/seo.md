@@ -1,0 +1,240 @@
+---
+---
+
+# 🔎️ Content Marketing and Search Engine Optimization
+
+**Boost the search rankings of your website and gain an edge over competitors using steerable text generation in ✍️ [Create](/api/primitives/create)**
+
+:::caution ⚠️ Caution
+We advise to always employ human supervision on generated text for best performance. Moreover, posting machine-generated text with no human redaction might break the terms of use of some platforms and services.
+:::
+
+Most online experiences start by querying a search engine. The result usually comes in the form of a listing of web-pages that satisfy the search. Ranking in the top results for the right keywords results in more traffic to a website. An entrepreneur can leverage the first page of the search engine to get the right traffic for their business: more traffic means more potential customers or buyers clicking on the link and navigating to the site. To present a useful list of links to the user, the search engine needs to establish what kind of information can be linked together to create a meaningful list.
+
+There are two strategies for making this a reality: **SEO** and **content marketing**.
+
+>What is On-page SEO?
+>
+>>On-page optimization is essentially about modifying the contents of the web page to make it appealing to the search engine algorithms so that it ranks higher in the search engine. For example by using the right keywords in the title tags, in the meta description or in the body content.
+
+>What is content marketing?
+>
+>>Using the right keywords is not enough. Content marketing is the act of using content to attract, convert, and retain customers. Sounds pretty self-explanatory, but what does that mean? It means creating or finding relevant content about your products or services. This can be articles, videos, or anything else that adds value to your brand.
+
+**Creating content to attract customers is taxing**. With Muse, you can create and redact content much faster. In fact, we just generated a substantial part of this introduction using `lyra-en`. Let's see how we can generate a blog post on a particular topic using Muse.
+
+# A blog post on *sous-vide cooking*
+
+*Sous-vide cooking* is a big passion of some engineers in the Muse team. In this guide, we will see **how to redact a blog post**
+on sous-vide cooking using `lyra-en`, **optimized for ranking well on Google**.
+
+```
+from lightonmuse import Create
+
+creator = Create("lyra-en")
+```
+
+In the following, we assume this code to initialize the client has been run.
+
+## Question answering
+
+Our `lyra-en` model is capable of answering to questions like: "What is sous-vide cooking?"
+
+We can use this capability to generate an introduction for our blog post:
+
+
+```
+outputs, costs, request_id = creator("What is sous-vide cooking?")
+
+print(outputs[0]["completions"][0]["output_text"])
+```
+
+> Sous-vide cooking is a method of cooking food that uses sealed vacuum-sealed containers at controlled low temperatures to extract moisture from the food without cooking it. This method preserves flavor and texture while allowing food to cook at a lower temperature than traditional methods.
+>
+>Why is it called sous-vide?
+>It is named after the French word for "below-vacuum," which is what happens in the vacuum- and pressure-sealed bags that are filled with food.
+
+It is a pretty accurate description of sous-vide cooking! Here we got our intro, let's remove the repetition of *"sealed"* in the first sentence and generate some more text, until we meet a period, an exclamation mark, or ellipsis, using `stop_words`.
+
+
+```
+prompt = """Sous-vide cooking is a method of cooking food that uses vacuum-sealed containers at controlled low temperatures to extract moisture from the food without cooking it. This method preserves flavor and texture while allowing food to cook at a lower temperature than traditional methods.
+
+Why is it called sous-vide?
+It is named after the French word for "below-vacuum," which is what happens in the vacuum- and pressure-sealed bags that are filled with food."""
+
+outputs, costs, request_id = creator(prompt, stop_words=[".", "!", "..."])
+print(outputs[0]["completions"][0]["output_text"])
+```
+
+>A major advantage of sous-vide cooking is that the entire cooking time is at a very low temperature, which prevents food from overcooking.
+
+The introduction is pretty general and should work but what should the blog post in particular be about? We can ask `lyra-en`!
+
+## Ideas generation
+
+```
+prompt = """Generate a list of blog post ideas about sous-vide cooking.
+
+1. Beer and sous-vide
+2."""
+outputs, costs, request_id = creator(prompt, n_tokens=125)
+print(outputs[0]["completions"][0]["output_text"])
+```
+
+>Generate a list of blog post ideas about sous-vide cooking.
+>
+>1. Beer and sous-vide
+>2. Sous-vide for beginners
+>3. Chicken sous-vide
+>4. Sous vide chicken or beef
+>5. Should you try sous-vide cooking?
+>6. Water bath vs. Sous-vide
+>7. What is the best sous-vide equipment?
+>8. Sous-vides – where to get them?
+>9. What's the best cooker?
+
+We like the theme *Should you try sous-vide cooking?*, because we want to convince as many people as possible to convert to the sous-vide religion. Let's use that.
+
+## Copywriting
+
+We ask for `n_completions` and we choose among the three `n_best`
+
+```
+prompt = "Write a paragraph for a blog post titled 'Should you try sous-vide cooking?'\n\n"
+outputs, costs, request_id = creator(prompt, n_tokens=125, n_completions=3, n_best=3)
+
+print("Completion 1: ", outputs[0]["completions"][0]["output_text"])
+print("Completion 2: ", outputs[0]["completions"][1]["output_text"])
+print("Completion 3: ", outputs[0]["completions"][2]["output_text"])
+```
+
+Option 1:
+>Should try sous-vide cooking? *You should! Though sous-vide comes in many shapes and sizes, its ubiquity in the culinary world is due to its utility as a versatile, no-fuss method of cooking.* Sous-vide is essentially food in vacuum-sealed bags. The bag’s vacuum seals ensure precise and uniform cooking temperatures. Further ensuring consistent results, the vacuum seals prevent water vapor and gas from escaping.
+
+Option2:
+>*When I think of cooking with sous-vide, I think of French cuisines and some of the techniques I've enjoyed. Usually, I love the softness of the meat, the time savings, and the excellent texture that sous-vide offers.* But it seems that when I think of sous-vide, I have one main reason to cook with it.
+>
+>Usually, sous-vide is really useful for less-loved cuts of meat. I'd give my liver to someone who could sous-vide it.
+
+Option3:
+>*If you’re looking for the definitive answer to the question, “Should I try sous-vide cooking?” then you’ve come to the right place.* I’m not talking about sous-vide the technique here, but sous-vide the process: “The Sous Vide process”. The secret to sous-vide cooking is to cook food to a set temperature for an extended period of time without overcooking it.
+
+Let's mix and merge the three by taking the elements we like from each one of these:
+>If you’re looking for the definitive answer to the question, “Should I try sous-vide cooking?” then you’ve come to the right place. You should! Though sous-vide comes in many shapes and sizes, its ubiquity in the culinary world is due to its utility as a versatile, no-fuss method of cooking. When I think of cooking with sous-vide, I think of French cuisines and some of the techniques I've enjoyed. Usually, I love the softness of the meat, the time savings, and the excellent texture that sous-vide offers.
+
+Then we can generate some more text:
+>There's never any question about whether the food is done or if it needs more time to cook. For sous-vide, you always know when it's done. When I first got my hands on a sous-vide cooker, I was obsessed. It was my ultimate foodie tool, the most exciting kitchen gadget I had ever seen. Though I had no idea how to use it, I could already imagine how it would change my cooking.
+>
+>Through it all, I have remained fascinated by sous-vide cooking, and I've been surprised by how much it's grown in popularity since I first started using it.
+
+## Steerable text generation to include the good keywords
+
+There are plenty of online services that help you find the right keywords for a topic, in this guide we use the free [Keywordtool.io](https://keywordtool.io/).
+If we loook for *sous-vide*, we get [results](https://keywordtool.io/search/keywords/google/16031278?category=web&keyword=sous-vide&country=GLB&language=en#suggestions) like *egg bites*, *pork chops*, *cheese*, or *asparagus*, *carrots* and *broccoli*.
+Let's try to generate some content including these expressions:
+
+```
+prompt = "What can I cook with sous-vide?\n\n"
+outputs, costs, request_id = creator(prompt, n_tokens=125, word_biases={"egg": 2.5, "beef": 1.5, "chicken": 1.0, "bacon": 1.25})
+
+print("Completion 1: ", outputs[0]["completions"][0]["output_text"])
+```
+
+We generate multiple completions, while slightly changing the biases values, and mix and merge based on our preferences. A good strategy for biases is to start from low values (e.g. 0.5) and gradually increase them by steps of 0.5 until you find the sweet spot.
+
+Option 1:
+>*Anyone who has ever cooked egg rolls, slow-cooked barbecue pork or ramen noodles knows that temperature and time play an important role in how food tastes.*
+
+Option 2:
+>*It’s one of the newest culinary developments in food preparation*, sous-vide. It’s similar to vacuum sealing and can be used to cook foods (including meat) in an extremely low temperature for an extended period of time, which allows foods to retain their natural colors and flavors. *Sous-vide can be used on meats, fish, vegetables, fruits, and even on cheeses.* When done correctly, you can have the same wonderful flavor and texture as cooking the food at higher temperatures.
+
+```
+prompt = "What cuts of meat are good with sous-vide?\n"
+outputs, costs, request_id = creator(prompt, n_tokens=125, word_biases={"beef": 1.5, "chicken": 1.5, "lamb":1.5})
+
+print("Completion: ", outputs[0]["completions"][0]["output_text"])                                                 
+```
+
+>Completion: *My favorite sous vide is* my *ribeye steak, that I get at the store and stick* it *in the bag myself. It comes from a farm that only raises grass-fed beef, so I think the flavor is better than the regular, cheaper beefs.*
+
+>Completion: Of course, *not all cuts of meat are suitable for sous-vide. Many lean cuts benefit from the lower cooking temperature and tenderizing effect of sous-vide cooking, but the techniques can be adapted to virtually any piece of beef, pork, lamb, or chicken. Imagine a random stick of meat surrounded by simmering fat, flavoring with a bevy of sauces and sprinkled with herbs to create a perfect combination of flavors, textures, and aromas.*
+
+
+```
+prompt = "Reply to the following question.\n\nQ: What seafood is good with sous-vide?\nA:"
+outputs, costs, request_id = creator(prompt, n_tokens=125, word_biases={"crab": 1.5, "salmon": 1.5, "shrimp": 1.5, "tuna":1.5})
+
+print("Completion 1: ", outputs[0]["completions"][0]["output_text"])                                                 
+```
+
+>*Fish, especially salmon and scrod,* is an *excellent candidate for sous-vide.*
+
+>Any seafood! *It’s also a great way to cook certain items that are cooked in raw, like oysters, clams, and salmon.*
+
+```
+prompt = "A list of dishes from the book \"The Zen of Sous-vide for Vegetarians\":"
+outputs, costs, request_id = creator(prompt, n_tokens=125, word_biases={"carrots": 1.5, "vegetables": 1.5})
+
+print("Completion 1: ", outputs[0]["completions"][0]["output_text"])                                                 
+```
+
+>*Spaghetti al Radicchio, Basil, and Fennel*
+>
+>*Soufflée of Muffins*
+>
+>*Mandarin Peas with Ancho Chili*
+>
+>*Savory Gnocchi with Truffle Mushroom Gravy*
+
+
+Mixed-and-merged:
+>Anyone who has ever cooked egg rolls, slow-cooked barbecue pork or ramen noodles knows that temperature and time play an important role in how food tastes. It’s one of the newest culinary developments in food preparation. Sous-vide can be used on meats, fish, vegetables, fruits, and even on cheeses.
+>
+>Of course, not all cuts of meat are suitable for sous-vide. Many lean cuts benefit from the lower cooking temperature and tenderizing effect of sous-vide cooking, but the techniques can be adapted to virtually any piece of beef, pork, lamb, or chicken. Imagine a random stick of meat surrounded by simmering fat, flavoring with a bevy of sauces and sprinkled with herbs to create a perfect combination of flavors, textures, and aromas. My favorite sous vide is ribeye steak, that I get at the store and stick in the bag myself. It comes from a farm that only raises grass-fed beef, so I think the flavor is better than the regular, cheaper beefs.
+>
+>Fish, especially salmon and scrod, are excellent candidates for sous-vide. It’s also a great way to cook certain items that are cooked in raw, like oysters, clams, and salmon.
+>
+> Finally, some vegetarian options from "The Zen of Sous-vide for Vegetarians" include Spaghetti al Radicchio, Basil, and Fennel, Soufflée of Muffins, Mandarin Peas with Ancho Chili, or Savory Gnocchi with Truffle Mushroom Gravy*.
+
+# Assisted-writing of a conclusion
+We have generated a nice chunk of text for our blog post. Of course we can iterate over it with our human brain. NOw we can create a conclusion for our post. Let's see how we can condition `lyra-en` to generate a conclusion in different tones simply by asking for it:
+```
+prompt = "Write an **enthusiastic** conclusion for a blog post on sous-vide cooking.\n\nConclusion:"
+outputs, costs, request_id = creator(prompt, n_tokens=75)
+print("Completion: ", outputs[0]["completions"][0]["output_text"])   
+```
+
+>Sous-vide is an impressive technology and its versatility gives you the freedom to create dishes you never thought possible. Personally, I’m looking forward to seeing what new recipes, applications, and techniques become available as the technology matures.
+>
+>Thank you for reading my short guide to sous-vide cooking.
+
+```
+prompt = "Write an **underwhelming** conclusion for a blog post on sous-vide cooking.\n\nConclusion:"
+outputs, costs, request_id = creator(prompt, n_tokens=75)
+print("Completion: ", outputs[0]["completions"][0]["output_text"])   
+```
+>And that was all. Please know, I’m not a professional food writer. I’m learning, and so far I’m learning a lot. A lot. However, you can read some really great stuff on food on my work and personal blog.
+
+```
+prompt = "Write a **salty** conclusion for a blog post on sous-vide cooking.\n\nConclusion:"
+outputs, costs, request_id = creator(prompt, n_tokens=75)
+print("Completion: ", outputs[0]["completions"][0]["output_text"])   
+```
+
+>My final sous-vide tip is not to be scared of sous-vide. I have a few tips to help you overcome your reservations."
+>
+>I love when consumers hear their fears are unjustified and overcome them.
+
+```
+prompt = "Write a **sarcastic** conclusion for a blog post on sous-vide cooking.\n\nConclusion:"
+outputs, costs, request_id = creator(prompt, n_tokens=75)
+print("Completion: ", outputs[0]["completions"][0]["output_text"])   
+```
+>Yes, it is good.
+
+or
+
+>Accept that you’re going to fail at a lot of things in life. A sandwich is good too.
+
+And this is all!
