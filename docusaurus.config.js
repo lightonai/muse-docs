@@ -48,16 +48,6 @@ module.exports = {
           position: 'left',
           label: '📚 Guides',
         },
-        {
-          href: 'https://muse.lighton.ai',
-          label: '🎭 Back to Muse',
-          position: 'right',
-        },
-        {
-          href: 'https://lighton.ai',
-          label: '💡 LightOn',
-          position: 'right',
-        },
       ],
     },
     prism: {
