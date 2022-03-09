@@ -1,29 +1,16 @@
----
----
-
 # 🔘 Select
 
 **Use the Select endpoint to select candidates with respect to a reference according to [text likelihood](/home/concepts#likelihood).**
 
 Available at ```https://api.lighton.ai/muse/v1/select```.
 
-:::info 💸️ Pricing
-Pricing for the **Evaluate** endpoints is not final, values returned by `cost` and `total_cost` are placeholders.
-:::
+> 💸️ **Pricing**
+>
+>Pricing for the **Evaluate** endpoints is not final, values returned by `cost` and `total_cost` are placeholders.
 
 ## Example
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
-<Tabs
-defaultValue="curl"
-values={[
-{ label: 'cURL', value: 'curl', },
-]
-}>
-
-<TabItem value="curl">
 
 ```bash title="Request"
 curl -X 'POST' \
@@ -35,9 +22,7 @@ curl -X 'POST' \
   -d '{"reference": "Je suis content", "candidates": ["je suis heureux", "je suis triste"]}'
 ```
 
-</TabItem>
 
-</Tabs>
 
 ```json title="Response (JSON)"
 {
@@ -121,12 +106,11 @@ Score normalized by the length in tokens, the higher the better.
 #### `token_scores` <span class="param-types">array[string:float]</span>
 List of [tokens](/home/concepts#tokens) of the `candidate` with associated likelihood scores, the higher the better.
 
-:::info ⚙️ Token representations
-
-Tokens are currently returned as they are represented by the tokenizer, which includes special characters such as `Ġ`
+> ⚙️ **Token representations**
+>
+>Tokens are currently returned as they are represented by the tokenizer, which includes special characters such as `Ġ`
 for spaces and possible encoding oddities (such as `Ã©` for `é`). 
 
-:::
 
 #### `best` <span class="param-types">string</span>
 Best choice selected among the `candidates` in terms of likelihood.

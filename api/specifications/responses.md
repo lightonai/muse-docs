@@ -1,6 +1,3 @@
----
----
-
 # 💬 Responses
 
 To an HTTP request, the API returns all results formatted in **JSON**.

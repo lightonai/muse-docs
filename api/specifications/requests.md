@@ -1,6 +1,3 @@
----
----
-
 # 📟 Requests
 
 ## Request format

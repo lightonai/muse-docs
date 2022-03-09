@@ -1,6 +1,3 @@
----
----
-
 # 🤹 Skills
 
 Skills enable you to **specialize models** in the Muse API to perform specific tasks, or to introduce them to
@@ -15,9 +12,11 @@ format.
 The skill to use for an API call can be specified using the `skill` parameters. Available skills are described below;
 **some skills may be only available for certain models and endpoints**.
 
-:::info 💸️ Pricing Skills are currently billed like normal API calls, taking into account processed & generated tokens.
+>💸️ **Pricing**
+>
+>Skills are currently billed like normal API calls, taking into account processed & generated tokens.
 This is not final, and pricing may evolve in the future.
-:::
+
 
 ## Available skills
 

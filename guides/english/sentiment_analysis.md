@@ -1,6 +1,3 @@
----
----
-
 # Sentiment Analysis
 
 **Detect sentiment expressed in reviews using ✍️ [Create](/api/primitives/create) and [Select](/api/primitives/evaluate/select).**
@@ -13,14 +10,14 @@ Because the number of reviews for a given product can quickly scale up, **automa
 
 We assume that the client has been initialized, using
 
-```
+```python
 from lightonmuse import Select, Create
 
 selector = Select("lyra-en")
 creator = Create("lyra-en")
 ```
 and imagine that we wish to classify the (positive) review
-```
+```python
 review = "A great American picture, full of incredible images and lasting moments."
 ```
 # Using Select
@@ -36,7 +33,7 @@ Let us start with using the Select Baseline, that is, without any Skill or other
 - As a **conjunction**, we use "Sentiment:"
 - The different **candidates** we use are `Positive.`, `Negative.` and `Neutral.` 
 
-```
+```python
 out = selector(review, ["Negative.", "Positive.", "Neutral."], "Sentiment:") 
 print(review + " | " + out[0][0]["best"])
 ```
@@ -49,7 +46,7 @@ Great, it works! However, as you can see in the Comparison section of the guide,
 
 The [sentiment_analysis Skill](/api/skills) has been trained to classify text as `Positive (+)`, `Negative (-)` or `Neutral (0)`. It can be used out of the box as follows:
 
-```
+```python
 sign_to_sentiment = {"+": "Positive.", "-": "Negative.", "0": "Neutral."}
 out = selector(review, ["-", "+", "0"], skill="sentiment_analysis") 
 print(review + " | " + sign_to_sentiment["out[0][0]["best"]"])
@@ -69,7 +66,7 @@ In addition to using Select, we can also use Create to classify reviews. For thi
 
 We start with providing `lyra-en` with only one line of instruction and one example:
 
-```
+```python
 example = """This is a review sentiment classifier.
 Review: 'The new Dune movie is great!'
 Sentiment: Positive.
@@ -79,14 +76,14 @@ Sentiment: Positive.
 
 In order to use Create, we need to re-format the review so it matches the `example` shown above:
 
-```
+```python
 review = """Review: 'A great American picture, full of incredible images and lasting moments.'
 Sentiment:
 ```
 
 We can then use Create on a text made of the `example` concatenated with the `review`:
 
-```
+```python
 out = creator(example+review, n_tokens=5, temperature=0.1,
                   stop_words=[".", "!", "...", "\n\n"]) 
 print(review.split("Review:")[1].split("\n")[0].strip().strip("\'") + ' | ' + out[0][0]['completions'][0]['output_text'])
@@ -104,7 +101,7 @@ This review was classified properly with only one example, however, such a simpl
 
 In this case, we use Create similarly as before but add more examples to our prompt:
 
-```
+```python
 examples = """This is a review sentiment classifier.
 Review: 'The new Dune movie is great!'
 Sentiment: Positive.
@@ -120,7 +117,7 @@ Sentiment: Positive.
 
 and, correspondingly, concatenate those examples and the review:
 
-```
+```python
 out = creator(examples+review, n_tokens=5, temperature=0.1,
                   stop_words=[".", "!", "...", "\n\n"]) 
 print(review.split("Review:")[1].split("\n")[0].strip().strip("\'") + ' | ' + out[0][0]['completions'][0]['output_text'])

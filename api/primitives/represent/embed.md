@@ -1,31 +1,18 @@
----
----
-
 # 🔢 Embed
 
 Use the **Embed** endpoint to obtain a vector representation of a string (see [embeddings](/home/concepts#embeddings)). 
 
 Available at ```https://api.lighton.ai/muse/v1/embed```.
 
-:::info 💸️ Pricing
-Pricing for the **Represent** endpoints is not final, values returned by `cost` and `total_cost` are placeholders.
-:::
+> 💸️ **Pricing**
+>
+> Pricing for the **Represent** endpoints is not final, values returned by `cost` and `total_cost` are placeholders.
+
 
 ---
 
 ## Example
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="curl"
-values={[
-{ label: 'cURL', value: 'curl', },
-]
-}>
-
-<TabItem value="curl">
 
 ```bash title="Request"
 curl -X 'POST' \
@@ -37,9 +24,6 @@ curl -X 'POST' \
   -d '{"text": "Il était une fois en Laponie"}'
 ```
 
-</TabItem>
-
-</Tabs>
 
 ```json title="Response (JSON)"
 {

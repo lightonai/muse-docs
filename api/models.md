@@ -1,6 +1,3 @@
----
----
-
 # 🤖 Models
 
 **The Muse API offers access to models in different languages, with different capabilities to best fit your needs.** 
@@ -22,13 +19,12 @@ skills are models specific.
 | ** `orion`** | **A great tradeoff between power and cost.** Can be specialized with **skills** to perform specific tasks at `lyra` level.| curated data  | Most text generation & classification use cases.|
 | ** `lyra`**  | **Our most powerful and capable models.**                                                                                                               | curated data  | Complex tasks, specialized text generation. |
 
-:::tip 💡 Choosing the right class
-
-We recommend **starting your experiments with the most powerful model available**, and then optimize for the smallest
+> 💡 **Choosing the right class**
+>
+>We recommend **starting your experiments with the most powerful model available**, and then optimize for the smallest
 size that still fullfills your needs. If a skill matching your task is available, it can be used to allow smaller models
 to perform on-par with larger ones.
 
-:::
 
 ## Languages & model availability 
 

@@ -1,13 +1,10 @@
----
----
-
 # 🔎️ Content Marketing and Search Engine Optimization
 
 **Boost the search rankings of your website and gain an edge over competitors using steerable text generation in ✍️ [Create](/api/primitives/create)**
 
-:::caution ⚠️ Caution
-We advise to always employ human supervision on generated text for best performance. Moreover, posting machine-generated text with no human redaction might break the terms of use of some platforms and services.
-:::
+> ⚠️ **Caution**
+>
+> We advise to always employ human supervision on generated text for best performance. Moreover, posting machine-generated text with no human redaction might break the terms of use of some platforms and services.
 
 Most online experiences start by querying a search engine. The result usually comes in the form of a listing of web-pages that satisfy the search. Ranking in the top results for the right keywords results in more traffic to a website. An entrepreneur can leverage the first page of the search engine to get the right traffic for their business: more traffic means more potential customers or buyers clicking on the link and navigating to the site. To present a useful list of links to the user, the search engine needs to establish what kind of information can be linked together to create a meaningful list.
 
@@ -28,7 +25,7 @@ There are two strategies for making this a reality: **SEO** and **content market
 *Sous-vide cooking* is a big passion of some engineers in the Muse team. In this guide, we will see **how to redact a blog post**
 on sous-vide cooking using `lyra-en`, **optimized for ranking well on Google**.
 
-```
+```python
 from lightonmuse import Create
 
 creator = Create("lyra-en")
@@ -43,7 +40,7 @@ Our `lyra-en` model is capable of answering to questions like: "What is sous-vid
 We can use this capability to generate an introduction for our blog post:
 
 
-```
+```python
 outputs, costs, request_id = creator("What is sous-vide cooking?")
 
 print(outputs[0]["completions"][0]["output_text"])
@@ -57,7 +54,7 @@ print(outputs[0]["completions"][0]["output_text"])
 It is a pretty accurate description of sous-vide cooking! Here we got our intro, let's remove the repetition of *"sealed"* in the first sentence and generate some more text, until we meet a period, an exclamation mark, or ellipsis, using `stop_words`.
 
 
-```
+```python
 prompt = """Sous-vide cooking is a method of cooking food that uses vacuum-sealed containers at controlled low temperatures to extract moisture from the food without cooking it. This method preserves flavor and texture while allowing food to cook at a lower temperature than traditional methods.
 
 Why is it called sous-vide?
@@ -73,7 +70,7 @@ The introduction is pretty general and should work but what should the blog post
 
 ## Ideas generation
 
-```
+```python
 prompt = """Generate a list of blog post ideas about sous-vide cooking.
 
 1. Beer and sous-vide
@@ -100,7 +97,7 @@ We like the theme *Should you try sous-vide cooking?*, because we want to convin
 
 We ask for `n_completions` and we choose among the three `n_best`
 
-```
+```python
 prompt = "Write a paragraph for a blog post titled 'Should you try sous-vide cooking?'\n\n"
 outputs, costs, request_id = creator(prompt, n_tokens=125, n_completions=3, n_best=3)
 
@@ -134,7 +131,7 @@ There are plenty of online services that help you find the right keywords for a 
 If we loook for *sous-vide*, we get [results](https://keywordtool.io/search/keywords/google/16031278?category=web&keyword=sous-vide&country=GLB&language=en#suggestions) like *egg bites*, *pork chops*, *cheese*, or *asparagus*, *carrots* and *broccoli*.
 Let's try to generate some content including these expressions:
 
-```
+```python
 prompt = "What can I cook with sous-vide?\n\n"
 outputs, costs, request_id = creator(prompt, n_tokens=125, word_biases={"egg": 2.5, "beef": 1.5, "chicken": 1.0, "bacon": 1.25})
 
@@ -149,7 +146,7 @@ Option 1:
 Option 2:
 >*It’s one of the newest culinary developments in food preparation*, sous-vide. It’s similar to vacuum sealing and can be used to cook foods (including meat) in an extremely low temperature for an extended period of time, which allows foods to retain their natural colors and flavors. *Sous-vide can be used on meats, fish, vegetables, fruits, and even on cheeses.* When done correctly, you can have the same wonderful flavor and texture as cooking the food at higher temperatures.
 
-```
+```python
 prompt = "What cuts of meat are good with sous-vide?\n"
 outputs, costs, request_id = creator(prompt, n_tokens=125, word_biases={"beef": 1.5, "chicken": 1.5, "lamb":1.5})
 
@@ -161,7 +158,7 @@ print("Completion: ", outputs[0]["completions"][0]["output_text"])
 >Completion: Of course, *not all cuts of meat are suitable for sous-vide. Many lean cuts benefit from the lower cooking temperature and tenderizing effect of sous-vide cooking, but the techniques can be adapted to virtually any piece of beef, pork, lamb, or chicken. Imagine a random stick of meat surrounded by simmering fat, flavoring with a bevy of sauces and sprinkled with herbs to create a perfect combination of flavors, textures, and aromas.*
 
 
-```
+```python
 prompt = "Reply to the following question.\n\nQ: What seafood is good with sous-vide?\nA:"
 outputs, costs, request_id = creator(prompt, n_tokens=125, word_biases={"crab": 1.5, "salmon": 1.5, "shrimp": 1.5, "tuna":1.5})
 
@@ -172,7 +169,7 @@ print("Completion 1: ", outputs[0]["completions"][0]["output_text"])
 
 >Any seafood! *It’s also a great way to cook certain items that are cooked in raw, like oysters, clams, and salmon.*
 
-```
+```python
 prompt = "A list of dishes from the book \"The Zen of Sous-vide for Vegetarians\":"
 outputs, costs, request_id = creator(prompt, n_tokens=125, word_biases={"carrots": 1.5, "vegetables": 1.5})
 
@@ -199,7 +196,7 @@ Mixed-and-merged:
 
 # Assisted-writing of a conclusion
 We have generated a nice chunk of text for our blog post. Of course we can iterate over it with our human brain. NOw we can create a conclusion for our post. Let's see how we can condition `lyra-en` to generate a conclusion in different tones simply by asking for it:
-```
+```python
 prompt = "Write an **enthusiastic** conclusion for a blog post on sous-vide cooking.\n\nConclusion:"
 outputs, costs, request_id = creator(prompt, n_tokens=75)
 print("Completion: ", outputs[0]["completions"][0]["output_text"])   
@@ -209,14 +206,14 @@ print("Completion: ", outputs[0]["completions"][0]["output_text"])
 >
 >Thank you for reading my short guide to sous-vide cooking.
 
-```
+```python
 prompt = "Write an **underwhelming** conclusion for a blog post on sous-vide cooking.\n\nConclusion:"
 outputs, costs, request_id = creator(prompt, n_tokens=75)
 print("Completion: ", outputs[0]["completions"][0]["output_text"])   
 ```
 >And that was all. Please know, I’m not a professional food writer. I’m learning, and so far I’m learning a lot. A lot. However, you can read some really great stuff on food on my work and personal blog.
 
-```
+```python
 prompt = "Write a **salty** conclusion for a blog post on sous-vide cooking.\n\nConclusion:"
 outputs, costs, request_id = creator(prompt, n_tokens=75)
 print("Completion: ", outputs[0]["completions"][0]["output_text"])   
@@ -225,8 +222,7 @@ print("Completion: ", outputs[0]["completions"][0]["output_text"])
 >My final sous-vide tip is not to be scared of sous-vide. I have a few tips to help you overcome your reservations."
 >
 >I love when consumers hear their fears are unjustified and overcome them.
-
-```
+```python
 prompt = "Write a **sarcastic** conclusion for a blog post on sous-vide cooking.\n\nConclusion:"
 outputs, costs, request_id = creator(prompt, n_tokens=75)
 print("Completion: ", outputs[0]["completions"][0]["output_text"])   

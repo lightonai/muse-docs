@@ -1,31 +1,17 @@
----
----
-
 # 🧪 Analyse
 
 **Use the 🧪 Analyse endpoint to compute the logprobability of each token in a string.**
 
 Available at ```https://api.lighton.ai/muse/v1/analyse```.
 
-:::info 💸️ Pricing
-You will be billed for the **total number of tokens sent in your request**.
-:::
+> 💸️ **Pricing**
+>
+> You will be billed for the **total number of tokens sent in your request**.
 
 ---
 
 ## Example
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="curl"
-values={[
-{ label: 'cURL', value: 'curl', },
-]
-}>
-
-<TabItem value="curl">
 
 ```bash title="Request"
 curl -X 'POST' \
@@ -37,9 +23,6 @@ curl -X 'POST' \
   -d '{"text": "Il était une fois en Laponie"}'
 ```
 
-</TabItem>
-
-</Tabs>
 
 ```json title="Response (JSON)"
 {
@@ -109,9 +92,7 @@ Total sum of the [log-probabilities](/home/concepts#likelihood) of the text prov
 
 [Log-probability](/home/concepts#likelihood) associated with each [token](/home/concepts#tokens), the higher the better.  
 
-:::info ⚙️ Token representations
-
-Tokens are currently returned as they are represented by the tokenizer, which includes special characters such as `Ġ`
+> ⚙️ **Token representations**
+>
+>Tokens are currently returned as they are represented by the tokenizer, which includes special characters such as `Ġ`
 for spaces and possible encoding oddities (such as `Ã©` for `é`). 
-
-:::

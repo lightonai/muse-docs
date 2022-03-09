@@ -1,6 +1,3 @@
----
----
-
 # 🔑 Authentication
 
 ## API keys
@@ -12,10 +9,11 @@ Muse API keys have the following format: `f89d6b69-tOWf6Ppw7LEvqryEo2FGUwf8dlpz7
 `f89d6b69` is an **8-character user identifier** (shared across all your keys), followed by **55 random characters
 unique to each key**.
 
-:::danger 🔐 Keep your API key safe!
-**Your API keys should stay strictly private, and should never be exposed to end-users**. You are responsible for 
+> 🔐 **Keep your API key safe!**
+>
+>**Your API keys should stay strictly private, and should never be exposed to end-users**. You are responsible for 
 keeping it safe: should your API key get leaked somehow, you should immediately revoke it to avoid unwanted use.
-:::
+
 
 ## Authenticating an API call
 

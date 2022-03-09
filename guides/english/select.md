@@ -1,5 +1,3 @@
----
----
 # Use Select for Customer Support
 
 **Use the [Select](/api/primitives/evaluate/select) primitive to identify the needs of your customers and help answer their requests.**
@@ -17,7 +15,7 @@ A naive approach might be to try and identify keywords to redirect the customer:
 
 Now, instead, we are going to use the Select endpoint in Muse to identify the needs of our customers. We start by initializing the client with the following code.
 
-```
+```python
 from lightonmuse import Select
 
 selector = Select("lyra-en")
@@ -35,14 +33,14 @@ In the first two cases, the customer does not actually need human help: they cou
 
 Let us use our customer's message as a prompt, and create our three different classes of customer's requests.
 
-```
+```python
 prompt = "Hey! I let my subscription lapse last month and can't connect anymore to the platform... Can you help?"
 classes = ["This user wants to cancel his subscription.", "This user is giving feedback.", "This user is asking for technical support."]
 ```
 
 Now, using the selector let us identify what candidate class is more relevant to the prompt, using text likelihood.
 
-```
+```python
 out = selector(prompt, classes)
 print(out[0][0]['best'])
 ```
@@ -52,7 +50,7 @@ print(out[0][0]['best'])
 
 ## Analysing our Results
 We can look into the scores of the different candidates and their tokens in more detail:
-```
+```python
 for candidate in out[0][0]['rankings']:
     print("Candidate | "+candidate["text"] + f' | Normalized log-prob: {candidate["score"]["normalized_logprob"]:.4f}')
     print("Token log-probs")
@@ -103,12 +101,12 @@ As we could expect, while "This user is asking for technical support." is ranked
 When using `lyra-en` as a selector, it is possible to use a conjunction as a link between the prompt and the candidate classes to improve performances. This way, the model actually sees the structure `user message + conjunction + candidate class`. Let us try and see if using a proper conjunction can make the difference in the normalized scores of our candidates a bit more significant.
 
 For example, we could use
-```
+```python
 conjunction = "This chat entry implies that"
 ```
 Let us look at the different scores after adding this conjunction
 
-```
+```python
 out = selector(prompt, classes, conjunction)
 for candidate in out[0][0]['rankings']:
     print("Candidate | "+candidate["text"] + f' | Normalized log-prob: {candidate["score"]["normalized_logprob"]:.4f}')
@@ -123,7 +121,7 @@ for candidate in out[0][0]['rankings']:
 
 The rankings between the different candidates stayed the same, but we can see that the difference between the best class and second-best class is now a bit larger. To illustrate the critical importance of a good conjunction, let us try and do even better.
 
-```
+```python
 conjunction = "This is a chat interaction. Where should the user be directed?"
 
 out = selector(prompt, classes, conjunction)
