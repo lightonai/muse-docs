@@ -31,21 +31,9 @@ This is not final, and pricing may evolve in the future.
 Skills allow you to get the best of Muse for some specific tasks. It is important to understand what each skill is
 designed for and how to interact with it. Check out the short guides we have written for each skills!
 
-- [Summarization](/guides/skills/summarization)
-- [Instruct](/guides/skills/instruct)
-- [Sentiment Analysis](/guides/skills/sentiment_analysis)
-
-
-**sentiment_analysis** classifies text as negative, neutral or positive. It uses the `Select` endpoint.  As `candidates`
-you need to use: `["-", "0", "+"]`, `-` for negative, `0` for neutral and `+` for positive. Some examples below:
-
-_The video you showed me really got me scared_  
-**-**
-
-_Mary told Jhon to check his mailbox_  
-0 
-
-
+- 📝 [Summarization](/guides/skills/summarization)
+- 🧑‍🏫 [Instruct](/guides/skills/instruct)
+- 😀😟 [Sentiment Analysis](/guides/skills/sentiment_analysis)
 
 ## Building your own skills
 
