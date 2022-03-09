@@ -52,7 +52,7 @@ curl -X 'POST' \
 
 ## Parameters
 
-#### `text` <span class="param-types">string/array[string]</span> <span class="param-warning">⚠️ required</span>
+#### `text` <span style="color:DimGray">string/array[string]</span> <span style="color:orange">⚠️ required</span>
 
 The input(s) that will be represented.
 
@@ -60,10 +60,10 @@ The input(s) that will be represented.
 
 An array of outputs shaped like your batch.
 
-#### `txt` <span class="param-types">string</span>
+#### `txt` <span style="color:DimGray">string</span>
 
 The text that was represented, from the provided `text` parameter.
 
-#### `embedding` <span class="param-types">array[float]</span>
+#### `embedding` <span style="color:DimGray">array[float]</span>
 
 Vector representation of the provided text. The size of the representation depends on the model used, see [models](/api/models) for details.

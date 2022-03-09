@@ -68,7 +68,7 @@ curl -X 'POST' \
 
 ## Parameters
 
-#### `text` <span class="param-types">string/array[string]</span> <span class="param-warning">⚠️ required</span>
+#### `text` <span style="color:DimGray">string/array[string]</span> <span style="color:orange">⚠️ required</span>
 
 The input(s) that will be analysed.
 
@@ -76,19 +76,19 @@ The input(s) that will be analysed.
 
 An array of outputs shaped like your batch.
 
-#### `text` <span class="param-types">string</span>
+#### `text` <span style="color:DimGray">string</span>
 
 The text that was analysed, from the provided `text` parameter. 
 
-#### `score` <span class="param-types">float</span>
+#### `score` <span style="color:DimGray">float</span>
 
 Total sum of the [log-probabilities](/home/concepts#likelihood) of the text provided, the higher the better.
 
-#### `normalized_score` <span class="param-types">float</span>
+#### `normalized_score` <span style="color:DimGray">float</span>
 
 Total sum of the [log-probabilities](/home/concepts#likelihood) of the text provided normalized by its length, the higher the better.
 
-#### `token_scores` <span class="param-types">array[map<string, float>]</span>
+#### `token_scores` <span style="color:DimGray">array[map<string, float>]</span>
 
 [Log-probability](/home/concepts#likelihood) associated with each [token](/home/concepts#tokens), the higher the better.  
 

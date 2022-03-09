@@ -55,12 +55,12 @@ curl -X 'POST' \
 
 ## Parameters
 
-#### `text` <span class="param-types">string/array[string]</span> <span class="param-warning">⚠️ required</span>
+#### `text` <span style="color:DimGray">string/array[string]</span> <span style="color:orange">⚠️ required</span>
 
 The input(s) that will be used by the model for generation, also known as the prompt. They can be provided either as a single string or as an array of strings for
 [batch processing](/api/specifications/requests#batching).
 
-#### `n_tokens` <span class="param-types">int</span> <span class="param-optional">20</span>
+#### `n_tokens` <span style="color:DimGray">int</span> <span style="color:Gray">20</span>
 
 Number of [tokens](/home/concepts#tokens) to generate. This can be overridden by a list of `stop_words`, which will cause
 generation to halt when a word in such list is encountered.
@@ -71,7 +71,7 @@ generation to halt when a word in such list is encountered.
 maximum length will see their prompt truncated from the left to fit. 
 
 
-#### `n_completions` <span class="param-types">int</span> <span class="param-optional">1</span>
+#### `n_completions` <span style="color:DimGray">int</span> <span style="color:Gray">1</span>
 
 Number of different completion proposals to return for each prompt.
 
@@ -80,7 +80,7 @@ Number of different completion proposals to return for each prompt.
 > You will be charged for the *total* number of tokens generated: `n_completions` * `n_tokens`, stay reasonable!
 
 
-#### `best_of` <span class="param-types">int</span> <span class="param-optional">null</span> <span class="param-warning">⚠️ smaller than n_completions</span>
+#### `best_of` <span style="color:DimGray">int</span> <span style="color:Gray">null</span> <span style="color:orange">⚠️ smaller than n_completions</span>
 
 Among `n_completions`, only return the `best_of` ones. Completions are selected according to how likely they are, summing the
 [log-likelihood](/home/concepts#likelihood) over all tokens generated. 
@@ -89,7 +89,7 @@ Among `n_completions`, only return the `best_of` ones. Completions are selected 
 
 See the [sampling](/home/concepts#sampling) entry for more details.
 
-#### `mode` <span class="param-types">(greedy, topk, nucleus)</span> <span class="param-optional">nucleus</span>
+#### `mode` <span style="color:DimGray">(greedy, topk, nucleus)</span> <span style="color:Gray">nucleus</span>
 
 How the model will decide which token to select at each step. 
 * **Greedy**: the model will always select the most likely token. This generation mode is deterministic and only
@@ -98,22 +98,22 @@ suited for applications in which there is a ground truth the model is expected t
     setting for most applications.
 * **Top-k**: the model will only consider the `k` most likely tokens.
 
-#### `temperature` <span class="param-types">float</span> <span class="param-optional">1.</span> <span class="param-warning">⚠️ only in topk/nucleus mode</span>
+#### `temperature` <span style="color:DimGray">float</span> <span style="color:Gray">1.</span> <span style="color:orange">⚠️ only in topk/nucleus mode</span>
 
 How risky will the model be in its choice of tokens. A temperature of 0 corresponds to greedy sampling; we recommend 
 a value around 1 for most creative applications, and closer to 0 when a ground truth exists.
 
-#### `p` <span class="param-types">float</span> <span class="param-optional">0.9</span> <span class="param-warning">⚠️ only in nucleus mode</span>
+#### `p` <span style="color:DimGray">float</span> <span style="color:Gray">0.9</span> <span style="color:orange">⚠️ only in nucleus mode</span>
 
 Total probability mass of the most likely tokens considered when sampling in nucleus mode. 
 
-#### `k` <span class="param-types">int</span> <span class="param-optional">5</span> <span class="param-warning">⚠️ only in topk mode</span>
+#### `k` <span style="color:DimGray">int</span> <span style="color:Gray">5</span> <span style="color:orange">⚠️ only in topk mode</span>
 
 Number of most likely tokens considered when sampling in top-k mode. 
 
 ### Control
 
-#### `biases` <span class="param-types">map<string, float></span> <span class="param-optional">null</span>
+#### `biases` <span style="color:DimGray">map<string, float></span> <span style="color:Gray">null</span>
 
 Bias the provided words to appear more or less often in the generated text. 
 Values should be comprised between -100 and +100, with negative values making words less likely to occur. Extreme
@@ -137,7 +137,7 @@ of samples and get an idea of the range of likelihood values in your specific us
 bias only applies to the first token (and may thus impact other words). 
 
 
-#### `presence_penalty` <span class="param-types">float</span> <span class="param-optional">0.</span>
+#### `presence_penalty` <span style="color:DimGray">float</span> <span style="color:Gray">0.</span>
 
 How strongly should tokens be prevented from appearing again. 
 This is a one-off penalty: tokens will be penalized after their first appearance, but not more if they appear repetitively 
@@ -148,7 +148,7 @@ This is a one-off penalty: tokens will be penalized after their first appearance
 >Once a token appears at least once, `presence_penalty` will be removed from its [log-likelihood](/home/concepts#likelihood) in the future. 
 
 
-#### `frequency_penalty` <span class="param-types">float</span> <span class="param-optional">0.</span>
+#### `frequency_penalty` <span style="color:DimGray">float</span> <span style="color:Gray">0.</span>
 
 How strongly should tokens be prevented from appearing again if they have appeared repetitively. Contrary to `presence_penalty`,
 this penalty scales with how often the token already occurs. Use values between 0 and 1. Values closer to 1 discourage repetition, especially useful in combination with `biases`.
@@ -159,28 +159,28 @@ this penalty scales with how often the token already occurs. Use values between 
 is how many times it occurs in the text already.
 
 
-#### `stop_words` <span class="param-types">array[string]</span> <span class="param-optional">null</span>
+#### `stop_words` <span style="color:DimGray">array[string]</span> <span style="color:Gray">null</span>
 
 Encountering any of these words will halt generation immediately. 
 
 ### Utilities
 
-#### `concat_prompt` <span class="param-types">boolean</span> <span class="param-optional">false</span>
+#### `concat_prompt` <span style="color:DimGray">boolean</span> <span style="color:Gray">false</span>
 
 The original `prompt` will be concatenated with the generated text in the returned response. 
 
-#### `return_logprobs` <span class="param-types">bool</span> <span class="param-optional">false</span>
+#### `return_logprobs` <span style="color:DimGray">bool</span> <span style="color:Gray">false</span>
 
 Returns the [log-probabilities](/home/concepts#likelihood) of the generated tokens.  
 
-#### `seed` <span class="param-types">int</span> <span class="param-optional">null</span>
+#### `seed` <span style="color:DimGray">int</span> <span style="color:Gray">null</span>
 
 Make sampling deterministic by setting a seed used for random number generation. 
 Useful for strictly reproducing **Create** calls.
 
 ### Skills
 
-#### `skill` <span class="param-types">string</span> <span class="param-optional">null</span>
+#### `skill` <span style="color:DimGray">string</span> <span style="color:Gray">null</span>
 
 Specify a 🤹 **[Skill](/api/skills)** to use to perform a specific task or to tailor the generated text. 
 
@@ -188,7 +188,7 @@ Specify a 🤹 **[Skill](/api/skills)** to use to perform a specific task or to 
 
 An array of outputs shaped like your batch.
 
-#### `input_text` <span class="param-types">string</span>
+#### `input_text` <span style="color:DimGray">string</span>
 
 The `text` used to generate the text.
 
@@ -196,20 +196,20 @@ The `text` used to generate the text.
 
 One entry for each `n_completions` requested. 
 
-#### `output_text` <span class="param-types">string</span>
+#### `output_text` <span style="color:DimGray">string</span>
 
 Text generated by the model. May be concatenated with the `input_text` if `concat_prompt=True`.
 
-#### `score` <span class="param-types">float</span>
+#### `score` <span style="color:DimGray">float</span>
 
 Total sum of the [log-probabilities](/home/concepts#likelihood) of the words generated, the higher the better.
 
-#### `normalized_score` <span class="param-types">float</span>
+#### `normalized_score` <span style="color:DimGray">float</span>
 
 Total sum of the [log-probabilities](/home/concepts#likelihood) of the words generated normalized by the length of the
 generated text, the higher the better.
 
-#### `token_scores` <span class="param-types">map<string, float></span>
+#### `token_scores` <span style="color:DimGray">map<string, float></span>
 
 [Log-probability](/home/concepts#likelihood) of each token generated in the completion, the higher the better.
 
