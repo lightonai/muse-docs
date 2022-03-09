@@ -1,6 +1,6 @@
-# Use Select for Customer Support
+# 🔘 Use Select for Customer Support
 
-**Use the [Select](/api/primitives/evaluate/select) primitive to identify the needs of your customers and help answer their requests.**
+**Use the 🔘 [Select](/api/primitives/evaluate/select) primitive to identify the needs of your customers and help answer their requests.**
 
 AI-powered chatbots have made it possible to get consistent and reliable customer support. Muse lets you identify your customer's issues easily, to minimize human involvement, making your support team much more efficient. 
 

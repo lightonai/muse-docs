@@ -1,6 +1,6 @@
-# Sentiment Analysis
+# ❤️ Review Classification
 
-**Detect sentiment expressed in reviews using ✍️ [Create](/api/primitives/create) and [Select](/api/primitives/evaluate/select).**
+**Detect sentiment expressed in reviews using ✍️ [Create](/api/primitives/create) and 🔘 [Select](/api/primitives/evaluate/select).**
 
 Sentiment analysis is the process of trying to measure a feeling or mood of a user in a text - for example, detecting whether a review is positive or negative.
 

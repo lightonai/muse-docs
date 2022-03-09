@@ -1,0 +1,44 @@
+# 😀😟 Sentiment Analysis Skill
+
+**Use the `Sentiment Analysis` skill with 🔘 [Select](/api/primitives/evaluate/select) to classify the polarity of a given text.**
+
+The `sentiment_analysis` skill is designed to classify text as negative, neutral, or positive.
+
+It uses the 🔘 [Select](/api/primitives/evaluate/select) endpoint, which requires you to specific `candidates` that are used for classification. In order to use the skill, the `candidates` need to be: `["-", "0", "+"]`,
+with 
+- `-` if the expressed opinion is negative,
+- `0` if it is neutral,
+- `+` if it is positive.
+
+In this short guide, learn how to use the `sentiment_analysis` skill with `lyra-en`.
+
+## Examples
+
+We start by initializing the client with
+
+```python
+from lightonmuse import Select
+
+selector = Select("lyra-en")
+```
+
+From there, using the skill is straightforward:
+
+```python
+output = selector("The video you showed me really got me scared", ["-", "+", "0"], skill="sentiment_analysis",) 
+print(output[0][0]['best'])
+```
+returns, as expected
+
+> `-`
+
+while a more neutral prompt
+
+```python
+output = selector("Mary told John to check his mailbox", ["-", "+", "0"], skill="sentiment_analysis",) 
+print(output[0][0]['best'])
+```
+returns
+> `0`
+
+Good luck classifying your own text!
