@@ -155,13 +155,13 @@ this penalty scales with how often the token already occurs. Use values between 
 
 > ⚙️ **Technical details**
 >
->`frequency_penalty` * $n_T$ will be removed from the [log-likelihood](/home/concepts#likelihood) of a token, where $n_T$
-is how many times it occurs in the text already.
+>`frequency_penalty` * `n_T` will be removed from the [log-likelihood](/home/concepts#likelihood) of a token, where `n_T`
+is the number of occurences of this token in the text already.
 
 
 #### `stop_words` <span style="color:DimGray">array[string]</span> <span style="color:Gray">null</span>
 
-Encountering any of these words will halt generation immediately. 
+Encountering any of these words will halt generation immediately.
 
 ### Utilities
 

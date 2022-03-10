@@ -60,38 +60,62 @@ for candidate in out[0][0]['rankings']:
 
 
 >Candidate | This user wants to cancel his subscription. | Normalized log-prob: -3.8278
-
+>
 >Token log-probs
- {'This': -8.9375}
- {' user': -5.44140625}
- {' wants': -5.17578125}
- {' to': -0.1341552734375}
- {' cancel': -6.77734375}
- {' his': -1.3203125}
- {' subscription': -1.01171875}
- {'.': -1.82421875}
+>
+> {'This': -8.9375}
+>
+> {' user': -5.44140625}
+>
+> {' wants': -5.17578125}
+>
+> {' to': -0.1341552734375}
+>
+> {' cancel': -6.77734375}
+>
+> {' his': -1.3203125}
+> 
+> {' subscription': -1.01171875}
+>
+> {'.': -1.82421875}
+
 
 >Candidate | This user is giving feedback. | Normalized log-prob: -5.4385
-
+>
 >Token log-probs
- {'This': -8.9375}
- {' user': -5.44140625}
- {' is': -2.27734375}
- {' giving': -8.140625}
- {' feedback': -4.64453125}
- {'.': -3.189453125}
+>
+> {'This': -8.9375}
+>
+> {' user': -5.44140625}
+>
+> {' is': -2.27734375}
+>
+> {' giving': -8.140625}
+>
+> {' feedback': -4.64453125}
+>
+> {'.': -3.189453125}
+
 
 >Candidate | This user is asking for technical support. | Normalized log-prob: -3.7139
-
+>
 >Token log-probs
- {'This': -8.9375}
- {' user': -5.44140625}
- {' is': -2.27734375}
- {' asking': -5.8671875}
- {' for': -0.76953125}
- {' technical': -4.5078125}
- {' support': -0.403564453125}
- {'.': -1.5068359375}
+>
+> {'This': -8.9375}
+>
+> {' user': -5.44140625}
+>
+> {' is': -2.27734375}
+>
+> {' asking': -5.8671875}
+>
+> {' for': -0.76953125}
+>
+> {' technical': -4.5078125}
+>
+> {' support': -0.403564453125}
+>
+> {'.': -1.5068359375}
 
 
 As we could expect, while "This user is asking for technical support." is ranked first, its score is very close to "This user wants to cancel his subscription.". 
@@ -101,9 +125,11 @@ As we could expect, while "This user is asking for technical support." is ranked
 When using `lyra-en` as a selector, it is possible to use a conjunction as a link between the prompt and the candidate classes to improve performances. This way, the model actually sees the structure `user message + conjunction + candidate class`. Let us try and see if using a proper conjunction can make the difference in the normalized scores of our candidates a bit more significant.
 
 For example, we could use
+
 ```python
 conjunction = "This chat entry implies that"
 ```
+
 Let us look at the different scores after adding this conjunction
 
 ```python
@@ -113,9 +139,9 @@ for candidate in out[0][0]['rankings']:
 ```
 
 >Candidate | This user wants to cancel his subscription. | Normalized log-prob: -4.1542
-
+>
 >Candidate | This user is giving feedback. | Normalized log-prob: -5.6647
-
+>
 >Candidate | This user is asking for technical support. | Normalized log-prob: -3.9866
 
 
@@ -130,9 +156,9 @@ for candidate in out[0][0]['rankings']:
 ```
 
 >Candidate | This user wants to cancel his subscription. | Normalized log-prob: -3.0111
-
+>
 >Candidate | This user is giving feedback. | Normalized log-prob: -3.9006
-
+>
 >Candidate | This user is asking for technical support. | Normalized log-prob: -2.6310
 
 As you can see, using a more specific conjunction gave us an even clearer ranking, with the score of the best candidate "This user is asking for technical support." being now significantly larger than the second-best choice. Now it's your turn to classify your users' requests and design the best conjunction!
