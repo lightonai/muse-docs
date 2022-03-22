@@ -98,6 +98,8 @@ suited for applications in which there is a ground truth the model is expected t
     setting for most applications.
 * **Top-k**: the model will only consider the `k` most likely tokens.
 
+Note that the default sampling method for `lyra-fr` is `topk`.
+
 #### `temperature` <span style="color:DimGray">float</span> <span style="color:Gray">1.</span> <span style="color:orange">⚠️ only in topk/nucleus mode</span>
 
 How risky will the model be in its choice of tokens. A temperature of 0 corresponds to greedy sampling; we recommend 
