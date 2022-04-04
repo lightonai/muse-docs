@@ -1,0 +1,18 @@
+{
+  "unversionedId": "guides/skills/multitask",
+  "id": "guides/skills/multitask",
+  "isDocsHomePage": false,
+  "title": "🧑‍🏫 Multitask Skill",
+  "description": "Use the Multitask Skill to make Muse execute instructions using ✍️ Create.",
+  "source": "@site/docs/guides/skills/multitask.md",
+  "sourceDirName": "guides/skills",
+  "slug": "/guides/skills/multitask",
+  "permalink": "/docs/guides/skills/multitask",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "guidesSidebar",
+  "previous": {
+    "title": "😀😟 Sentiment Analysis Skill",
+    "permalink": "/docs/guides/skills/sentiment_analysis"
+  }
+}

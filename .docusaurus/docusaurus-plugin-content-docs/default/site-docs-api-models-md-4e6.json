@@ -1,0 +1,22 @@
+{
+  "unversionedId": "api/models",
+  "id": "api/models",
+  "isDocsHomePage": false,
+  "title": "🤖 Models",
+  "description": "The Muse API offers access to models in different languages, with different capabilities to best fit your needs.",
+  "source": "@site/docs/api/models.md",
+  "sourceDirName": "api",
+  "slug": "/api/models",
+  "permalink": "/docs/api/models",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "🐍 Python",
+    "permalink": "/docs/api/bindings/python"
+  },
+  "next": {
+    "title": "✍️ Create",
+    "permalink": "/docs/api/primitives/create"
+  }
+}

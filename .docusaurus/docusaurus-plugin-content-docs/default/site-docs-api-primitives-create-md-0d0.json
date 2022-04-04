@@ -1,0 +1,22 @@
+{
+  "unversionedId": "api/primitives/create",
+  "id": "api/primitives/create",
+  "isDocsHomePage": false,
+  "title": "✍️ Create",
+  "description": "Use the ✍️ Create endpoint to write text according to a provided prompt.",
+  "source": "@site/docs/api/primitives/create.md",
+  "sourceDirName": "api/primitives",
+  "slug": "/api/primitives/create",
+  "permalink": "/docs/api/primitives/create",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "🤖 Models",
+    "permalink": "/docs/api/models"
+  },
+  "next": {
+    "title": "🧪 Analyse",
+    "permalink": "/docs/api/primitives/evaluate/analyse"
+  }
+}

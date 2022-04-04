@@ -1,0 +1,22 @@
+{
+  "unversionedId": "guides/english/seo",
+  "id": "guides/english/seo",
+  "isDocsHomePage": false,
+  "title": "🔎️ Content Marketing and Search Engine Optimization",
+  "description": "Boost the search rankings of your website and gain an edge over competitors using steerable text generation in ✍️ Create",
+  "source": "@site/docs/guides/english/seo.md",
+  "sourceDirName": "guides/english",
+  "slug": "/guides/english/seo",
+  "permalink": "/docs/guides/english/seo",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "guidesSidebar",
+  "previous": {
+    "title": "📜 Prompt design",
+    "permalink": "/docs/guides/english/prompt"
+  },
+  "next": {
+    "title": "❤️ Review Classification",
+    "permalink": "/docs/guides/english/review_classification"
+  }
+}

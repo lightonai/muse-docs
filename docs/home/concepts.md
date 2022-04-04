@@ -110,12 +110,12 @@ multiple pre-defined options according to their likelihood.
 **🔬️ [Evaluate](/api/primitives/evaluate/analyse) endpoints rely on likelihood to understand text**. You can access the log-probabilities
 associated with words in a sentence using 🧪 **[Analyse](/api/primitives/evaluate/analyse)**, to use in a downstream pipeline, or you
 can directly use 🔘 **[Select](/api/primitives/evaluate/select)** to perform likelihood-based text classification. See our guide
-about 🥇 **[Text classification](/guides/english/classification)** with the Muse API to learn more.
+about 🥇 **[reviews classification](/guides/english/review_classification)** with the Muse API to learn more.
 
 **Likelihood can be manually manipulated in ✍️ [Create](/api/primitives/create) to steer generation**. Use `word_biases` to manually
 increase or decrease the log-probabilities of words to see them more often or to ban them. Alter the likelihood calculations
 with `presence_penalty` and `frequence_penalty` to generate less repetitive and more novel text. Check-out our guide
-on 🎛️ **[Steering generation](/guides/english/steer)** for more.
+on 🎛️ **[Steering generation for SEO](/guides/english/seo)** for more.
 
 
 ### Embeddings <Alpha>alpha</Alpha>

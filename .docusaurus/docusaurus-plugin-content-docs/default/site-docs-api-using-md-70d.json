@@ -1,0 +1,18 @@
+{
+  "unversionedId": "api/using",
+  "id": "api/using",
+  "isDocsHomePage": false,
+  "title": "🤩 Using the Muse API",
+  "description": "<span",
+  "source": "@site/docs/api/using.md",
+  "sourceDirName": "api",
+  "slug": "/api/using",
+  "permalink": "/docs/api/using",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "apiSidebar",
+  "next": {
+    "title": "🔑 Authentication",
+    "permalink": "/docs/api/specifications/authentication"
+  }
+}

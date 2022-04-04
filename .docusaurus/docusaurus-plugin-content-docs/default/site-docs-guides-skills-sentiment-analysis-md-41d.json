@@ -1,0 +1,22 @@
+{
+  "unversionedId": "guides/skills/sentiment_analysis",
+  "id": "guides/skills/sentiment_analysis",
+  "isDocsHomePage": false,
+  "title": "😀😟 Sentiment Analysis Skill",
+  "description": "Use the Sentiment Analysis skill with 🔘 Select to classify the polarity of a given text.",
+  "source": "@site/docs/guides/skills/sentiment_analysis.md",
+  "sourceDirName": "guides/skills",
+  "slug": "/guides/skills/sentiment_analysis",
+  "permalink": "/docs/guides/skills/sentiment_analysis",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "guidesSidebar",
+  "previous": {
+    "title": "📝 Summarization Skill",
+    "permalink": "/docs/guides/skills/summarization"
+  },
+  "next": {
+    "title": "🧑‍🏫 Multitask Skill",
+    "permalink": "/docs/guides/skills/multitask"
+  }
+}

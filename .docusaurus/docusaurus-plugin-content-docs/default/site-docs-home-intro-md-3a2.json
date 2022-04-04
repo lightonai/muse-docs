@@ -1,0 +1,20 @@
+{
+  "unversionedId": "home/intro",
+  "id": "home/intro",
+  "isDocsHomePage": false,
+  "title": "👋 Introduction",
+  "description": "Welcome to the documentation for the 🎭 LightOn Muse API Beta!",
+  "source": "@site/docs/home/intro.md",
+  "sourceDirName": "home",
+  "slug": "/",
+  "permalink": "/docs/",
+  "version": "current",
+  "frontMatter": {
+    "slug": "/"
+  },
+  "sidebar": "homeSidebar",
+  "next": {
+    "title": "🪐 Concepts",
+    "permalink": "/docs/home/concepts"
+  }
+}

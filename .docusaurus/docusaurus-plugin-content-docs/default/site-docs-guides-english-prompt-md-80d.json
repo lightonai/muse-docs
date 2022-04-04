@@ -1,0 +1,22 @@
+{
+  "unversionedId": "guides/english/prompt",
+  "id": "guides/english/prompt",
+  "isDocsHomePage": false,
+  "title": "📜 Prompt design",
+  "description": "Learn the ins and outs of writing great prompts to get the most out of our models with ✍️ Create.",
+  "source": "@site/docs/guides/english/prompt.md",
+  "sourceDirName": "guides/english",
+  "slug": "/guides/english/prompt",
+  "permalink": "/docs/guides/english/prompt",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "guidesSidebar",
+  "previous": {
+    "title": "📚 Guides and tutorials",
+    "permalink": "/docs/guides/guides"
+  },
+  "next": {
+    "title": "🔎️ Content Marketing and Search Engine Optimization",
+    "permalink": "/docs/guides/english/seo"
+  }
+}

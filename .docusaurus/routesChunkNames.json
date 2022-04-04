@@ -1,0 +1,106 @@
+{
+  "/docs/-378": {
+    "component": "1be78505",
+    "versionMetadata": "935f2afb"
+  },
+  "/docs/-ccc": {
+    "component": "17896441",
+    "content": "3a23634f"
+  },
+  "/docs/api/bindings/python-11e": {
+    "component": "17896441",
+    "content": "75bb1d0f"
+  },
+  "/docs/api/models-725": {
+    "component": "17896441",
+    "content": "4e61bb45"
+  },
+  "/docs/api/primitives/create-a0a": {
+    "component": "17896441",
+    "content": "0d0b0861"
+  },
+  "/docs/api/primitives/evaluate/analyse-b79": {
+    "component": "17896441",
+    "content": "423d673f"
+  },
+  "/docs/api/primitives/evaluate/select-492": {
+    "component": "17896441",
+    "content": "b673a678"
+  },
+  "/docs/api/primitives/process-2b2": {
+    "component": "17896441",
+    "content": "769bdc01"
+  },
+  "/docs/api/primitives/represent/compare-d68": {
+    "component": "17896441",
+    "content": "31fbced6"
+  },
+  "/docs/api/primitives/represent/embed-712": {
+    "component": "17896441",
+    "content": "b4139889"
+  },
+  "/docs/api/skills-14d": {
+    "component": "17896441",
+    "content": "5afde469"
+  },
+  "/docs/api/specifications/authentication-bce": {
+    "component": "17896441",
+    "content": "831c13d2"
+  },
+  "/docs/api/specifications/errors_warnings-f03": {
+    "component": "17896441",
+    "content": "a5d3a53b"
+  },
+  "/docs/api/specifications/requests-0e6": {
+    "component": "17896441",
+    "content": "df8c9108"
+  },
+  "/docs/api/specifications/responses-6d9": {
+    "component": "17896441",
+    "content": "bdc8d03e"
+  },
+  "/docs/api/using-b0a": {
+    "component": "17896441",
+    "content": "70d3da90"
+  },
+  "/docs/guides/english/prompt-dc6": {
+    "component": "17896441",
+    "content": "80dd19c1"
+  },
+  "/docs/guides/english/review_classification-22a": {
+    "component": "17896441",
+    "content": "52eff8b3"
+  },
+  "/docs/guides/english/select-6b4": {
+    "component": "17896441",
+    "content": "b56482cf"
+  },
+  "/docs/guides/english/seo-8fb": {
+    "component": "17896441",
+    "content": "4281294f"
+  },
+  "/docs/guides/guides-de6": {
+    "component": "17896441",
+    "content": "6989bcc5"
+  },
+  "/docs/guides/skills/multitask-d11": {
+    "component": "17896441",
+    "content": "d3383eb8"
+  },
+  "/docs/guides/skills/sentiment_analysis-f74": {
+    "component": "17896441",
+    "content": "41d369d0"
+  },
+  "/docs/guides/skills/summarization-49c": {
+    "component": "17896441",
+    "content": "4d48092a"
+  },
+  "/docs/home/changelog-c6d": {
+    "component": "17896441",
+    "content": "6abd9f7a"
+  },
+  "/docs/home/concepts-80a": {
+    "component": "17896441",
+    "content": "039a187a"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "unversionedId": "api/specifications/authentication",
+  "id": "api/specifications/authentication",
+  "isDocsHomePage": false,
+  "title": "🔑 Authentication",
+  "description": "API keys",
+  "source": "@site/docs/api/specifications/authentication.md",
+  "sourceDirName": "api/specifications",
+  "slug": "/api/specifications/authentication",
+  "permalink": "/docs/api/specifications/authentication",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "🤩 Using the Muse API",
+    "permalink": "/docs/api/using"
+  },
+  "next": {
+    "title": "📟 Requests",
+    "permalink": "/docs/api/specifications/requests"
+  }
+}

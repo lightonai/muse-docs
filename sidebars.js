@@ -22,5 +22,8 @@ module.exports = {
                     {'📊 Represent': ['api/primitives/represent/embed', 'api/primitives/represent/compare']},
                     'api/primitives/process']},
                 'api/skills'],
-  guidesSidebar: ['guides/guides', {'🇬🇧 English': ['guides/english/prompt', 'guides/english/classification', 'guides/english/steer']}, ]
-};
+  guidesSidebar: ['guides/guides', {'🇬🇧 English': ['guides/english/prompt', 'guides/english/seo',
+                                                   'guides/english/review_classification',
+                                                   'guides/english/select'],
+                                    '🤹Skills': ['guides/skills/summarization', 'guides/skills/sentiment_analysis',
+                                                 'guides/skills/multitask']} ]};

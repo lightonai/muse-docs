@@ -34,7 +34,7 @@ Skills allow you to get the best of Muse for some specific tasks. It is importan
 designed for and how to interact with it. Check out the short guides we have written for each skills!
 
 - 📝 [Summarization](/guides/skills/summarization)
-- 🧑‍🏫 [Instruct](/guides/skills/instruct)
+- 🧑‍🏫 [Multitask](/guides/skills/multitask)
 - 😀😟 [Sentiment Analysis](/guides/skills/sentiment_analysis)
 
 ## Building your own skills

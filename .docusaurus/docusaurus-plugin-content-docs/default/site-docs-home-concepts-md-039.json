@@ -1,0 +1,22 @@
+{
+  "unversionedId": "home/concepts",
+  "id": "home/concepts",
+  "isDocsHomePage": false,
+  "title": "🪐 Concepts",
+  "description": "<span",
+  "source": "@site/docs/home/concepts.md",
+  "sourceDirName": "home",
+  "slug": "/home/concepts",
+  "permalink": "/docs/home/concepts",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "homeSidebar",
+  "previous": {
+    "title": "👋 Introduction",
+    "permalink": "/docs/"
+  },
+  "next": {
+    "title": "📝 Changelog",
+    "permalink": "/docs/home/changelog"
+  }
+}

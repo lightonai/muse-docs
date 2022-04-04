@@ -1,0 +1,22 @@
+{
+  "unversionedId": "api/specifications/responses",
+  "id": "api/specifications/responses",
+  "isDocsHomePage": false,
+  "title": "💬 Responses",
+  "description": "To an HTTP request, the API returns all results formatted in JSON.",
+  "source": "@site/docs/api/specifications/responses.md",
+  "sourceDirName": "api/specifications",
+  "slug": "/api/specifications/responses",
+  "permalink": "/docs/api/specifications/responses",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "📟 Requests",
+    "permalink": "/docs/api/specifications/requests"
+  },
+  "next": {
+    "title": "⚠️ Errors and warnings",
+    "permalink": "/docs/api/specifications/errors_warnings"
+  }
+}

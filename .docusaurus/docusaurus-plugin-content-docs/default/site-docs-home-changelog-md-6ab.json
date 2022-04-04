@@ -1,0 +1,18 @@
+{
+  "unversionedId": "home/changelog",
+  "id": "home/changelog",
+  "isDocsHomePage": false,
+  "title": "📝 Changelog",
+  "description": "<span",
+  "source": "@site/docs/home/changelog.md",
+  "sourceDirName": "home",
+  "slug": "/home/changelog",
+  "permalink": "/docs/home/changelog",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "homeSidebar",
+  "previous": {
+    "title": "🪐 Concepts",
+    "permalink": "/docs/home/concepts"
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "pluginId": "default",
+  "version": "current",
+  "label": "Next",
+  "banner": "none",
+  "isLast": true,
+  "docsSidebars": {
+    "homeSidebar": [
+      {
+        "type": "link",
+        "label": "👋 Introduction",
+        "href": "/docs/"
+      },
+      {
+        "type": "link",
+        "label": "🪐 Concepts",
+        "href": "/docs/home/concepts"
+      },
+      {
+        "type": "link",
+        "label": "📝 Changelog",
+        "href": "/docs/home/changelog"
+      }
+    ],
+    "apiSidebar": [
+      {
+        "type": "link",
+        "label": "🤩 Using the Muse API",
+        "href": "/docs/api/using"
+      },
+      {
+        "type": "category",
+        "collapsed": true,
+        "collapsible": true,
+        "label": "🧐 Specifications",
+        "items": [
+          {
+            "type": "link",
+            "label": "🔑 Authentication",
+            "href": "/docs/api/specifications/authentication"
+          },
+          {
+            "type": "link",
+            "label": "📟 Requests",
+            "href": "/docs/api/specifications/requests"
+          },
+          {
+            "type": "link",
+            "label": "💬 Responses",
+            "href": "/docs/api/specifications/responses"
+          },
+          {
+            "type": "link",
+            "label": "⚠️ Errors and warnings",
+            "href": "/docs/api/specifications/errors_warnings"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "collapsed": true,
+        "collapsible": true,
+        "label": "📟 Bindings",
+        "items": [
+          {
+            "type": "link",
+            "label": "🐍 Python",
+            "href": "/docs/api/bindings/python"
+          }
+        ]
+      },
+      {
+        "type": "link",
+        "label": "🤖 Models",
+        "href": "/docs/api/models"
+      },
+      {
+        "type": "category",
+        "collapsed": true,
+        "collapsible": true,
+        "label": "🧠 Primitives",
+        "items": [
+          {
+            "type": "link",
+            "label": "✍️ Create",
+            "href": "/docs/api/primitives/create"
+          },
+          {
+            "type": "category",
+            "collapsed": true,
+            "collapsible": true,
+            "label": "🔬 Evaluate",
+            "items": [
+              {
+                "type": "link",
+                "label": "🧪 Analyse",
+                "href": "/docs/api/primitives/evaluate/analyse"
+              },
+              {
+                "type": "link",
+                "label": "🔘 Select",
+                "href": "/docs/api/primitives/evaluate/select"
+              }
+            ]
+          },
+          {
+            "type": "category",
+            "collapsed": true,
+            "collapsible": true,
+            "label": "📊 Represent",
+            "items": [
+              {
+                "type": "link",
+                "label": "🔢 Embed",
+                "href": "/docs/api/primitives/represent/embed"
+              },
+              {
+                "type": "link",
+                "label": "⚖️ Compare",
+                "href": "/docs/api/primitives/represent/compare"
+              }
+            ]
+          },
+          {
+            "type": "link",
+            "label": "⚙️️ Process",
+            "href": "/docs/api/primitives/process"
+          }
+        ]
+      },
+      {
+        "type": "link",
+        "label": "🤹 Skills",
+        "href": "/docs/api/skills"
+      }
+    ],
+    "guidesSidebar": [
+      {
+        "type": "link",
+        "label": "📚 Guides and tutorials",
+        "href": "/docs/guides/guides"
+      },
+      {
+        "type": "category",
+        "collapsed": true,
+        "collapsible": true,
+        "label": "🇬🇧 English",
+        "items": [
+          {
+            "type": "link",
+            "label": "📜 Prompt design",
+            "href": "/docs/guides/english/prompt"
+          },
+          {
+            "type": "link",
+            "label": "🔎️ Content Marketing and Search Engine Optimization",
+            "href": "/docs/guides/english/seo"
+          },
+          {
+            "type": "link",
+            "label": "❤️ Review Classification",
+            "href": "/docs/guides/english/review_classification"
+          },
+          {
+            "type": "link",
+            "label": "🔘 Use Select for Customer Support",
+            "href": "/docs/guides/english/select"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "collapsed": true,
+        "collapsible": true,
+        "label": "🤹Skills",
+        "items": [
+          {
+            "type": "link",
+            "label": "📝 Summarization Skill",
+            "href": "/docs/guides/skills/summarization"
+          },
+          {
+            "type": "link",
+            "label": "😀😟 Sentiment Analysis Skill",
+            "href": "/docs/guides/skills/sentiment_analysis"
+          },
+          {
+            "type": "link",
+            "label": "🧑‍🏫 Multitask Skill",
+            "href": "/docs/guides/skills/multitask"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "unversionedId": "guides/english/select",
+  "id": "guides/english/select",
+  "isDocsHomePage": false,
+  "title": "🔘 Use Select for Customer Support",
+  "description": "Use the 🔘 Select primitive to identify the needs of your customers and help answer their requests.",
+  "source": "@site/docs/guides/english/select.md",
+  "sourceDirName": "guides/english",
+  "slug": "/guides/english/select",
+  "permalink": "/docs/guides/english/select",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "guidesSidebar",
+  "previous": {
+    "title": "❤️ Review Classification",
+    "permalink": "/docs/guides/english/review_classification"
+  },
+  "next": {
+    "title": "📝 Summarization Skill",
+    "permalink": "/docs/guides/skills/summarization"
+  }
+}

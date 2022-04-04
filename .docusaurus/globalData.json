@@ -1,0 +1,143 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs/",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs/",
+          "mainDocId": "home/intro",
+          "docs": [
+            {
+              "id": "api/bindings/python",
+              "path": "/docs/api/bindings/python",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/models",
+              "path": "/docs/api/models",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/primitives/create",
+              "path": "/docs/api/primitives/create",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/primitives/evaluate/analyse",
+              "path": "/docs/api/primitives/evaluate/analyse",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/primitives/evaluate/select",
+              "path": "/docs/api/primitives/evaluate/select",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/primitives/process",
+              "path": "/docs/api/primitives/process",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/primitives/represent/compare",
+              "path": "/docs/api/primitives/represent/compare",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/primitives/represent/embed",
+              "path": "/docs/api/primitives/represent/embed",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/skills",
+              "path": "/docs/api/skills",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/specifications/authentication",
+              "path": "/docs/api/specifications/authentication",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/specifications/errors_warnings",
+              "path": "/docs/api/specifications/errors_warnings",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/specifications/requests",
+              "path": "/docs/api/specifications/requests",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/specifications/responses",
+              "path": "/docs/api/specifications/responses",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/using",
+              "path": "/docs/api/using",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "guides/english/prompt",
+              "path": "/docs/guides/english/prompt",
+              "sidebar": "guidesSidebar"
+            },
+            {
+              "id": "guides/english/review_classification",
+              "path": "/docs/guides/english/review_classification",
+              "sidebar": "guidesSidebar"
+            },
+            {
+              "id": "guides/english/select",
+              "path": "/docs/guides/english/select",
+              "sidebar": "guidesSidebar"
+            },
+            {
+              "id": "guides/english/seo",
+              "path": "/docs/guides/english/seo",
+              "sidebar": "guidesSidebar"
+            },
+            {
+              "id": "guides/guides",
+              "path": "/docs/guides/guides",
+              "sidebar": "guidesSidebar"
+            },
+            {
+              "id": "guides/skills/multitask",
+              "path": "/docs/guides/skills/multitask",
+              "sidebar": "guidesSidebar"
+            },
+            {
+              "id": "guides/skills/sentiment_analysis",
+              "path": "/docs/guides/skills/sentiment_analysis",
+              "sidebar": "guidesSidebar"
+            },
+            {
+              "id": "guides/skills/summarization",
+              "path": "/docs/guides/skills/summarization",
+              "sidebar": "guidesSidebar"
+            },
+            {
+              "id": "home/changelog",
+              "path": "/docs/home/changelog",
+              "sidebar": "homeSidebar"
+            },
+            {
+              "id": "home/concepts",
+              "path": "/docs/home/concepts",
+              "sidebar": "homeSidebar"
+            },
+            {
+              "id": "home/intro",
+              "path": "/docs/",
+              "sidebar": "homeSidebar"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
