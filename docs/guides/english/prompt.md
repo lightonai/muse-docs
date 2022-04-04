@@ -23,7 +23,7 @@ The first type of prompts we consider here is using the beginning of a text (art
 For example, we can use 
 ```python
 prompt = "It was a nice summer evening."
-output = creator(prompt, n_tokens=20, seed=0) 
+output = creator(prompt, n_tokens=20) 
 print(prompt + "🤖 " + output[0][0]['completions'][0]['output_text'])
 ```
 ​which returns
@@ -33,13 +33,13 @@ print(prompt + "🤖 " + output[0][0]['completions'][0]['output_text'])
 ​
 ```python
 prompt = "It was a nice summer evening"
-output = creator(prompt, n_tokens=20, seed=0) 
+output = creator(prompt, n_tokens=20) 
 print(prompt + "🤖 " + output[0][0]['completions'][0]['output_text'])
 ```
 
 > It was a nice summer evening🤖 . The sky was still bright with orange sun, and on the beach, the sun was fading on
 
-Keep this in mind whatever tasks you want Muse to perform!
+Keep this in mind!
 
 ## The description of a task
 
@@ -49,7 +49,7 @@ For example, we can ask `lyra-en` to generate an Instagram Ad for a resort that 
 ​
 ```python
 prompt = "An Instagram ad for Atmosphere resort, a luxury hotel on Apo island in the Philippines with world-class diving.\n\nInstagram Ad:" 
-output = creator(prompt, temperature=0.8, n_tokens=98, seed=0, word_biases={"luxury": 5, "scuba": 5}, frequency_penalty=0.5)
+output = creator(prompt, temperature=0.8, n_tokens=98, word_biases={"luxury": 5, "scuba": 5}, frequency_penalty=0.5)
 print(output[0][0]['completions'][0]['output_text'])
 ```
 >Visit Atmosphere
@@ -73,7 +73,7 @@ Answer: We are sorry we didn't meet your expectations, and that you had to wait 
 ###
 Review: I like this bar. The deco, the staff and the little bit of a mystery in finding it all adds up to a positive experience. 
 Answer: """
-output = creator(prompt, temperature=0.8, n_tokens=25, seed=0, 
+output = creator(prompt, temperature=0.8, n_tokens=25,
                   stop_words=["\n", ".", "\n\n"])
 print(output[0][0]['completions'][0]['output_text'])
 ```
