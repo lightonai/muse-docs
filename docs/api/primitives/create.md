@@ -98,13 +98,9 @@ suited for applications in which there is a ground truth the model is expected t
     setting for most applications.
 * **Top-k**: the model will only consider the `k` most likely tokens.
 
-<<<<<<< HEAD:docs/api/primitives/create.md
 Note that the default sampling method for `lyra-fr` is `topk`.
 
 #### `temperature` <span style="color:DimGray">float</span> <span style="color:Gray">1.</span> <span style="color:orange">⚠️ only in topk/nucleus mode</span>
-=======
-#### `temperature` <span class="param-types">float</span> <span class="param-optional">1.</span> <span class="param-warning">⚠️ only in topk/nucleus mode</span>
->>>>>>> parent of 81578361... Change parameters style:api/primitives/create.md
 
 How risky will the model be in its choice of tokens. A temperature of 0 corresponds to greedy sampling; we recommend 
 a value around 1 for most creative applications, and closer to 0 when a ground truth exists.
