@@ -10,20 +10,28 @@
  */
 
 module.exports = {
-  // By default, Docusaurus generates a sidebar from the docs folder structure
-  homeSidebar: ['home/intro', 'home/concepts', 'home/changelog'],
-  apiSidebar: ['api/using',
-                {'🧐 Specifications': ['api/specifications/authentication', 'api/specifications/requests',
-                    'api/specifications/responses', 'api/specifications/errors_warnings']},
-                {'📟 Bindings': ['api/bindings/python']},
-                'api/models',
-                {'🧠 Primitives': ['api/primitives/create',
-                    {'🔬 Evaluate': ['api/primitives/evaluate/analyse', 'api/primitives/evaluate/select']},
-                    {'📊 Represent': ['api/primitives/represent/embed', 'api/primitives/represent/compare']},
-                    'api/primitives/process']},
-                'api/skills'],
-  guidesSidebar: ['guides/guides', {'🇬🇧 English': ['guides/english/prompt', 'guides/english/seo',
-                                                   'guides/english/review_classification',
-                                                   'guides/english/select'],
-                                    '🤹Skills': ['guides/skills/summarization', 'guides/skills/sentiment_analysis',
-                                                 'guides/skills/multitask']} ]};
+    // By default, Docusaurus generates a sidebar from the docs folder structure
+    homeSidebar: ['home/intro', 'home/concepts', 'home/changelog'],
+    apiSidebar: ['api/using',
+        {
+            '🧐 Specifications': ['api/specifications/authentication', 'api/specifications/requests',
+                'api/specifications/responses', 'api/specifications/errors_warnings']
+        },
+        { '📟 Bindings': ['api/bindings/python'] },
+        'api/models',
+        {
+            '🧠 Primitives': ['api/primitives/create',
+                { '🔬 Evaluate': ['api/primitives/evaluate/analyse', 'api/primitives/evaluate/select'] },
+                { '📊 Represent': ['api/primitives/represent/embed', 'api/primitives/represent/compare'] },
+                'api/primitives/process']
+        },
+        'api/skills'],
+    guidesSidebar: ['guides/guides', {
+        '🇬🇧 English': ['guides/english/prompt', 'guides/english/seo',
+            'guides/english/review_classification',
+            'guides/english/select'],
+        '🇫🇷 French': ['guides/french/prompt'],
+        '🤹Skills': ['guides/skills/summarization', 'guides/skills/sentiment_analysis',
+            'guides/skills/multitask']
+    }]
+};
