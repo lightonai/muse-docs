@@ -1,3 +1,6 @@
+---
+---
+
 # ⚠️ Errors and warnings
 
 If something goes wrong, the API will return **standard HTTP codes** to indicate a problem occurred:

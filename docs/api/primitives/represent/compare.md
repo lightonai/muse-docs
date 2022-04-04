@@ -1,16 +1,31 @@
+---
+---
+
 # ⚖️ Compare
 
 Use the **Compare** endpoint to compare a reference input with some candidates based on cosine similarity scores computed on the model embeddings.
 
 Available at ```https://api.lighton.ai/muse/v1/compare```.
 
-> 💸️ **Pricing**
->
->Pricing for the **Represent** endpoints is not final, values returned by `cost` and `total_cost` are placeholders.
+:::info 💸️ Pricing
+Pricing for the **Represent** endpoints is not final, values returned by `cost` and `total_cost` are placeholders.
+:::
 
 ---
 
 ## Example
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="curl"
+values={[
+{ label: 'cURL', value: 'curl', },
+]
+}>
+
+<TabItem value="curl">
 
 ```bash title="Request"
 curl -X 'POST' \
@@ -21,6 +36,10 @@ curl -X 'POST' \
   -H 'X-Model: orion-fr' \
   -d '{"reference": "Je suis content", "candidates": ["je suis heureux", "je suis triste"]}'
 ```
+
+</TabItem>
+
+</Tabs>
 
 ```json title="Response (JSON)"
 {

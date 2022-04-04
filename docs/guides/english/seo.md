@@ -1,10 +1,13 @@
+---
+---
+
 # 🔎️ Content Marketing and Search Engine Optimization
 
 **Boost the search rankings of your website and gain an edge over competitors using steerable text generation in ✍️ [Create](/api/primitives/create)**
 
-> ⚠️ **Caution**
->
-> We advise to always employ human supervision on generated text for best performance. Moreover, posting machine-generated text with no human redaction might break the terms of use of some platforms and services.
+:::caution ⚠️ Caution
+We advise to always employ human supervision on generated text for best performance. Moreover, posting machine-generated text with no human redaction might break the terms of use of some platforms and services.
+:::
 
 Most online experiences start by querying a search engine. The result usually comes in the form of a listing of web-pages that satisfy the search. Ranking in the top results for the right keywords results in more traffic to a website. An entrepreneur can leverage the first page of the search engine to get the right traffic for their business: more traffic means more potential customers or buyers clicking on the link and navigating to the site. To present a useful list of links to the user, the search engine needs to establish what kind of information can be linked together to create a meaningful list.
 
@@ -222,6 +225,7 @@ print("Completion: ", outputs[0]["completions"][0]["output_text"])
 >My final sous-vide tip is not to be scared of sous-vide. I have a few tips to help you overcome your reservations."
 >
 >I love when consumers hear their fears are unjustified and overcome them.
+
 ```python
 prompt = "Write a **sarcastic** conclusion for a blog post on sous-vide cooking.\n\nConclusion:"
 outputs, costs, request_id = creator(prompt, n_tokens=75)

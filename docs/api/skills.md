@@ -12,10 +12,12 @@ format.
 The skill to use for an API call can be specified using the `skill` parameters. Available skills are described below;
 **some skills may be only available for certain models and endpoints**.
 
->💸️ **Pricing**
->
->Skills are currently billed like normal API calls, taking into account processed & generated tokens.
+:::info 💸️ Pricing
+
+Skills are currently billed like normal API calls, taking into account processed & generated tokens.
 This is not final, and pricing may evolve in the future.
+
+:::
 
 
 ## Available skills

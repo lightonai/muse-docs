@@ -1,3 +1,6 @@
+---
+---
+
 # 📜 Prompt design
 
 **Learn the ins and outs of writing great prompts to get the most out of our models with ✍️ [Create](/api/primitives/create)**.
@@ -86,6 +89,6 @@ to the last review.
 
 As you can see in the examples above, a good prompt is the key to achieving quality results. The more detail you can include in the description of a task, the more examples you can provide, the better the generation. Make sure to try out various prompts to see what produces the best results for your task at hand, and check out our examples for inspiration.
 
-> ⚠️ **Caution**
->
-> The use of ambiguous, disrespectful, racist, or otherwise improper vocabulary can lead to improper generations. Please use common sense when generating text. LightOn is not responsible for improper use of the Muse API.
+:::caution ⚠️ Caution
+The use of ambiguous, disrespectful, racist, or otherwise improper vocabulary can lead to improper generations. Please use common sense when generating text. LightOn is not responsible for improper use of the Muse API.
+:::

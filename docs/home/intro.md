@@ -1,3 +1,7 @@
+---
+slug: /
+---
+
 # 👋 Introduction
 
 **Welcome to the documentation for the 🎭 LightOn Muse API Beta!**
@@ -8,12 +12,11 @@ can help you build conversational AI, copywriting tools, text classifiers, seman
 
 **🚀 What you can put in words is the only limit.**
 
-
->🔒 **Accessing the Muse API private beta**
->
->The Muse API is currently in **private beta** for select customers. You can 
+:::tip 🔒 Accessing the Muse API private beta
+The Muse API is currently in **private beta** for select customers. You can 
 **[register your interest](https://lightonmuse.typeform.com/waitlist)**, and we will keep you updated regarding
 our public launch. Stay tuned: public access is coming early 2022.
+:::
 
 ## Getting started
 * ✍️ **[Create](/api/primitives/create)**, 🔬️ **[Evaluate](/api/primitives/evaluate/select)**, 📊 **[Represent](/api/primitives/represent/embed)**, 
@@ -26,9 +29,8 @@ Or directly use **handy skills for generic tasks** such as summarization.
 📚 **[Guides](/guides/guides)** to discover what you can build with the Muse API. 
 In a hurry? **[Book a 15 minutes discussion with our experts](https://calendly.com/lightonmuse/demo)**.
 
->🚧 **Work in progress!**
->
->The Muse API is currently in beta, and is actively being worked on! Pages may be incomplete, and some features 
+:::caution 🚧 Work in progress!
+The Muse API is currently in beta, and is actively being worked on! Pages may be incomplete, and some features 
 may change/break as we expand the API. 
 **The best up-to-date overview of the API is provided by the [API Reference](/api/using)**.
-
+:::

@@ -1,6 +1,20 @@
+---
+---
+
 # 🤩 Using the Muse API
 
-
+export const Alpha = ({children}) => (
+<span
+style={{
+backgroundColor: '#68B1D0',
+fontFamily: 'monospace',
+borderRadius: '7px',
+color: '#fff',
+padding: '0.3rem',
+}}>
+{children}
+</span>
+);
 
 We offer three ways to query the Muse API: 
 * Directly through **[HTTP requests](/api/specifications/requests)**, the most flexible format to implement 
@@ -18,7 +32,7 @@ This is the main gateway to Muse, and **we recommend you get started with this e
 in your product. Leverage 🧪 **[Analyse](/api/primitives/evaluate/analyse)** to help your machine learning pipeline
 unlock unique insights, or directly use
 🔘 **[Select](/api/primitives/evaluate/select)** for text classification.
-* 📊 **[Represent](/api/primitives/represent/embed)** <span style="background-color: #68B1D0">alpha</span> builds **computer-understandable 
+* 📊 **[Represent](/api/primitives/represent/embed)** <Alpha>alpha</Alpha> builds **computer-understandable 
 representations of sentences, paragraphs, and documents**. Enhance your machine learning pipeline and semantic search
 applications with rich contextual embeddings from 🔢 **[Embed](/api/primitives/represent/embed)**, or directly use
 ⚖️ **[Compare](/api/primitives/represent/compare)** to find semantically-similar texts.
@@ -32,6 +46,6 @@ We offer a number of **official bindings libraries** to use the Muse API directl
 
 | Language | Availability | Link |
 |----------|--------------|------|
-| **🐍 [Python](/api/bindings/python)**   | <span style="background-color: #68B1D0">alpha</span> | [GitHub](https://github.com/lightonai/lightonmuse) |
+| **🐍 [Python](/api/bindings/python)**   | <Alpha>alpha</Alpha> | [GitHub](https://github.com/lightonai/lightonmuse) |
 | **🌐 Javascript** | *coming soon* |      |
 
