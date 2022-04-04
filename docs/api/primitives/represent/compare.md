@@ -52,11 +52,11 @@ curl -X 'POST' \
 
 ## Parameters
 
-#### `reference` <span style="color:DimGray">string</span> <span style="color:orange">⚠️ required</span>
+#### `reference` <span class="param-types">string</span> <span class="param-warning">⚠️ required</span>
 
 The reference input to compute similarity against.
 
-#### `candidates` <span style="color:DimGray">array[string]</span> <span style="color:orange">⚠️ required</span>
+#### `candidates` <span class="param-types">array[string]</span> <span class="param-warning">⚠️ required</span>
 
 The input(s) that are compared to the reference and ranked based on similarity.
 
@@ -64,7 +64,7 @@ The input(s) that are compared to the reference and ranked based on similarity.
 
 An array of outputs shaped like your batch.
 
-#### `reference` <span style="color:DimGray">string</span>
+#### `reference` <span class="param-types">string</span>
 
 The `reference` sentence used to compute similarities.
 
@@ -72,10 +72,10 @@ The `reference` sentence used to compute similarities.
 
 One entry for each member of `candidates`. 
 
-#### `candidate` <span style="color:DimGray">string</span>
+#### `candidate` <span class="param-types">string</span>
 
 A single entry from the `candidates` sent in the request.
 
-#### `similarity` <span style="color:DimGray">float</span>
+#### `similarity` <span class="param-types">float</span>
 
 Similarity score between `candidate` and `reference`. It ranges between 0 and 1, the higher the more similar.

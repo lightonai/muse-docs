@@ -62,19 +62,19 @@ curl -X 'POST' \
 
 ## Parameters
 
-#### `reference` <span style="color:DimGray">string</span> <span style="color:orange">⚠️ required</span>
+#### `reference` <span class="param-types">string</span> <span class="param-warning">⚠️ required</span>
 
 The reference input to compute likelihood against.
 
-#### `candidates` <span style="color:DimGray">array[string]</span> <span style="color:orange">⚠️ required</span>
+#### `candidates` <span class="param-types">array[string]</span> <span class="param-warning">⚠️ required</span>
 
 The input(s) that are compared to the reference and ranked based on likelihood.
 
-#### `conjunction` <span style="color:DimGray">string</span> <span style="color:Gray">""</span>
+#### `conjunction` <span class="param-types">string</span> <span class="param-optional">""</span>
 
 Expression used to link reference and candidates to create the prompt used to compute the likelihood. The prompt will have the structure `reference`+`conjunction`+`candidate`. Finding a good `conjunction` can greatly increase the performance of `select`.
 
-#### `concat_best` <span style="color:DimGray">boolean</span> <span style="color:Gray">true</span>
+#### `concat_best` <span class="param-types">boolean</span> <span class="param-optional">true</span>
 
 If `true` the response will contain a `"best"` field with the selected choice.
 
@@ -83,7 +83,7 @@ If `true` the response will contain a `"best"` field with the selected choice.
 
 An array of outputs shaped like your batch.
 
-#### `reference` <span style="color:DimGray">string</span>
+#### `reference` <span class="param-types">string</span>
 
 The `reference` sentence used to compute similarities.
 
@@ -91,19 +91,19 @@ The `reference` sentence used to compute similarities.
 
 One entry for each member of `candidates`. 
 
-#### `text` <span style="color:DimGray">string</span>
+#### `text` <span class="param-types">string</span>
 
 A single entry from the `candidates` sent in the request.
 
-#### `score` <span style="color:DimGray">float</span>
+#### `score` <span class="param-types">float</span>
 
 Log-likelihood score computed on the concatenation of `reference`, `conjunction` and `candidate`, the higher the better.
 
-#### `normalized_score` <span style="color:DimGray">float</span>
+#### `normalized_score` <span class="param-types">float</span>
 
 Score normalized by the length in tokens, the higher the better.
 
-#### `token_scores` <span style="color:DimGray">array[string:float]</span>
+#### `token_scores` <span class="param-types">array[string:float]</span>
 List of [tokens](/home/concepts#tokens) of the `candidate` with associated likelihood scores, the higher the better.
 
 > ⚙️ **Token representations**
@@ -112,5 +112,5 @@ List of [tokens](/home/concepts#tokens) of the `candidate` with associated likel
 for spaces and possible encoding oddities (such as `Ã©` for `é`). 
 
 
-#### `best` <span style="color:DimGray">string</span>
+#### `best` <span class="param-types">string</span>
 Best choice selected among the `candidates` in terms of likelihood.
