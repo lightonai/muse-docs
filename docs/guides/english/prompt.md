@@ -1,7 +1,7 @@
 ---
 ---
 
-# 📜 Prompt design
+# 📜 Prompt Design
 
 **Learn the ins and outs of writing great prompts to get the most out of our models with ✍️ [Create](/api/primitives/create)**.
 
@@ -53,7 +53,7 @@ output = creator(prompt, temperature=0.8, n_tokens=98, word_biases={"luxury": 5,
 print(output[0][0]['completions'][0]['output_text'])
 ```
 >Visit Atmosphere
-
+>
 >Atmosphere has just opened its doors and is now ready to offer an unparalleled experience in luxurious, private villas. While the resort’s restaurant is world-class, the real star of the show is the ocean itself. With five stunning dive sites around the island, there’s no better way to enjoy a vacation than with scuba diving. Check out some of our most recent Instagram posts below and get ready to be immersed in paradise!
 
 

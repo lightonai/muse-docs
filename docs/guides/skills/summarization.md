@@ -23,7 +23,7 @@ prompt = """Après le choc démographique de 2020, marqué par la surmortalité 
 ```
 For this, we simply have to input
 ```python
-output = creator_fr(prompt, skill="summarization", seed=0)
+output = creator_fr(prompt, skill="summarization")
 print(output[0][0]['completions'][0]['output_text'])
 ```
 which returns

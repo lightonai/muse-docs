@@ -39,7 +39,7 @@ print(output[0][0]['completions'][0]['output_text'])
 `Multitask` can also be used to generate a sentence that includes a set of words:
 
 ```python
-output = creator("Create a sentence with the following words: [tennis, Rome, sunset]:", skill="multitask", seed=123, n_tokens=30)
+output = creator("Create a sentence with the following words: [tennis, Rome, sunset]:", skill="multitask", n_tokens=30)
 print(output[0][0]['completions'][0]['output_text'])
 ```
 
@@ -50,7 +50,7 @@ returns
 It can also create poetry!
 
 ```python
-output = creator("Create a sad poetry about love:", skill="multitask", seed=123, n_tokens=65)
+output = creator("Create a sad poetry about love:", skill="multitask", n_tokens=65)
 print(output[0][0]['completions'][0]['output_text'])
 ```
 

@@ -1,7 +1,7 @@
 ---
 ---
 
-# 📜 Construction de prompts
+# 📜 Construction de Prompts
 
 
 **Apprends à concevoir efficacement des prompts afin de tirer le meilleur parti de nos modèles, en utilisant ✍️ [Create](/api/primitives/create)**.
@@ -18,9 +18,9 @@ from lightonmuse import Create
 creator = Create("lyra-fr")
 ```
 
-​
+
 ## Un texte à compléter
-​
+
 
 Dans un premier temps, explorons comment utiliser un début de texte (article, publicité, texte littéraire) en tant que prompt, que Muse peut compléter.
 
@@ -94,6 +94,8 @@ et on obtient, en réponse au dernier commentaire :
 
 > Nous sommes ravis que vous ayez pu profiter de ce bon moment ! À très bientôt !
 ​
+
+
 ​
 ## Expérimente avec tes prompts
 
