@@ -23,12 +23,12 @@ and imagine that we wish to classify the (positive) review
 ```python
 review = "A great American picture, full of incredible images and lasting moments."
 ```
-# Using Select
+## Using Select
 
-Since the Select endpoint uses to likelihood to select the more likely candidate with respect to a reference, it seems like a good place to start doing sentiment analysis! Here we assume that you are familiar with the use of Select: make sure to check out our [Select Guide](/guides/english/select) for more detail. 
+Since the Select endpoint uses likelihood to select the more likely candidate with respect to a reference, it seems like a good place to start doing sentiment analysis! Here we assume that you are familiar with the use of Select: make sure to check out our [Select Guide](/guides/english/select) for more detail. 
 
 
-## Select Baseline
+### Select Baseline
 
 Let us start with using the Select Baseline, that is, without any Skill or other trick, to classify reviews. We try the following approach:
 
@@ -45,7 +45,7 @@ print(review + " | " + out[0][0]["best"])
 Great, it works! However, as you can see in the Comparison section of the guide, the performances of this method are not as good when the reviews become a bit more complex. So let's see how we can improve on it.
 
 
-## Select with a twist: the sentiment_analysis skill
+### Select with a twist: the sentiment_analysis skill
 
 The [sentiment_analysis Skill](/api/skills) has been trained to classify text as `Positive (+)`, `Negative (-)` or `Neutral (0)`. It can be used out of the box as follows:
 
@@ -61,11 +61,11 @@ And again, the review is properly classified:
 
 
 
-# Using Create
+## Using Create
 
 In addition to using Select, we can also use Create to classify reviews. For this purpose, we need to provide `lyra-en` with examples so it can understand the task at hand. As we will see, the number of examples provided affects the precision of the classification. 
 
-## One-shot classification
+### One-shot classification
 
 We start with providing `lyra-en` with only one line of instruction and one example:
 
@@ -100,7 +100,7 @@ Note that, to use Create for sentiment analysis, we use a very low temperature o
 
 This review was classified properly with only one example, however, such a simple approach does not work for more complex reviews and may be very biased by the choice of example, as we will see below. So let's try and use three examples!
 
-## Three-shot classification
+### Three-shot classification
 
 In this case, we use Create similarly as before but add more examples to our prompt:
 
@@ -132,7 +132,7 @@ print(review.split("Review:")[1].split("\n")[0].strip().strip("\'") + ' | ' + ou
 As expected, the review is once again properly classified.
 
 
-# Comparing the different methods
+## Comparing the different methods
 
 Let us now discuss the differences between the various methods. To compare them, we gathered 20 movie reviews (10 positive reviews and 10 negative reviews) and classified them using the four methods described above. We've tried to find reviews that are not straightforward to classify (and some of them are pretty funny!). The table below summarizes the results, with wrong classifications being crossed out.
 

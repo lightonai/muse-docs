@@ -30,7 +30,7 @@ module.exports = {
         '🇬🇧 English': ['guides/english/prompt', 'guides/english/seo',
             'guides/english/review_classification',
             'guides/english/select'],
-        '🇫🇷 French': ['guides/french/prompt'],
+        '🇫🇷 French': ['guides/french/prompt', 'guides/french/review_classification'],
         '🤹Skills': ['guides/skills/summarization', 'guides/skills/sentiment_analysis',
             'guides/skills/multitask']
     }]
