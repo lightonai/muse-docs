@@ -4,156 +4,156 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/docs/',
-    component: ComponentCreator('/docs/','378'),
+    path: '/',
+    component: ComponentCreator('/','c3b'),
     routes: [
       {
-        path: '/docs/',
-        component: ComponentCreator('/docs/','ccc'),
+        path: '/',
+        component: ComponentCreator('/','0e1'),
         exact: true,
         'sidebar': "homeSidebar"
       },
       {
-        path: '/docs/api/bindings/python',
-        component: ComponentCreator('/docs/api/bindings/python','11e'),
+        path: '/api/bindings/python',
+        component: ComponentCreator('/api/bindings/python','aa6'),
         exact: true,
         'sidebar': "apiSidebar"
       },
       {
-        path: '/docs/api/models',
-        component: ComponentCreator('/docs/api/models','725'),
+        path: '/api/models',
+        component: ComponentCreator('/api/models','869'),
         exact: true,
         'sidebar': "apiSidebar"
       },
       {
-        path: '/docs/api/primitives/create',
-        component: ComponentCreator('/docs/api/primitives/create','a0a'),
+        path: '/api/primitives/create',
+        component: ComponentCreator('/api/primitives/create','a6a'),
         exact: true,
         'sidebar': "apiSidebar"
       },
       {
-        path: '/docs/api/primitives/evaluate/analyse',
-        component: ComponentCreator('/docs/api/primitives/evaluate/analyse','b79'),
+        path: '/api/primitives/evaluate/analyse',
+        component: ComponentCreator('/api/primitives/evaluate/analyse','a5f'),
         exact: true,
         'sidebar': "apiSidebar"
       },
       {
-        path: '/docs/api/primitives/evaluate/select',
-        component: ComponentCreator('/docs/api/primitives/evaluate/select','492'),
+        path: '/api/primitives/evaluate/select',
+        component: ComponentCreator('/api/primitives/evaluate/select','c3b'),
         exact: true,
         'sidebar': "apiSidebar"
       },
       {
-        path: '/docs/api/primitives/process',
-        component: ComponentCreator('/docs/api/primitives/process','2b2'),
+        path: '/api/primitives/process',
+        component: ComponentCreator('/api/primitives/process','43f'),
         exact: true,
         'sidebar': "apiSidebar"
       },
       {
-        path: '/docs/api/primitives/represent/compare',
-        component: ComponentCreator('/docs/api/primitives/represent/compare','d68'),
+        path: '/api/primitives/represent/compare',
+        component: ComponentCreator('/api/primitives/represent/compare','fcf'),
         exact: true,
         'sidebar': "apiSidebar"
       },
       {
-        path: '/docs/api/primitives/represent/embed',
-        component: ComponentCreator('/docs/api/primitives/represent/embed','712'),
+        path: '/api/primitives/represent/embed',
+        component: ComponentCreator('/api/primitives/represent/embed','af8'),
         exact: true,
         'sidebar': "apiSidebar"
       },
       {
-        path: '/docs/api/skills',
-        component: ComponentCreator('/docs/api/skills','14d'),
+        path: '/api/skills',
+        component: ComponentCreator('/api/skills','e4a'),
         exact: true,
         'sidebar': "apiSidebar"
       },
       {
-        path: '/docs/api/specifications/authentication',
-        component: ComponentCreator('/docs/api/specifications/authentication','bce'),
+        path: '/api/specifications/authentication',
+        component: ComponentCreator('/api/specifications/authentication','fca'),
         exact: true,
         'sidebar': "apiSidebar"
       },
       {
-        path: '/docs/api/specifications/errors_warnings',
-        component: ComponentCreator('/docs/api/specifications/errors_warnings','f03'),
+        path: '/api/specifications/errors_warnings',
+        component: ComponentCreator('/api/specifications/errors_warnings','0ca'),
         exact: true,
         'sidebar': "apiSidebar"
       },
       {
-        path: '/docs/api/specifications/requests',
-        component: ComponentCreator('/docs/api/specifications/requests','0e6'),
+        path: '/api/specifications/requests',
+        component: ComponentCreator('/api/specifications/requests','1e1'),
         exact: true,
         'sidebar': "apiSidebar"
       },
       {
-        path: '/docs/api/specifications/responses',
-        component: ComponentCreator('/docs/api/specifications/responses','6d9'),
+        path: '/api/specifications/responses',
+        component: ComponentCreator('/api/specifications/responses','0da'),
         exact: true,
         'sidebar': "apiSidebar"
       },
       {
-        path: '/docs/api/using',
-        component: ComponentCreator('/docs/api/using','b0a'),
+        path: '/api/using',
+        component: ComponentCreator('/api/using','7da'),
         exact: true,
         'sidebar': "apiSidebar"
       },
       {
-        path: '/docs/guides/english/prompt',
-        component: ComponentCreator('/docs/guides/english/prompt','dc6'),
+        path: '/guides/english/prompt',
+        component: ComponentCreator('/guides/english/prompt','446'),
         exact: true,
         'sidebar': "guidesSidebar"
       },
       {
-        path: '/docs/guides/english/review_classification',
-        component: ComponentCreator('/docs/guides/english/review_classification','22a'),
+        path: '/guides/english/review_classification',
+        component: ComponentCreator('/guides/english/review_classification','ad3'),
         exact: true,
         'sidebar': "guidesSidebar"
       },
       {
-        path: '/docs/guides/english/select',
-        component: ComponentCreator('/docs/guides/english/select','6b4'),
+        path: '/guides/english/select',
+        component: ComponentCreator('/guides/english/select','9c8'),
         exact: true,
         'sidebar': "guidesSidebar"
       },
       {
-        path: '/docs/guides/english/seo',
-        component: ComponentCreator('/docs/guides/english/seo','8fb'),
+        path: '/guides/english/seo',
+        component: ComponentCreator('/guides/english/seo','bb1'),
         exact: true,
         'sidebar': "guidesSidebar"
       },
       {
-        path: '/docs/guides/guides',
-        component: ComponentCreator('/docs/guides/guides','de6'),
+        path: '/guides/guides',
+        component: ComponentCreator('/guides/guides','6ea'),
         exact: true,
         'sidebar': "guidesSidebar"
       },
       {
-        path: '/docs/guides/skills/multitask',
-        component: ComponentCreator('/docs/guides/skills/multitask','d11'),
+        path: '/guides/skills/multitask',
+        component: ComponentCreator('/guides/skills/multitask','ea8'),
         exact: true,
         'sidebar': "guidesSidebar"
       },
       {
-        path: '/docs/guides/skills/sentiment_analysis',
-        component: ComponentCreator('/docs/guides/skills/sentiment_analysis','f74'),
+        path: '/guides/skills/sentiment_analysis',
+        component: ComponentCreator('/guides/skills/sentiment_analysis','025'),
         exact: true,
         'sidebar': "guidesSidebar"
       },
       {
-        path: '/docs/guides/skills/summarization',
-        component: ComponentCreator('/docs/guides/skills/summarization','49c'),
+        path: '/guides/skills/summarization',
+        component: ComponentCreator('/guides/skills/summarization','31d'),
         exact: true,
         'sidebar': "guidesSidebar"
       },
       {
-        path: '/docs/home/changelog',
-        component: ComponentCreator('/docs/home/changelog','c6d'),
+        path: '/home/changelog',
+        component: ComponentCreator('/home/changelog','532'),
         exact: true,
         'sidebar': "homeSidebar"
       },
       {
-        path: '/docs/home/concepts',
-        component: ComponentCreator('/docs/home/concepts','80a'),
+        path: '/home/concepts',
+        component: ComponentCreator('/home/concepts','976'),
         exact: true,
         'sidebar': "homeSidebar"
       }

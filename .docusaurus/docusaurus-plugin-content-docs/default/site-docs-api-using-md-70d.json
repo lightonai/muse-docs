@@ -7,12 +7,12 @@
   "source": "@site/docs/api/using.md",
   "sourceDirName": "api",
   "slug": "/api/using",
-  "permalink": "/docs/api/using",
+  "permalink": "/api/using",
   "version": "current",
   "frontMatter": {},
   "sidebar": "apiSidebar",
   "next": {
     "title": "🔑 Authentication",
-    "permalink": "/docs/api/specifications/authentication"
+    "permalink": "/api/specifications/authentication"
   }
 }

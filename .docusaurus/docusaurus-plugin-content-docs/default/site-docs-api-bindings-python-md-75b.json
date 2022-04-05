@@ -7,16 +7,16 @@
   "source": "@site/docs/api/bindings/python.md",
   "sourceDirName": "api/bindings",
   "slug": "/api/bindings/python",
-  "permalink": "/docs/api/bindings/python",
+  "permalink": "/api/bindings/python",
   "version": "current",
   "frontMatter": {},
   "sidebar": "apiSidebar",
   "previous": {
     "title": "⚠️ Errors and warnings",
-    "permalink": "/docs/api/specifications/errors_warnings"
+    "permalink": "/api/specifications/errors_warnings"
   },
   "next": {
     "title": "🤖 Models",
-    "permalink": "/docs/api/models"
+    "permalink": "/api/models"
   }
 }

@@ -7,16 +7,16 @@
   "source": "@site/docs/guides/english/select.md",
   "sourceDirName": "guides/english",
   "slug": "/guides/english/select",
-  "permalink": "/docs/guides/english/select",
+  "permalink": "/guides/english/select",
   "version": "current",
   "frontMatter": {},
   "sidebar": "guidesSidebar",
   "previous": {
     "title": "❤️ Review Classification",
-    "permalink": "/docs/guides/english/review_classification"
+    "permalink": "/guides/english/review_classification"
   },
   "next": {
     "title": "📝 Summarization Skill",
-    "permalink": "/docs/guides/skills/summarization"
+    "permalink": "/guides/skills/summarization"
   }
 }

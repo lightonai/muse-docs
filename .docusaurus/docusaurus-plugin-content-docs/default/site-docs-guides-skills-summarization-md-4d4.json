@@ -7,16 +7,16 @@
   "source": "@site/docs/guides/skills/summarization.md",
   "sourceDirName": "guides/skills",
   "slug": "/guides/skills/summarization",
-  "permalink": "/docs/guides/skills/summarization",
+  "permalink": "/guides/skills/summarization",
   "version": "current",
   "frontMatter": {},
   "sidebar": "guidesSidebar",
   "previous": {
     "title": "🔘 Use Select for Customer Support",
-    "permalink": "/docs/guides/english/select"
+    "permalink": "/guides/english/select"
   },
   "next": {
     "title": "😀😟 Sentiment Analysis Skill",
-    "permalink": "/docs/guides/skills/sentiment_analysis"
+    "permalink": "/guides/skills/sentiment_analysis"
   }
 }

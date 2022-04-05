@@ -133,3 +133,6 @@ dmypy.json
 
 # NodeJS
 node_modules
+
+# Docusaurus
+.docusaurus/

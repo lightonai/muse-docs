@@ -7,16 +7,16 @@
   "source": "@site/docs/api/specifications/errors_warnings.md",
   "sourceDirName": "api/specifications",
   "slug": "/api/specifications/errors_warnings",
-  "permalink": "/docs/api/specifications/errors_warnings",
+  "permalink": "/api/specifications/errors_warnings",
   "version": "current",
   "frontMatter": {},
   "sidebar": "apiSidebar",
   "previous": {
     "title": "💬 Responses",
-    "permalink": "/docs/api/specifications/responses"
+    "permalink": "/api/specifications/responses"
   },
   "next": {
     "title": "🐍 Python",
-    "permalink": "/docs/api/bindings/python"
+    "permalink": "/api/bindings/python"
   }
 }

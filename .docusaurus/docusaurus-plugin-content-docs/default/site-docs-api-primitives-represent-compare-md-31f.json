@@ -7,16 +7,16 @@
   "source": "@site/docs/api/primitives/represent/compare.md",
   "sourceDirName": "api/primitives/represent",
   "slug": "/api/primitives/represent/compare",
-  "permalink": "/docs/api/primitives/represent/compare",
+  "permalink": "/api/primitives/represent/compare",
   "version": "current",
   "frontMatter": {},
   "sidebar": "apiSidebar",
   "previous": {
     "title": "🔢 Embed",
-    "permalink": "/docs/api/primitives/represent/embed"
+    "permalink": "/api/primitives/represent/embed"
   },
   "next": {
     "title": "⚙️️ Process",
-    "permalink": "/docs/api/primitives/process"
+    "permalink": "/api/primitives/process"
   }
 }

@@ -7,16 +7,16 @@
   "source": "@site/docs/api/primitives/evaluate/select.md",
   "sourceDirName": "api/primitives/evaluate",
   "slug": "/api/primitives/evaluate/select",
-  "permalink": "/docs/api/primitives/evaluate/select",
+  "permalink": "/api/primitives/evaluate/select",
   "version": "current",
   "frontMatter": {},
   "sidebar": "apiSidebar",
   "previous": {
     "title": "🧪 Analyse",
-    "permalink": "/docs/api/primitives/evaluate/analyse"
+    "permalink": "/api/primitives/evaluate/analyse"
   },
   "next": {
     "title": "🔢 Embed",
-    "permalink": "/docs/api/primitives/represent/embed"
+    "permalink": "/api/primitives/represent/embed"
   }
 }

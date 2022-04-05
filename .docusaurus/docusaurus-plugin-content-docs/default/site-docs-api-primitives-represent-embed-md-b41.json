@@ -7,16 +7,16 @@
   "source": "@site/docs/api/primitives/represent/embed.md",
   "sourceDirName": "api/primitives/represent",
   "slug": "/api/primitives/represent/embed",
-  "permalink": "/docs/api/primitives/represent/embed",
+  "permalink": "/api/primitives/represent/embed",
   "version": "current",
   "frontMatter": {},
   "sidebar": "apiSidebar",
   "previous": {
     "title": "🔘 Select",
-    "permalink": "/docs/api/primitives/evaluate/select"
+    "permalink": "/api/primitives/evaluate/select"
   },
   "next": {
     "title": "⚖️ Compare",
-    "permalink": "/docs/api/primitives/represent/compare"
+    "permalink": "/api/primitives/represent/compare"
   }
 }

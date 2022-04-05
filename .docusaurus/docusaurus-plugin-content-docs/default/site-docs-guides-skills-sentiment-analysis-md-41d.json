@@ -7,16 +7,16 @@
   "source": "@site/docs/guides/skills/sentiment_analysis.md",
   "sourceDirName": "guides/skills",
   "slug": "/guides/skills/sentiment_analysis",
-  "permalink": "/docs/guides/skills/sentiment_analysis",
+  "permalink": "/guides/skills/sentiment_analysis",
   "version": "current",
   "frontMatter": {},
   "sidebar": "guidesSidebar",
   "previous": {
     "title": "📝 Summarization Skill",
-    "permalink": "/docs/guides/skills/summarization"
+    "permalink": "/guides/skills/summarization"
   },
   "next": {
     "title": "🧑‍🏫 Multitask Skill",
-    "permalink": "/docs/guides/skills/multitask"
+    "permalink": "/guides/skills/multitask"
   }
 }

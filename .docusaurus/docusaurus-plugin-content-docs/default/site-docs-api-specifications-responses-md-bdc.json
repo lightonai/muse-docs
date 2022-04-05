@@ -7,16 +7,16 @@
   "source": "@site/docs/api/specifications/responses.md",
   "sourceDirName": "api/specifications",
   "slug": "/api/specifications/responses",
-  "permalink": "/docs/api/specifications/responses",
+  "permalink": "/api/specifications/responses",
   "version": "current",
   "frontMatter": {},
   "sidebar": "apiSidebar",
   "previous": {
     "title": "📟 Requests",
-    "permalink": "/docs/api/specifications/requests"
+    "permalink": "/api/specifications/requests"
   },
   "next": {
     "title": "⚠️ Errors and warnings",
-    "permalink": "/docs/api/specifications/errors_warnings"
+    "permalink": "/api/specifications/errors_warnings"
   }
 }

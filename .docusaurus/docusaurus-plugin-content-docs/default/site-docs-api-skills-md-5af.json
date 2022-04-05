@@ -7,12 +7,12 @@
   "source": "@site/docs/api/skills.md",
   "sourceDirName": "api",
   "slug": "/api/skills",
-  "permalink": "/docs/api/skills",
+  "permalink": "/api/skills",
   "version": "current",
   "frontMatter": {},
   "sidebar": "apiSidebar",
   "previous": {
     "title": "⚙️️ Process",
-    "permalink": "/docs/api/primitives/process"
+    "permalink": "/api/primitives/process"
   }
 }

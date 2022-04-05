@@ -7,12 +7,12 @@
   "source": "@site/docs/home/changelog.md",
   "sourceDirName": "home",
   "slug": "/home/changelog",
-  "permalink": "/docs/home/changelog",
+  "permalink": "/home/changelog",
   "version": "current",
   "frontMatter": {},
   "sidebar": "homeSidebar",
   "previous": {
     "title": "🪐 Concepts",
-    "permalink": "/docs/home/concepts"
+    "permalink": "/home/concepts"
   }
 }

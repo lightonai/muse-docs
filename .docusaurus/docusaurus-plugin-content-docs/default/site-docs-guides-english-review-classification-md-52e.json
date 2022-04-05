@@ -7,16 +7,16 @@
   "source": "@site/docs/guides/english/review_classification.md",
   "sourceDirName": "guides/english",
   "slug": "/guides/english/review_classification",
-  "permalink": "/docs/guides/english/review_classification",
+  "permalink": "/guides/english/review_classification",
   "version": "current",
   "frontMatter": {},
   "sidebar": "guidesSidebar",
   "previous": {
     "title": "🔎️ Content Marketing and Search Engine Optimization",
-    "permalink": "/docs/guides/english/seo"
+    "permalink": "/guides/english/seo"
   },
   "next": {
     "title": "🔘 Use Select for Customer Support",
-    "permalink": "/docs/guides/english/select"
+    "permalink": "/guides/english/select"
   }
 }

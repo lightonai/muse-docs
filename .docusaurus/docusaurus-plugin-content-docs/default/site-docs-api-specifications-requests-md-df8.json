@@ -7,16 +7,16 @@
   "source": "@site/docs/api/specifications/requests.md",
   "sourceDirName": "api/specifications",
   "slug": "/api/specifications/requests",
-  "permalink": "/docs/api/specifications/requests",
+  "permalink": "/api/specifications/requests",
   "version": "current",
   "frontMatter": {},
   "sidebar": "apiSidebar",
   "previous": {
     "title": "🔑 Authentication",
-    "permalink": "/docs/api/specifications/authentication"
+    "permalink": "/api/specifications/authentication"
   },
   "next": {
     "title": "💬 Responses",
-    "permalink": "/docs/api/specifications/responses"
+    "permalink": "/api/specifications/responses"
   }
 }

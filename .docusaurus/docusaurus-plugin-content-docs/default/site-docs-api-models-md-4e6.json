@@ -7,16 +7,16 @@
   "source": "@site/docs/api/models.md",
   "sourceDirName": "api",
   "slug": "/api/models",
-  "permalink": "/docs/api/models",
+  "permalink": "/api/models",
   "version": "current",
   "frontMatter": {},
   "sidebar": "apiSidebar",
   "previous": {
     "title": "🐍 Python",
-    "permalink": "/docs/api/bindings/python"
+    "permalink": "/api/bindings/python"
   },
   "next": {
     "title": "✍️ Create",
-    "permalink": "/docs/api/primitives/create"
+    "permalink": "/api/primitives/create"
   }
 }

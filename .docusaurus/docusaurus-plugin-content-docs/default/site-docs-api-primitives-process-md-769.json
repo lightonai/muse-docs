@@ -7,16 +7,16 @@
   "source": "@site/docs/api/primitives/process.md",
   "sourceDirName": "api/primitives",
   "slug": "/api/primitives/process",
-  "permalink": "/docs/api/primitives/process",
+  "permalink": "/api/primitives/process",
   "version": "current",
   "frontMatter": {},
   "sidebar": "apiSidebar",
   "previous": {
     "title": "⚖️ Compare",
-    "permalink": "/docs/api/primitives/represent/compare"
+    "permalink": "/api/primitives/represent/compare"
   },
   "next": {
     "title": "🤹 Skills",
-    "permalink": "/docs/api/skills"
+    "permalink": "/api/skills"
   }
 }

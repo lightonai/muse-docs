@@ -7,16 +7,16 @@
   "source": "@site/docs/api/primitives/create.md",
   "sourceDirName": "api/primitives",
   "slug": "/api/primitives/create",
-  "permalink": "/docs/api/primitives/create",
+  "permalink": "/api/primitives/create",
   "version": "current",
   "frontMatter": {},
   "sidebar": "apiSidebar",
   "previous": {
     "title": "🤖 Models",
-    "permalink": "/docs/api/models"
+    "permalink": "/api/models"
   },
   "next": {
     "title": "🧪 Analyse",
-    "permalink": "/docs/api/primitives/evaluate/analyse"
+    "permalink": "/api/primitives/evaluate/analyse"
   }
 }

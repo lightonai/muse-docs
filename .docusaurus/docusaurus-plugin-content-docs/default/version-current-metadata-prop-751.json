@@ -9,24 +9,24 @@
       {
         "type": "link",
         "label": "👋 Introduction",
-        "href": "/docs/"
+        "href": "/"
       },
       {
         "type": "link",
         "label": "🪐 Concepts",
-        "href": "/docs/home/concepts"
+        "href": "/home/concepts"
       },
       {
         "type": "link",
         "label": "📝 Changelog",
-        "href": "/docs/home/changelog"
+        "href": "/home/changelog"
       }
     ],
     "apiSidebar": [
       {
         "type": "link",
         "label": "🤩 Using the Muse API",
-        "href": "/docs/api/using"
+        "href": "/api/using"
       },
       {
         "type": "category",
@@ -37,22 +37,22 @@
           {
             "type": "link",
             "label": "🔑 Authentication",
-            "href": "/docs/api/specifications/authentication"
+            "href": "/api/specifications/authentication"
           },
           {
             "type": "link",
             "label": "📟 Requests",
-            "href": "/docs/api/specifications/requests"
+            "href": "/api/specifications/requests"
           },
           {
             "type": "link",
             "label": "💬 Responses",
-            "href": "/docs/api/specifications/responses"
+            "href": "/api/specifications/responses"
           },
           {
             "type": "link",
             "label": "⚠️ Errors and warnings",
-            "href": "/docs/api/specifications/errors_warnings"
+            "href": "/api/specifications/errors_warnings"
           }
         ]
       },
@@ -65,14 +65,14 @@
           {
             "type": "link",
             "label": "🐍 Python",
-            "href": "/docs/api/bindings/python"
+            "href": "/api/bindings/python"
           }
         ]
       },
       {
         "type": "link",
         "label": "🤖 Models",
-        "href": "/docs/api/models"
+        "href": "/api/models"
       },
       {
         "type": "category",
@@ -83,7 +83,7 @@
           {
             "type": "link",
             "label": "✍️ Create",
-            "href": "/docs/api/primitives/create"
+            "href": "/api/primitives/create"
           },
           {
             "type": "category",
@@ -94,12 +94,12 @@
               {
                 "type": "link",
                 "label": "🧪 Analyse",
-                "href": "/docs/api/primitives/evaluate/analyse"
+                "href": "/api/primitives/evaluate/analyse"
               },
               {
                 "type": "link",
                 "label": "🔘 Select",
-                "href": "/docs/api/primitives/evaluate/select"
+                "href": "/api/primitives/evaluate/select"
               }
             ]
           },
@@ -112,33 +112,33 @@
               {
                 "type": "link",
                 "label": "🔢 Embed",
-                "href": "/docs/api/primitives/represent/embed"
+                "href": "/api/primitives/represent/embed"
               },
               {
                 "type": "link",
                 "label": "⚖️ Compare",
-                "href": "/docs/api/primitives/represent/compare"
+                "href": "/api/primitives/represent/compare"
               }
             ]
           },
           {
             "type": "link",
             "label": "⚙️️ Process",
-            "href": "/docs/api/primitives/process"
+            "href": "/api/primitives/process"
           }
         ]
       },
       {
         "type": "link",
         "label": "🤹 Skills",
-        "href": "/docs/api/skills"
+        "href": "/api/skills"
       }
     ],
     "guidesSidebar": [
       {
         "type": "link",
         "label": "📚 Guides and tutorials",
-        "href": "/docs/guides/guides"
+        "href": "/guides/guides"
       },
       {
         "type": "category",
@@ -149,22 +149,22 @@
           {
             "type": "link",
             "label": "📜 Prompt design",
-            "href": "/docs/guides/english/prompt"
+            "href": "/guides/english/prompt"
           },
           {
             "type": "link",
             "label": "🔎️ Content Marketing and Search Engine Optimization",
-            "href": "/docs/guides/english/seo"
+            "href": "/guides/english/seo"
           },
           {
             "type": "link",
             "label": "❤️ Review Classification",
-            "href": "/docs/guides/english/review_classification"
+            "href": "/guides/english/review_classification"
           },
           {
             "type": "link",
             "label": "🔘 Use Select for Customer Support",
-            "href": "/docs/guides/english/select"
+            "href": "/guides/english/select"
           }
         ]
       },
@@ -177,17 +177,17 @@
           {
             "type": "link",
             "label": "📝 Summarization Skill",
-            "href": "/docs/guides/skills/summarization"
+            "href": "/guides/skills/summarization"
           },
           {
             "type": "link",
             "label": "😀😟 Sentiment Analysis Skill",
-            "href": "/docs/guides/skills/sentiment_analysis"
+            "href": "/guides/skills/sentiment_analysis"
           },
           {
             "type": "link",
             "label": "🧑‍🏫 Multitask Skill",
-            "href": "/docs/guides/skills/multitask"
+            "href": "/guides/skills/multitask"
           }
         ]
       }

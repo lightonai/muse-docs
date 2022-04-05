@@ -1,13 +1,13 @@
 export default {
   "title": "LightOn Muse API Documentation",
   "tagline": "Unlock the power of extreme-scale NLP with our Muses.",
-  "url": "https://muse.lighton.ai/docs/",
-  "baseUrl": "/docs/",
+  "url": "https://muse-docs.lighton.ai/",
+  "baseUrl": "/",
   "onBrokenLinks": "throw",
   "onBrokenMarkdownLinks": "warn",
-  "favicon": "img/favicon.ico",
+  "favicon": "img/muse-logo.svg",
   "organizationName": "LightOn",
-  "projectName": "muse-doc",
+  "projectName": "muse-docs",
   "themeConfig": {
     "colorMode": {
       "defaultMode": "light",
@@ -25,7 +25,7 @@ export default {
       "title": "",
       "logo": {
         "alt": "LightOn Logo",
-        "src": "img/lighton_o.png"
+        "src": "img/muse-logo.svg"
       },
       "items": [
         {

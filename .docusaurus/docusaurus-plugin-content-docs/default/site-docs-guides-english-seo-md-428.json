@@ -7,16 +7,16 @@
   "source": "@site/docs/guides/english/seo.md",
   "sourceDirName": "guides/english",
   "slug": "/guides/english/seo",
-  "permalink": "/docs/guides/english/seo",
+  "permalink": "/guides/english/seo",
   "version": "current",
   "frontMatter": {},
   "sidebar": "guidesSidebar",
   "previous": {
     "title": "📜 Prompt design",
-    "permalink": "/docs/guides/english/prompt"
+    "permalink": "/guides/english/prompt"
   },
   "next": {
     "title": "❤️ Review Classification",
-    "permalink": "/docs/guides/english/review_classification"
+    "permalink": "/guides/english/review_classification"
   }
 }

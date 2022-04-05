@@ -7,12 +7,12 @@
   "source": "@site/docs/guides/skills/multitask.md",
   "sourceDirName": "guides/skills",
   "slug": "/guides/skills/multitask",
-  "permalink": "/docs/guides/skills/multitask",
+  "permalink": "/guides/skills/multitask",
   "version": "current",
   "frontMatter": {},
   "sidebar": "guidesSidebar",
   "previous": {
     "title": "😀😟 Sentiment Analysis Skill",
-    "permalink": "/docs/guides/skills/sentiment_analysis"
+    "permalink": "/guides/skills/sentiment_analysis"
   }
 }

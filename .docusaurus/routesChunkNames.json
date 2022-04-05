@@ -1,105 +1,105 @@
 {
-  "/docs/-378": {
+  "/-c3b": {
     "component": "1be78505",
     "versionMetadata": "935f2afb"
   },
-  "/docs/-ccc": {
+  "/-0e1": {
     "component": "17896441",
     "content": "3a23634f"
   },
-  "/docs/api/bindings/python-11e": {
+  "/api/bindings/python-aa6": {
     "component": "17896441",
     "content": "75bb1d0f"
   },
-  "/docs/api/models-725": {
+  "/api/models-869": {
     "component": "17896441",
     "content": "4e61bb45"
   },
-  "/docs/api/primitives/create-a0a": {
+  "/api/primitives/create-a6a": {
     "component": "17896441",
     "content": "0d0b0861"
   },
-  "/docs/api/primitives/evaluate/analyse-b79": {
+  "/api/primitives/evaluate/analyse-a5f": {
     "component": "17896441",
     "content": "423d673f"
   },
-  "/docs/api/primitives/evaluate/select-492": {
+  "/api/primitives/evaluate/select-c3b": {
     "component": "17896441",
     "content": "b673a678"
   },
-  "/docs/api/primitives/process-2b2": {
+  "/api/primitives/process-43f": {
     "component": "17896441",
     "content": "769bdc01"
   },
-  "/docs/api/primitives/represent/compare-d68": {
+  "/api/primitives/represent/compare-fcf": {
     "component": "17896441",
     "content": "31fbced6"
   },
-  "/docs/api/primitives/represent/embed-712": {
+  "/api/primitives/represent/embed-af8": {
     "component": "17896441",
     "content": "b4139889"
   },
-  "/docs/api/skills-14d": {
+  "/api/skills-e4a": {
     "component": "17896441",
     "content": "5afde469"
   },
-  "/docs/api/specifications/authentication-bce": {
+  "/api/specifications/authentication-fca": {
     "component": "17896441",
     "content": "831c13d2"
   },
-  "/docs/api/specifications/errors_warnings-f03": {
+  "/api/specifications/errors_warnings-0ca": {
     "component": "17896441",
     "content": "a5d3a53b"
   },
-  "/docs/api/specifications/requests-0e6": {
+  "/api/specifications/requests-1e1": {
     "component": "17896441",
     "content": "df8c9108"
   },
-  "/docs/api/specifications/responses-6d9": {
+  "/api/specifications/responses-0da": {
     "component": "17896441",
     "content": "bdc8d03e"
   },
-  "/docs/api/using-b0a": {
+  "/api/using-7da": {
     "component": "17896441",
     "content": "70d3da90"
   },
-  "/docs/guides/english/prompt-dc6": {
+  "/guides/english/prompt-446": {
     "component": "17896441",
     "content": "80dd19c1"
   },
-  "/docs/guides/english/review_classification-22a": {
+  "/guides/english/review_classification-ad3": {
     "component": "17896441",
     "content": "52eff8b3"
   },
-  "/docs/guides/english/select-6b4": {
+  "/guides/english/select-9c8": {
     "component": "17896441",
     "content": "b56482cf"
   },
-  "/docs/guides/english/seo-8fb": {
+  "/guides/english/seo-bb1": {
     "component": "17896441",
     "content": "4281294f"
   },
-  "/docs/guides/guides-de6": {
+  "/guides/guides-6ea": {
     "component": "17896441",
     "content": "6989bcc5"
   },
-  "/docs/guides/skills/multitask-d11": {
+  "/guides/skills/multitask-ea8": {
     "component": "17896441",
     "content": "d3383eb8"
   },
-  "/docs/guides/skills/sentiment_analysis-f74": {
+  "/guides/skills/sentiment_analysis-025": {
     "component": "17896441",
     "content": "41d369d0"
   },
-  "/docs/guides/skills/summarization-49c": {
+  "/guides/skills/summarization-31d": {
     "component": "17896441",
     "content": "4d48092a"
   },
-  "/docs/home/changelog-c6d": {
+  "/home/changelog-532": {
     "component": "17896441",
     "content": "6abd9f7a"
   },
-  "/docs/home/concepts-80a": {
+  "/home/concepts-976": {
     "component": "17896441",
     "content": "039a187a"
   }

@@ -7,16 +7,16 @@
   "source": "@site/docs/home/concepts.md",
   "sourceDirName": "home",
   "slug": "/home/concepts",
-  "permalink": "/docs/home/concepts",
+  "permalink": "/home/concepts",
   "version": "current",
   "frontMatter": {},
   "sidebar": "homeSidebar",
   "previous": {
     "title": "👋 Introduction",
-    "permalink": "/docs/"
+    "permalink": "/"
   },
   "next": {
     "title": "📝 Changelog",
-    "permalink": "/docs/home/changelog"
+    "permalink": "/home/changelog"
   }
 }

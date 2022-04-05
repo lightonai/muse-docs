@@ -9,13 +9,13 @@ const katex = require('rehype-katex');
 module.exports = {
   title: 'LightOn Muse API Documentation',
   tagline: 'Unlock the power of extreme-scale NLP with our Muses.',
-  url: 'https://muse.lighton.ai/docs/',
-  baseUrl: '/docs/',
+  url: 'https://muse-docs.lighton.ai/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/muse-logo.svg',
   organizationName: 'LightOn', // Usually your GitHub org/user name.
-  projectName: 'muse-doc', // Usually your repo name.
+  projectName: 'muse-docs', // Usually your repo name.
   themeConfig: {
     colorMode: {
       defaultMode: 'light',
@@ -27,7 +27,7 @@ module.exports = {
       title: '',
       logo: {
         alt: 'LightOn Logo',
-        src: 'img/lighton_o.png',
+        src: 'img/muse-logo.svg',
       },
       items: [
         {

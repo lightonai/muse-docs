@@ -7,16 +7,16 @@
   "source": "@site/docs/guides/english/prompt.md",
   "sourceDirName": "guides/english",
   "slug": "/guides/english/prompt",
-  "permalink": "/docs/guides/english/prompt",
+  "permalink": "/guides/english/prompt",
   "version": "current",
   "frontMatter": {},
   "sidebar": "guidesSidebar",
   "previous": {
     "title": "📚 Guides and tutorials",
-    "permalink": "/docs/guides/guides"
+    "permalink": "/guides/guides"
   },
   "next": {
     "title": "🔎️ Content Marketing and Search Engine Optimization",
-    "permalink": "/docs/guides/english/seo"
+    "permalink": "/guides/english/seo"
   }
 }
