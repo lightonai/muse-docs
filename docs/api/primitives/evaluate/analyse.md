@@ -43,44 +43,38 @@ curl -X 'POST' \
 
 ```json title="Response (JSON)"
 {
-   "request_id":"65117cdf-9bb0-4f8f-9595-eb071704f455",
+   "request_id":"35a6ba91-ce83-40d7-991f-edca70396bdf",
    "outputs":[
       [
          {
-            "execution_metadata":{
-               "cost":1
+            "execution_metadata":
+            {
+               "cost":{
+                  "tokens_used":7,
+                  "tokens_input":7,
+                  "tokens_generated":0,
+                  "cost_type":"orion-fr@default",
+                  "batch_size":1
+               },
+            "finish_reason":"length"
             },
             "text":"Il était une fois en Laponie",
-            "score":-18.69577697564091,
-            "normalized_score":-2.6708252822344156,
-            "token_scores":[
-               {
-                  "ĠÃ©tait":-4.357117652893066
-               },
-               {
-                  "Ġune":-2.9926750659942627
-               },
-               {
-                  "Ġfois":-0.08664964139461517
-               },
-               {
-                  "Ġen":-4.026288986206055
-               },
-               {
-                  "ĠLa":-7.227386951446533
-               },
-               {
-                  "pon":-0.0054404293186962605
-               },
-               {
-                  "ie":-0.00021824838768225163
+            "score":{
+               "logprob":-18.885456800460815,
+               "normalized_logprob":-2.697922400065831,
+               "token_logprobs":[{" était":-3.869140625},{" une":-5.09375},{" fois":-0.322021484375},{" en":-2.8984375},{" L":-6.60546875},{"apon":-0.0963134765625},{"ie":-0.0003249645233154297}]
                }
-            ]
-         }
-      ]
-   ],
-   "total_cost":1
-}
+            }
+         ]
+      ],
+   "costs":{
+      "orion-fr@default":{
+         "total_tokens_used":7,
+         "total_tokens_input":7,
+         "total_tokens_generated":0,
+         "batch_size":1}
+      }
+   }
 ```
 
 ## Parameters

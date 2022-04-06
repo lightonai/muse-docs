@@ -25,4 +25,4 @@ All API calls should be authenticated by **providing the API key to the `X-API-K
 -H 'X-API-KEY: YOUR_API_KEY'
 ```
 
-If using the Muse API from the Playground, calls will automatically be authenticated with a special Playground API key.
+If using the Muse API from the Playground, calls will automatically be authenticated with your default Playground API key.

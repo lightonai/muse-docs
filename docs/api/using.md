@@ -20,7 +20,7 @@ We offer three ways to query the Muse API:
 * Directly through **[HTTP requests](/api/specifications/requests)**, the most flexible format to implement 
 in your application; 
 * With one of our official **[binding libraries](#bindings)**, in the language of your choice;
-* Using our **online playground** (coming soon), an ideal environment for developing new prompts. 
+* Using our **[online playground](https://muse.lighton.ai)**, an ideal environment for developing new prompts. 
 
 We offer a number of **primitives** (endpoints) through which you can interact with the API. Broadly, these
 are split in four categories:
@@ -37,7 +37,7 @@ representations of sentences, paragraphs, and documents**. Enhance your machine 
 applications with rich contextual embeddings from 🔢 **[Embed](/api/primitives/represent/embed)**, or directly use
 ⚖️ **[Compare](/api/primitives/represent/compare)** to find semantically-similar texts.
 
-**Don't know where to start? Have a look at our 
+**Don't know where to start? Have a look at the examples on our [Playground](https://muse.lighton.ai) or the
 [demo notebook](https://github.com/lightonai/lightonmuse/blob/master/examples/demo_notebook.ipynb)!**
 
 ## Bindings
