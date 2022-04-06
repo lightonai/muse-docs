@@ -90,7 +90,7 @@ ce qui produit
 
 Cette critique a été classée correctement avec un seul exemple, cependant, une approche aussi simple ne fonctionne pas pour des critiques plus complexes, comme nous le verrons dans la dernière section de ce guide. De plus, cette méthode est extrêmement biaisée par le choix de l'exemple fourni au modèle. Essayons donc d'utiliser plus d'exemples !
 
-## Classification Three-shot
+### Classification Three-shot
 
 Dans cette section, nous utilisons Create comme précédemment, mais fournissons à `lyra-fr` trois exemples au lieu d'un seul :
 
