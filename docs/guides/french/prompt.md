@@ -12,6 +12,12 @@ L'utilisation d'un vocabulaire ambigu, irrespectueux, raciste ou autrement inapp
 
 Que l'on souhaite utiliser l'API pour rédiger un article, répondre à des questions ou classifier des avis laissés par des clients, tout commence par un **prompt**, c'est-à-dire le texte d'entrée soumis au modèle qui conditionne le texte produit. Le prompt permet au modèle de suivre des instructions spécifiques ou d'effectuer des tâches données et est primordial afin d'obtenir les meilleurs résultats possibles.
 
+:::tip ❓ Qu'est-ce qu'un prompt, exactement ?
+
+Le mot "prompt" est un anglicisme qui désigne le texte que l'on fourni en entrée d'un modèle de langage. C'est ce qui permet d'orienter la conversation avec Muse, et de l'inviter à répondre ou interagir dans un domaine ou un style particulier.
+
+:::
+
 Dans ce guide, nous passons en revue différents types de prompts qui peuvent être utilisés avec Muse, utilisant `lyra-fr` pour illustrer nos exemples. Pour une version anglaise de ce guide, utilisant `lyra-en`, jetez un œil au guide [Prompt Design](/guides/english/prompt). Par la suite, nous supposons que le client a été initialisé en utilisant la commande suivante :
 
 ```python
