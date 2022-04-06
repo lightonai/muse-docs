@@ -6,11 +6,11 @@
 
 **Classifie des critiques selon si elles sont positives ou négatives en utilisant ✍️ [Create](/api/primitives/create) et 🔘 [Select](/api/primitives/evaluate/select).**
 
-L'analyse des sentiments (aussi appelée *opinion mining*) consiste à analyser les différents sentiments et émotions exprimés dans un texte donné. Par exemple, ce procédé peut être utilisé pour classifier des critiques de film suivant si elles sont positives ou négatives.
+L'analyse des sentiments (aussi appelée *opinion mining*) consiste à analyser les différents sentiments et émotions exprimés dans un texte donné. Par exemple, ce procédé peut être utilisé pour classifier des avis de clients suivant s'ils sont satisfaits ou non.
 
 C'est un outil essentiel afin de comprendre les attitudes et les besoins de clients. Il permet d'explorer leur satisfaction, ou encore d'évaluer leurs réactions par rapport à un nouveau produit ou service, et d'ajuster ces nouveautés au ressenti de ces clients.
 
-Dans la mesure où le nombre de commentaires et avis laissés sur un produit donné peut exploser, il est primordial d'être capable de faire de l'analyse des sentiment automatiquement. Dans ce guide, nous nous penchons pour ce sujet. Afin d'illustrer les capacités de Muse dans le domaine de l'analyse des sentiments, nous allons voir comment `lyra-fr` peut être utilisé pour classifier des critiques de films.
+À l'heure actuelle, le nombre de commentaires et avis laissés sur un produit donné peut très vite exploser. C'est pour cette raison qu'il est primordial d'être capable de faire de l'analyse des sentiment automatiquement. Dans ce guide, nous nous penchons pour ce sujet. Afin d'illustrer les capacités de Muse dans le domaine de l'analyse des sentiments, nous allons voir comment `lyra-fr` peut être utilisé pour classifier des critiques de films. Pour une version anglaise de ce guide, utilisant `lyra-en`, et qui inclue l'utilisation de la [Skill](/api/skills) `sentiment_analysis`,  jette un œil au guide [Review Classification](/guides/english/review_classification).
 
 Par la suite, nous partons du principe que le client a été initialisé à l'aide de la commande suivante :
 
@@ -23,16 +23,15 @@ creator = Create("lyra-fr")
 
 ## Classifie des Critiques avec Select
 
-La primitive Select utilise des probabilités afin de sélectionner le candidat le plus adéquat en comparaison à une phrase de référence. Par conséquent, c'est un bon point de départ pour faire de la classification de critiques ! Dans la suite, on suppose que tu es familier avec l'utilisation de Select. Pour plus d'informations, jette un œil à notre [guide Select](/guides/english/select) et à la [page de documentation](/api/primitives/evaluate/select) de la primitive.
+La primitive Select utilise des probabilités afin de sélectionner le candidat le plus adéquat en comparaison avec une phrase de référence. Par conséquent, c'est un bon point de départ pour faire de la classification de critiques ! Dans la suite, nous allons supposer que tu es familier avec l'utilisation de Select. Pour plus d'informations, visite notre [guide Select](/guides/english/select) ou encore la [page de documentation](/api/primitives/evaluate/select) de la primitive.
 
-Afin de classifier des critiques avec Select, nous utilisons les paramètres suivants : 
+Afin de classifier des critiques avec Select, nous utilisons les paramètres suivants :
 
-- On formate la **reference** de la façon suivante : `Critique : "critique à classifier" \n` 
-- On utilise en `conjunction` (c'est-à-dire, en lien entre la référence et les candidats) `Cette critique est` 
+- On formate la **reference** de la façon suivante : `Critique : "critique à classifier" \n`
+- On utilise en `conjunction` (c'est-à-dire, en lien entre la référence et les candidats) `Cette critique est`
 - Les candidats possibles sont `positive` et `négative`.
 
-
-En termes de code, cela revient à utiliser 
+En termes de code, cela revient à utiliser
 
 ```python
 reference = "Critique: \"Riche en rebondissements, surprenant et drôle, Vanille est un divertissement ludique parfait pour toute la famille.\" \n"
@@ -44,15 +43,15 @@ ce qui produit
 
 > positive
 
-... qui est bien la réponse attendue ! La dernière section de ce guide offre une comparaison des performances de cette méthode par rapport aux méthodes qui utilisent Create. Passons donc à celles-ci !
+... qui est bien la réponse attendue ! La dernière section de ce guide offre une comparaison des performances de cette méthode par rapport aux méthodes qui utilisent Create. Mais avant cela, étudions comment Create peut effectivement être utilisée pour cette tâche !
 
 ## Classifie des Critiques avec Create
 
-La primitive Create peut être utilisée à la place de Select pour classifier des critiques ! En revanche, pour ce faire, `lyra-fr` a besoin de voir au moins un exemple pour comprendre ce qui est attendu. Nous l'avons précisé dans notre guide sur la [construction de prompts](/guides/french/prompt) : pour ce genre de tâches, donner plus d'exemples permet d'obtenir de meilleurs résultats, et c'est effectivement ce que l'on va voir ici.
+La primitive Create peut être utilisée à la place de Select pour classifier des critiques ! En revanche, pour s'assurer que les résultats sont pertinents, `lyra-fr` a besoin de voir au moins un exemple pour comprendre ce qui est attendu. Nous l'avons précisé dans notre guide sur la [construction de prompts](/guides/french/prompt) : pour ce genre de tâches, donner plus d'exemples permet d'obtenir de meilleurs résultats, et c'est effectivement ce que l'on va voir ici.
 
 ### Classification One-shot
 
-Commençons par fournir à `lyra-fr` une courte consigne et un exemple :
+Commençons par fournir à `lyra-fr` une courte phrase de consignes et un seul exemple :
 
 ```python
 example = """Détermine si ces critiques de film sont positives ou négatives.
@@ -63,14 +62,14 @@ Cette critique est négative.
 """
 ```
 
-Ensuite, il nous faut reformater notre critique suivant le même schéma que l'`example` ci-dessus : 
+Ensuite, il nous faut reformater notre critique suivant le même schéma que l'`example` ci-dessus :
 
 ```python
 review = """Critique: \"Riche en rebondissements, surprenant et drôle, Vanille est un divertissement ludique parfait pour toute la famille.\"
 Cette critique est
 ```
 
-Nous pouvons maintenant utiliser Create, en donnant en prompt l'ensemble `example` et critique concaténés :
+Nous pouvons maintenant utiliser Create, en donnant l'ensemble `example` et critique concaténés comme prompt :
 
 ```python
 out = creator(example+review, mode="greedy", n_tokens=5, 
@@ -82,9 +81,9 @@ ce qui produit
 
 > positive
 
-... Comme avant ! Pour faire de l'analyse des sentiments avec Create, on a utilisé le mode de génération `greedy`, qui est déterministe. En effet, dans ce cas, on sait qu'une critique est soit `positive`, soit `négative`. Par conséquent, on ne veut pas que `lyra-fr` soit créatif, d'où le choix du mode `greedy`. Alternativement, nous aurions pu utiliser `nucleus` ou `topk` avec une température très basse. Nous nous sommes également limités à 5 tokens produits, puisque nous n'en avons pas besoin de plus et avons utilisé en `stop_words = [".", " !", "...", "\n\n"]` afin que la génération de texte s'arrête après la classification.
+... Comme précédemment ! Pour faire de l'analyse des sentiments avec Create, on a utilisé le mode de génération `greedy`, qui est déterministe. En effet, dans ce cas, on sait qu'une critique est soit `positive`, soit `négative`. Par conséquent, on ne veut pas que `lyra-fr` soit créatif, d'où le choix du mode `greedy`. Alternativement, nous aurions pu utiliser `nucleus` ou `topk` avec une température très basse - comme c'est le cas dans l'équivalent anglais de ce guide. Nous nous sommes également limités à 5 tokens produits, puisque nous n'en avons pas besoin de plus et avons utilisé en `stop_words = [".", " !", "...", "\n\n"]` afin que la génération de texte s'arrête après la classification.
 
-Cette critique a été classée correctement avec un seul exemple, cependant, une approche aussi simple ne fonctionne pas pour des critiques plus complexes, comme nous le verrons dans la dernière section de ce guide. De plus, cette approche est extrêmement biaisée par le choix de l'exemple fourni au modèle. Essayons donc d'utiliser plus d'exemples !
+Cette critique a été classée correctement avec un seul exemple, cependant, une approche aussi simple ne fonctionne pas pour des critiques plus complexes, comme nous le verrons dans la dernière section de ce guide. De plus, cette méthode est extrêmement biaisée par le choix de l'exemple fourni au modèle. Essayons donc d'utiliser plus d'exemples !
 
 ## Classification Three-shot
 
@@ -148,14 +147,10 @@ Nous discutons maintenant des différences et des performances des méthodes exp
 | Si on reste sur un film d’aventure somme toute classique, Uncharted remplit le cahier des charges du blockbuster avec un certain talent.                                                                                                       |     Positive     |     Positive     |      Positive      |   |
 | **Classifications Incorrectes**                                                                                                                                                                                                                          |                 1 |                 6 |                   0 |   |
 
+Analysons nos résultats, en commençant par la méthode la moins performante : Create One-shot. Comme nous l'avons mentionné plus haut, cette méthode dépend très fortement de l'exemple choisi - puisqu'on en donne un seul ! En effet, lorsque l'exemple choisi est négatif, le modèle tend à classifier plus de critiques comme étant positives et vis versa (nous vous laissons essayer !). Cela parait censé si l'on considère que le modèle "apprend" exactement ce qu'est une critique négative à travers l'exemple fourni dans le prompt, alors que la définition d'un exemple positif reste plus floue. Cette méthode produit donc des résultats mitigés, avec 6 critiques classifiées de façon incorrecte.
 
+En revanche, utiliser trois exemples (Create Three-Shot) fournis d'excellents résultats (on dirait même plus : parfaits !). Ce n'est pas surprenant, puisque les exemples préparent spécifiquement le modèle pour la classification de critiques. Cependant, cette méthode nécessite des étapes supplémentaires (trouver des exemples, les formater), et coûte plus cher, puisque le prompt devient plus long au fur et à mesure que l'on rajoute ces exemples.
 
-
-
-Analysons nos résultats, en commençant par la méthode la moins performante : Create One-shot. Comme nous l'avons mentionné plus haut, cette méthode dépend très fortement de l'exemple choisi - puisqu'on en donne un seul ! En effet, lorsque l'exemple choisi est négatif, le modèle tend à classifier plus de critiques comme étant positives et vis versa (nous vous laissons essayer !). Cela parait censé si l'on considère que le modèle "voit" exactement ce qu'est une critique négative à travers l'exemple fourni dans le prompt, alors qu'un exemple positif reste plus flou. Cette méthode produit donc des résultats mitigés, avec 6 critiques classifiées de façon incorrecte.
-
-En revanche, utiliser trois exemples (Create Three-Shot) fournis d'excellents résultats (on dirait même plus : parfaits !). Ce n'est pas surprenant, puisque les exemples préparent spécifiquement le modèle pour la classification de critiques. Cependant, cette méthode nécessite des étapes supplémentaires (trouver des exemples), et coûte plus cher, puisque le prompt devient plus long au fur et à mesure que l'on rajoute ces exemples.
-
-Enfin, l'approche Select a produit, elle aussi, de très bons résultats, avec une seule critique classifiée de manière incorrecte. C'est très impressionnant si l'on considère que Select fait essentiellement du zero-shot, c'est-à-dire que la primitive classifie des critiques sans avoir vu explicitement des exemples. C'est aussi la méthode qui utilise le prompt le plus court. 
+Enfin, l'approche Select a produit, elle aussi, de très bons résultats, avec une seule critique classifiée de manière incorrecte. Ceci est d'autant plus impressionnant si l'on considère que Select fait essentiellement du zero-shot, c'est-à-dire que la primitive classifie des critiques sans avoir vu explicitement des exemples. C'est aussi la méthode qui utilise le prompt le plus court.
 
 Bonne chance pour classifier tes propres critiques ou commentaires !
