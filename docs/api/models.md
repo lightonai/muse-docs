@@ -4,7 +4,7 @@
 # 🤖 Models
 
 **The Muse API offers access to models in different languages, with different capabilities to best fit your needs.** 
-Increasingly powerful models incur increased costs and slower calls, but they can tackle more tasks. 
+Increasingly powerful models are slower and more expensive, but they can tackle more tasks more effectively. 
 
 You can select which model to use by setting the **`X-Model`** header in your API call. Models code are formatted as 
 `model_class-language` (`orion-fr` is the Orion model for French for instance).
@@ -35,25 +35,29 @@ to perform on-par with larger ones.
 
 ✅ are available in the API, 📆 are coming soon, and ❌ are not available.
 
-|        | French \[`fr`\] | English \[`en`\] | Spanish \[`es`\] | Italian \[`it`\] |
-|--------|-------------|--------------|--------------|--------------|
-| auriga | ❌           | ❌            | 📆            | 📆            |
-| orion  | ✅           | 📆            | ❌            | ❌            |
-| lyra   | 📆           | ✅            | ❌            | ❌            |
+|        | French \[`fr`\] | English \[`en`\] | Spanish \[`es`\] | Italian \[`it`\] | German \[`de`\]
+|--------|-------------|--------------|--------------|--------------|--------------|
+| auriga | ❌           | ❌            | ✅            | ✅            | ✅            |
+| orion  | ✅           | ✅            | ❌            | ❌            | ❌            |
+| lyra   | ✅           | ✅            | ❌            | ❌            | ❌            |
 
 Don't see a language or model you need? Shoot us an e-mail at muse@lighton.ai. 
 
 ## Models versioning 
 
-🟢 are recommended models, 🔵 are new models, 🟡 are models in end-of-life, 
+🟢 are recommended models, 🔵 are new models, 🟡 are models in end-of-life, 🔴 are retired models,
 and 📆 are coming soon.
 
 | **Model**     | **Training data** | **Data cut-off** | **Status** |
 |---------------|-------------------|------------------|------------|
-| `orion-fr`    | `fr-web-v1`       | December 2018    | 🟡          |
-| `orion-fr-v2` | `fr-curated-v1`   | October 2021     | 🔵          |
-| `lyra-fr`     | `fr-curated-v1`   | October 2021     | 📆          |
+| `orion-fr`    | `fr-web-v1`       | December 2018    | 🔴          |
+| `orion-fr-v2` | `fr-curated-v1`   | October 2021     | 🟢          |
+| `lyra-fr`     | `fr-curated-v1`   | October 2021     | 🟢          |
 | `orion-en`    | `en-curated-v1`   | December 2020    | 🟢          |
 | `lyra-en`     | `en-curated-v1`   | December 2020    | 🟢          |
+| `auriga-de`    | `de-web-v1`   | October 2021    | 🟢          |
+| `auriga-es`     | `es-web-v1`   | October 2021    | 🟢          |
+| `auriga-it`    | `it-web-v1`   | October 2021    | 🟢          |
+
 
 **We recommend you make the switch from 🟡 end-of-life models to 🔵 new models as soon as possible.**

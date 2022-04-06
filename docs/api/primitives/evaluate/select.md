@@ -41,38 +41,47 @@ curl -X 'POST' \
 
 ```json title="Response (JSON)"
 {
-   "request_id":"1412bac9-2caf-4165-9d6c-db09101a3f60",
+   "request_id":"1f19c4d1-47f2-4c96-a8d2-314e6ed3a341",
    "outputs":[
       [
          {
-            "reference": "Je suis content"
-            "rankings":[
-               {
-                  "text": "je suis heureux",
-                  "score":-7.755064308643341,
-                  "normalized_score":-2.585021436214447,
-                  "token_scores": [{"Ġje": -4.135122776031494},
-                                   {"Ġsuis": -0.8857746720314026},                                  
-                                   {"Ġheureux":-2.7341668605804443}]}
-                  },
-               {
-                  "text": "je suis triste",
-                  "score":-11.674759447574615,
-                  "normalized_score":-3.891586482524872,
-                  "token_scores": [{"Ġje": -4.135122776031494},
-                                   {"Ġsuis": -0.8857746720314026},                                  
-                                   {"Ġtriste":-6.653861999511719}]}
+            "reference":"Je suis content",
+            "rankings":[{
+               "text":"je suis heureux",
+               "score":{
+                  "logprob":-16.361328125,
+                  "normalized_logprob":-5.453776041666667,
+                  "token_logprobs":[{" je":-10.3984375},{" suis":-1.638671875},{" heureux":-4.32421875}]
                   }
-             ]
-                  
-             "execution_metadata":{
-                     "cost":2
+               },{
+               "text":"je suis triste",
+               "score":{
+                  "logprob":-20.466796875,
+                  "normalized_logprob":-6.822265625,
+                  "token_logprobs":[{" je":-10.3984375},{" suis":-1.638671875},{" triste":-8.4296875}]
                   }
-               }
-            ]
+               }],
+               "best":"je suis heureux",
+               "execution_metadata":{
+                  "cost":{
+                     "tokens_used":10,
+                     "tokens_input":10,
+                     "tokens_generated":0,
+                     "cost_type":"orion-fr@default",
+                     "batch_size":2
+                     },
+                  "finish_reason":"length"}
+            }
+         ]
       ],
-   "total_cost":2
-}
+   "costs":{
+      "orion-fr@default":{
+         "total_tokens_used":10,
+         "total_tokens_input":10,
+         "total_tokens_generated":0,
+         "batch_size":2}
+         }
+      }
 ```
 
 ## Parameters

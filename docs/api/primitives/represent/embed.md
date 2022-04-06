@@ -43,26 +43,33 @@ curl -X 'POST' \
 
 ```json title="Response (JSON)"
 {
-   {
-   "request_id":"22360153-dd3c-49c1-8794-0deb84794175",
+   "request_id":"a0b4f1e0-e1a7-48b9-8204-6567efe3957d",
    "outputs":[
-      [
-         {
-            "execution_metadata":{
-               "cost":1
+      [{
+         "execution_metadata":{
+            "cost":{
+               "tokens_used":8,
+               "tokens_input":8,
+               "tokens_generated":0,
+               "cost_type":"orion-fr@default",
+               "batch_size":1},
+            "finish_reason":"length"
             },
-            "txt":"Il était une fois en Laponie",
-            "embedding":[
-               -1.8401802778244019,
-               0.03995080664753914,
-               ...
-               0.7565141916275024,
-               0.3985326290130615
-            ]
-         }
+         "text":"Il était une fois en Laponie",
+         "embedding":[-0.28515625,-0.67724609375,-0.0014142990112304688,2.421875,
+         ...
+         1.488525390625,0.08782958984375]
+      }
       ]
    ],
-   "total_cost":1
+   "costs":{
+      "orion-fr@default":{
+         "total_tokens_used":8,
+         "total_tokens_input":8,
+         "total_tokens_generated":0,
+         "batch_size":1
+      }
+   }
 }
 ```
 

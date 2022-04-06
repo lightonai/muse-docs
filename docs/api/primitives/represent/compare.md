@@ -43,30 +43,42 @@ curl -X 'POST' \
 
 ```json title="Response (JSON)"
 {
-   "request_id":"1412bac9-2caf-4165-9d6c-db09101a3f60",
+   "request_id":"36fdde13-2bf7-4952-81c0-df206c72126e",
    "outputs":[
       [
          {
-            "reference": "Je suis content"
+            "reference":"Je suis content",
             "similarities":[
                {
-                  "candidate": "je suis heureux",
-                  "similarity":0.9703072905540466
+                  "candidate":"je suis heureux",
+                  "similarity":0.9340229034423828
                   },
                {
-                  "candidate": "je suis triste",
-                  "similarity":0.9521504640579224
-                  }
-             ]
-                  
-             "execution_metadata":{
-                     "cost":3
-                  }
+                  "candidate":"je suis triste",
+                  "similarity":0.8432836532592773
+               }],
+            "best":"je suis heureux",
+            "execution_metadata":{
+               "cost":{
+                  "tokens_used":9,
+                  "tokens_input":9,
+                  "tokens_generated":0,
+                  "cost_type":"orion-fr@default",
+                  "batch_size":3},
+                  "finish_reason":"length"
                }
-            ]
+            }
+         ]
       ],
-   "total_cost":3
-}
+   "costs":{
+      "orion-fr@default":{
+         "total_tokens_used":9,
+         "total_tokens_input":9,
+         "total_tokens_generated":0,
+         "batch_size":3
+         }
+      }
+   }
 ```
 
 ## Parameters

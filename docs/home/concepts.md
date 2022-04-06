@@ -70,7 +70,7 @@ The variety, quality, and sheer size of our curated training data make our model
 able to tackle many tasks simply by taking in natural language instructions.
 
 We offer 🤖 **[Models](/api/models)** of different capabilities in various languages; for example, if you want just want to play
-around in English, use `lyra-en`.
+around in English, use `lyra-en`, for French, use `lyra-fr`.
 
 
 ### Prompt
@@ -114,15 +114,15 @@ about 🥇 **[reviews classification](/guides/english/review_classification)** w
 
 **Likelihood can be manually manipulated in ✍️ [Create](/api/primitives/create) to steer generation**. Use `word_biases` to manually
 increase or decrease the log-probabilities of words to see them more often or to ban them. Alter the likelihood calculations
-with `presence_penalty` and `frequence_penalty` to generate less repetitive and more novel text. Check-out our guide
+with `presence_penalty` and `frequence_penalty` to generate less repetitive and more novel text. Check out our guide
 on 🎛️ **[Steering generation for SEO](/guides/english/seo)** for more.
 
 
 ### Embeddings <Alpha>alpha</Alpha>
 
 **Embeddings are a numerical representation of a given text, built by the model internally to make predictions**. They
-are a vector (i.e. list) of floating point numbers; they encode in a computer-understandable format information about the
-input text, its context, as well as general knowledge derived from the training data. They can be used in further
+are a vector (i.e. list) of floating point numbers; they encode information about the
+input text, its context, as well as general knowledge derived from the training data in a computer-understandable format. They can be used by
 machine learning algorithms as a representation of the input text, to compare different sentences and documents,
 classify samples, or cluster texts.
 
@@ -139,8 +139,8 @@ by focusing them on a task, and they can make smaller and cheaper models competi
 also be used to imbue the model with a specific style (e.g. of an author, legalese, etc.). If you are familiar with 
 machine learning, skills are similar to fine-tuning.
 
-**We offer a number of pre-made business-ready 🤹 [Skills](/api/skills)**. You can use these out-of-the-box to solve
-common business use cases, such as summarization. Skills availability vary across model size and language. 
+**We offer a number of pre-made business-ready 🤹 [Skills](/api/skills)**. You can use these out-of-the-box to address
+common business use cases, such as summarization. Skills availability varies across model size and languages. 
 
 **If you are interested in a specific skill, or if you have a dataset you think could be used for a skill, 
 [get in touch with us](https://lightonmuse.typeform.com/skills).** We currently build and curate all skills, but we will soon enable you to build and share skills
@@ -174,7 +174,7 @@ as `Ġticket - ing`.
 
 ### Sampling
 
-**Sampling is the operation that allows the model to go from modelling a probability distribution to generating actual 
+**Sampling is the operation that allows the model to go from modeling a probability distribution to generating actual 
 text**. Ultimately, the model evaluates the likelihood of every possible token in its vocabulary. This probability
 distribution can then be *sampled* to generate text with ✍️ **[Create](/api/primitives/create)**. We expose three modes of
 generation: 
@@ -186,4 +186,3 @@ unlikely choices.
 * **Top-k**: the model will consider the `k` most likely tokens and apply temperature sampling on them. 
 
 For most creative applications, we recommend sticking to **nucleus** sampling, with a temperature in the 0.8-1.0 range.
-
