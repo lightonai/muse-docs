@@ -5,9 +5,9 @@
 
 ## Request format
 
-The Muse API is accessed through simple **`POST` HTML requests**, from the tool of your choice (`curl`, `requests`).
+The Muse API is accessed through **`POST` HTML requests**, from the tool of your choice (`curl`, `requests`, ...).
 
-The example request below queries the ✍️ **[Create](/api/primitives/create)** endpoint of the `lyra-en` model, with
+The example request below queries the ✍️ **[Create](/api/primitives/create)** endpoint of the `lyra-fr` model, with
 the prompt `"Once upon a time"`, and asks for a completion of length 25 tokens (`"n_tokens": 25`):
 
 ```bash title="Example request (curl)"
@@ -16,11 +16,11 @@ curl -X 'POST' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'X-API-KEY: YOUR_API_KEY' \
-  -H 'X-Model: orion-fr' \
+  -H 'X-Model: lyra-fr' \
   -d '{"text": "Il était une fois", "params": {"n_tokens": 25}}'
 ```
 
-Requests should abide to the following format:
+Requests should follow this format:
 * **Endpoint/primitive URL**: `https://api.lighton.ai/muse/v1/{endpoint}` (e.g. `create`, `select`, etc.);
 * **Header for JSON payload**: the API works with JSON payloads only, so you should set `Content-Type: application/json` 
 and `Accept: application/json` in your requests;
@@ -29,10 +29,10 @@ and `Accept: application/json` in your requests;
 * **Header for model**: you should specify which model you want to query, see 🤖 **[Models](/api/models)** 
 for availability across languages;
 * **JSON payload for the request**: the request and its parameters should be specified in JSON format. All 
-endpoints usually take the main text(s) first, and then extra parameters in a `params` dictionnary. **See the specific
+endpoints usually take the main text(s) first, and then the extra parameters. **See the specific
 documentation of each primitive for details**.
 
-As an example, the request above will generate the following response (make sure to check the 💬 **[Responses](/api/specifications/responses)** page
+As an example, the request above will generate a response similar to the following (make sure to check the 💬 **[Responses](/api/specifications/responses)** page
 for more information).
 
 ```json title="Response to example request (JSON)"
@@ -66,8 +66,7 @@ for more information).
 ## Batching requests
 
 If you are planning to process data in bulk, and/or to make many independent API calls, you may benefit from the 
-Muse API ability to **batch requests to the same endpoint and model**. Batching enables lower latency, faster
-processing, and simplified processing.
+Muse API ability to **batch requests to the same endpoint and model**. Batching enables lower latency, faster and simplified processing.
 
 The API supports both batching with the same parameters and with different parameters.
 
