@@ -46,3 +46,6 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   margin-left: 10px;
 }
 
+code {
+  white-space : pre-wrap !important;
+}

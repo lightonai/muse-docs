@@ -7,7 +7,7 @@
 The `Summarization` skill is designed to generate a summary of the provided prompt. It only requires, as an input, the text one wants to
 summarize. The generated summaries can have different styles and different lengths. 
 
-In this short guide, learn how to use this skill with `orion-fr`.
+In this short guide, learn how to use this skill with `orion-fr`. We assume here that the reader is familiar with the use of Create, as well as with the Python Bindings: for more information, check out the ✍️ [Create](/api/primitives/create), and [Python Bindings](/api/bindings/python) documentation pages.
 
 ## Example
 

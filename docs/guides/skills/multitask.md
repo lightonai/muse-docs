@@ -6,7 +6,7 @@ The `Multitask` skill is made to execute instructions, provided in natural langu
 
 Note that, whenever using `Multitask`, it is important to select the appropriate [sampling](/home/concepts#sampling) mode according to the type of instructions provided. As a rule of thumb, **greedy** is more suitable for trivia questions, while **nucleus** provides better results for creative tasks.
 
-In this guide, we explore a few examples using `lyra-en` to showcase the flexibility of the `Multitask` skill. We assume that the client has been initialized by running
+In this guide, we explore a few examples using `lyra-en` to showcase the flexibility of the `Multitask` skill. We assume here that the reader is familiar with the use of Create, as well as with the Python Bindings: for more information, check out the ✍️ [Create](/api/primitives/create), and [Python Bindings](/api/bindings/python) documentation pages. We assume that the client has been initialized by running
 
 ```python
 from lightonmuse import Create

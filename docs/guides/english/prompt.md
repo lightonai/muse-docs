@@ -5,9 +5,13 @@
 
 **Learn the ins and outs of writing great prompts to get the most out of our models with ✍️ [Create](/api/primitives/create)**.
 
+:::caution ⚠️ Caution
+The use of ambiguous, disrespectful, racist, or otherwise improper vocabulary can lead to improper generations. Please use common sense when generating text. LightOn is not responsible for improper use of the Muse API.
+:::
+
 Whether you want to use the API to write an article, to answer questions, or to classify customer reviews, it all starts with a **prompt**, i.e. the input text that is submitted to the model and conditions the outputs returned. The prompt primes the model to follow given instructions or perform given tasks, and is primordial to obtain better results.
 
-​In this guide, we review different types of prompts which can be used for Muse, using `lyra-en` as an example. If you're interested in designing prompt in French using `lyra-fr`, check our [Construction de Prompts](/guides/french/prompt) guide! We assume that the client has been initialized using
+​In this guide, we review different types of prompts which can be used for Muse, using `lyra-en` as an example. If you're interested in designing prompt in French using `lyra-fr`, check our [Construction de Prompts](/guides/french/prompt) guide! We assume here that the reader is familiar with the use of Create, as well as with the Python Bindings: for more information, check out the ✍️ [Create](/api/primitives/create) and [Python Bindings](/api/bindings/python) documentation pages. We assume that the client has been initialized using
 
 ```python
 from lightonmuse import Create
@@ -89,6 +93,3 @@ to the last review.
 
 As you can see in the examples above, a good prompt is the key to achieving quality results. The more detail you can include in the description of a task, the more examples you can provide, the better the generation. Make sure to try out various prompts to see what produces the best results for your task at hand, and check out our examples for inspiration.
 
-:::caution ⚠️ Caution
-The use of ambiguous, disrespectful, racist, or otherwise improper vocabulary can lead to improper generations. Please use common sense when generating text. LightOn is not responsible for improper use of the Muse API.
-:::

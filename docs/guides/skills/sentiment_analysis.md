@@ -10,7 +10,7 @@ with
 - `0` if it is neutral,
 - `+` if it is positive.
 
-In this short guide, learn how to use the `sentiment_analysis` skill with `lyra-en`.
+In this short guide, learn how to use the `sentiment_analysis` skill with `lyra-en`. We assume here that the reader is familiar with the parameters of Select, as well as with the Python Bindings: for more information, check out the 🔘 [Select](/api/primitives/evaluate/select), and [Python Bindings](/api/bindings/python) documentation pages. We start by initializing the client with the following code.
 
 ## Examples
 

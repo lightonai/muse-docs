@@ -16,7 +16,7 @@ We're going to see how to use `lyra-en` to help this customer.
 
 A naive approach might be to try and identify keywords to redirect the customer: in this case, with the word "subscription" being in the message, we might assume that the user wants to manage or cancel his subscription. However, that is not quite pertinent here.
 
-Now, instead, we are going to use the Select endpoint in Muse to identify the needs of our customers. We start by initializing the client with the following code.
+Now, instead, we are going to use the Select endpoint in Muse to identify the needs of our customers. We assume here that the reader is familiar with the parameters of Select, as well as with the Python Bindings: for more information, check out the 🔘 [Select](/api/primitives/evaluate/select), and [Python Bindings](/api/bindings/python) documentation pages. We start by initializing the client with the following code.
 
 ```python
 from lightonmuse import Select

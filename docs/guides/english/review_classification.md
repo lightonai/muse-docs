@@ -9,9 +9,7 @@ Sentiment analysis is the process of trying to measure a feeling or mood of a us
 
 It is an essential tool when it comes to understanding customers' emotions and needs. It enables us to explore how customers react to a brand, product, or service. The most successful companies know how to use sentiment analysis to react to people’s expectations. This allows them to find out what consumers want, and offer it to them. 
 
-Because the number of reviews for a given product can quickly scale up, **automatically** detecting sentiment is primordial. In this guide, we explore different ways Muse and `lyra-en` can be used to classify movie reviews. If you're interested in seeing how `lyra-fr` performs for this task, check our [Classification de Critiques](/guides/french/review_classification) guide!
-
-We assume that the client has been initialized, using
+Because the number of reviews for a given product can quickly scale up, **automatically** detecting sentiment is primordial. In this guide, we explore different ways Muse and `lyra-en` can be used to classify movie reviews. If you're interested in seeing how `lyra-fr` performs for this task, check our [Classification de Critiques](/guides/french/review_classification) guide! We assume here that the reader is familiar with the use of Create and Select, as well as with the Python Bindings: for more information, check out the ✍️ [Create](/api/primitives/create), 🔘 [Select](/api/primitives/evaluate/select), and [Python Bindings](/api/bindings/python) documentation pages. We assume that the client has been initialized, using
 
 ```python
 from lightonmuse import Select, Create
