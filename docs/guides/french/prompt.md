@@ -14,7 +14,7 @@ Que l'on souhaite utiliser l'API pour rédiger un article, répondre à des ques
 
 :::tip ❓ Qu'est-ce qu'un prompt, exactement ?
 
-Le mot "prompt" est un anglicisme qui désigne le texte que l'on fourni en entrée d'un modèle de langage. C'est ce qui permet d'orienter la conversation avec Muse, et de l'inviter à répondre ou interagir dans un domaine ou un style particulier.
+Le mot "prompt" est un anglicisme qui désigne le texte que l'on fourni à Muse. C'est l'amorce qui permet d'orienter la conversation, et d'inviter Muse à répondre ou interagir dans un domaine ou un style particulier.
 
 :::
 
