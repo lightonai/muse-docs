@@ -8,7 +8,7 @@
 Available at ```https://api.lighton.ai/muse/v1/select```.
 
 :::info 💸️ Pricing
-Pricing for the **Evaluate** endpoints is not final, values returned by `cost` and `total_cost` are placeholders.
+You will be billed for the **total number of tokens sent in your request**.
 :::
 
 ## Example
