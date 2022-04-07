@@ -10,8 +10,8 @@ export default {
   "projectName": "muse-docs",
   "themeConfig": {
     "colorMode": {
-      "defaultMode": "light",
-      "disableSwitch": true,
+      "defaultMode": "dark",
+      "disableSwitch": false,
       "respectPrefersColorScheme": false,
       "switchConfig": {
         "darkIcon": "🌜",
@@ -245,6 +245,13 @@ export default {
         ]
       },
       "additionalLanguages": []
+    },
+    "announcementBar": {
+      "id": "public_beta",
+      "content": "Muse powered by LightOn is now in public beta. Signup at <a href=\"muse.lighton.ai\">muse.lighton.ai</a>",
+      "backgroundColor": "#31273F",
+      "textColor": "#D2D6DB",
+      "isCloseable": false
     },
     "docs": {
       "versionPersistence": "localStorage"

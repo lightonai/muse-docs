@@ -18,8 +18,8 @@ module.exports = {
   projectName: 'muse-docs', // Usually your repo name.
   themeConfig: {
     colorMode: {
-      defaultMode: 'light',
-      disableSwitch: true,
+      defaultMode: 'dark',
+      disableSwitch: false,
       respectPrefersColorScheme: false,
     },
     navbar: {
@@ -53,6 +53,14 @@ module.exports = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
+    },
+    announcementBar: {
+      id: 'public_beta',
+      content:
+        'Stay tuned for the public beta release of Muse. In the meantime, have fun at <a href="muse.lighton.ai">muse.lighton.ai</a>',
+      backgroundColor: '#31273F',
+      textColor: '#D2D6DB',
+      isCloseable: false,
     },
   },
   presets: [

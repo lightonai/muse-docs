@@ -2,7 +2,7 @@
   "unversionedId": "guides/english/prompt",
   "id": "guides/english/prompt",
   "isDocsHomePage": false,
-  "title": "📜 Prompt design",
+  "title": "📜 Prompt Design",
   "description": "Learn the ins and outs of writing great prompts to get the most out of our models with ✍️ Create.",
   "source": "@site/docs/guides/english/prompt.md",
   "sourceDirName": "guides/english",

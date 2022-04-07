@@ -5,7 +5,7 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 export default [
   {
     path: '/',
-    component: ComponentCreator('/','c3b'),
+    component: ComponentCreator('/','3a5'),
     routes: [
       {
         path: '/',
@@ -118,6 +118,12 @@ export default [
       {
         path: '/guides/english/seo',
         component: ComponentCreator('/guides/english/seo','bb1'),
+        exact: true,
+        'sidebar': "guidesSidebar"
+      },
+      {
+        path: '/guides/french/prompt',
+        component: ComponentCreator('/guides/french/prompt','8dc'),
         exact: true,
         'sidebar': "guidesSidebar"
       },
