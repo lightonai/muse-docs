@@ -12,8 +12,8 @@
   "frontMatter": {},
   "sidebar": "guidesSidebar",
   "previous": {
-    "title": "📜 Construction de Prompts",
-    "permalink": "/guides/french/prompt"
+    "title": "❤️ Classification de Critiques",
+    "permalink": "/guides/french/review_classification"
   },
   "next": {
     "title": "😀😟 Sentiment Analysis Skill",

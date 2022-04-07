@@ -5,7 +5,7 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 export default [
   {
     path: '/',
-    component: ComponentCreator('/','3a5'),
+    component: ComponentCreator('/','331'),
     routes: [
       {
         path: '/',
@@ -124,6 +124,12 @@ export default [
       {
         path: '/guides/french/prompt',
         component: ComponentCreator('/guides/french/prompt','8dc'),
+        exact: true,
+        'sidebar': "guidesSidebar"
+      },
+      {
+        path: '/guides/french/review_classification',
+        component: ComponentCreator('/guides/french/review_classification','ee4'),
         exact: true,
         'sidebar': "guidesSidebar"
       },
