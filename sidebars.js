@@ -31,7 +31,7 @@ module.exports = {
             'guides/english/review_classification',
             'guides/english/select'],
         '🇫🇷 French': ['guides/french/prompt', 'guides/french/review_classification'],
-        '🤹Skills': ['guides/skills/summarization', 'guides/skills/sentiment_analysis',
+        '🤹 Skills': ['guides/skills/summarization', 'guides/skills/sentiment_analysis',
             'guides/skills/multitask']
     }]
 };
