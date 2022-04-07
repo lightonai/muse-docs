@@ -57,7 +57,7 @@ module.exports = {
     announcementBar: {
       id: 'public_beta',
       content:
-        'Stay tuned for the public beta release of Muse. In the meantime, have fun at <a href="muse.lighton.ai">muse.lighton.ai</a>',
+        'Stay tuned for the public beta release of Muse. In the meantime, have fun at <a href="https://muse.lighton.ai">muse.lighton.ai</a>',
       backgroundColor: '#31273F',
       textColor: '#D2D6DB',
       isCloseable: false,
