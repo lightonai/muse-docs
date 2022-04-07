@@ -3,4 +3,4 @@
 
 # ⚙️️ Process
 
-Coming soon.
+Specialize your models on demande, through a simple API call. Coming soon.
