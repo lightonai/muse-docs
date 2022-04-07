@@ -1546,6 +1546,11 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
+"@jsplumb/docusaurus-plugin-statcounter@^1.0.0":
+  "integrity" "sha512-WWzl9NHQG26n6qnsH1MMUWwiXnL+JI9RlpNs3xri8Oa7Ys7/DpN750jlg2ovnd3/vT46Cu65dPVO1ngdNV7rMg=="
+  "resolved" "https://registry.npmjs.org/@jsplumb/docusaurus-plugin-statcounter/-/docusaurus-plugin-statcounter-1.0.0.tgz"
+  "version" "1.0.0"
+
 "@mdx-js/mdx@^1.6.21":
   "integrity" "sha512-AMxuLxPz2j5/6TpF/XSdKpQP1NlG0z11dFOlq+2IP/lSgl11GY8ji6S/rgsViN/L0BDvHvUMruRb7ub+24LUYA=="
   "resolved" "https://registry.npmjs.org/@mdx-js/mdx/-/mdx-1.6.22.tgz"
