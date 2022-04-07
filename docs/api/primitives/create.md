@@ -165,7 +165,7 @@ this option with `presence_penalty` and `frequency_penalty` to achieve best resu
 :::info ⚙️ Technical details
 
 The provided bias is directly added to the [log-likelihood](/home/concepts#likelihood) predicted by the model at a given step, before performing
-the sampling operation. You can use the `top_logprobs` option or the **Analyse** endpoint to access the [log-probabilities](/home/concepts#likelihood)
+the sampling operation. You can use the `return_logprobs` option or the **Analyse** endpoint to access the [log-probabilities](/home/concepts#likelihood)
 of samples and get an idea of the range of likelihood values in your specific use case.
 
 The bias is actually applied at the token level, and not at the word level. For words made of multiple tokens, the 
