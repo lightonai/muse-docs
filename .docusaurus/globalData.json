@@ -101,6 +101,11 @@
               "sidebar": "guidesSidebar"
             },
             {
+              "id": "guides/french/prompt",
+              "path": "/guides/french/prompt",
+              "sidebar": "guidesSidebar"
+            },
+            {
               "id": "guides/guides",
               "path": "/guides/guides",
               "sidebar": "guidesSidebar"

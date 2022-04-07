@@ -148,7 +148,7 @@
         "items": [
           {
             "type": "link",
-            "label": "📜 Prompt design",
+            "label": "📜 Prompt Design",
             "href": "/guides/english/prompt"
           },
           {
@@ -165,6 +165,19 @@
             "type": "link",
             "label": "🔘 Use Select for Customer Support",
             "href": "/guides/english/select"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "collapsed": true,
+        "collapsible": true,
+        "label": "🇫🇷 French",
+        "items": [
+          {
+            "type": "link",
+            "label": "📜 Construction de Prompts",
+            "href": "/guides/french/prompt"
           }
         ]
       },
