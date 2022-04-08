@@ -27,7 +27,7 @@ Accomplish complex tasks out of the box, simply by providing **instructions in n
 Or directly use **handy skills for generic tasks** such as summarization.
 * **Not familiar with large language models?** Learn about key 🪐 **[Concepts](/home/concepts)** and explore our 
 📚 **[Guides](/guides/guides)** to discover what you can build with the Muse API. 
-In a hurry? **[Book a 15 minutes discussion with our experts](https://calendly.com/lightonmuse/demo)**.
+In a hurry? **[Book a 30 minutes discussion with our experts](https://calendly.com/lightonmuse/demo)**.
 
 :::caution 🚧 Work in progress!
 The Muse API is currently in beta, and is actively being worked on! Pages may be incomplete, and some features 

@@ -1,5 +1,5 @@
 {
-  "/-3a5": {
+  "/-331": {
     "component": "1be78505",
     "versionMetadata": "935f2afb"
   },
@@ -82,6 +82,10 @@
   "/guides/french/prompt-8dc": {
     "component": "17896441",
     "content": "ae94655e"
+  },
+  "/guides/french/review_classification-ee4": {
+    "component": "17896441",
+    "content": "c35b5fdb"
   },
   "/guides/guides-6ea": {
     "component": "17896441",

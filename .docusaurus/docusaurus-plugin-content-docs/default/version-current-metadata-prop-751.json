@@ -178,6 +178,11 @@
             "type": "link",
             "label": "📜 Construction de Prompts",
             "href": "/guides/french/prompt"
+          },
+          {
+            "type": "link",
+            "label": "❤️ Classification de Critiques",
+            "href": "/guides/french/review_classification"
           }
         ]
       },

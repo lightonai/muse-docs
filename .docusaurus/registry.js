@@ -26,5 +26,6 @@ export default {
   'b56482cf': [() => import(/* webpackChunkName: 'b56482cf' */ "@site/docs/guides/english/select.md"), "@site/docs/guides/english/select.md", require.resolveWeak("@site/docs/guides/english/select.md")],
   'b673a678': [() => import(/* webpackChunkName: 'b673a678' */ "@site/docs/api/primitives/evaluate/select.md"), "@site/docs/api/primitives/evaluate/select.md", require.resolveWeak("@site/docs/api/primitives/evaluate/select.md")],
   'bdc8d03e': [() => import(/* webpackChunkName: 'bdc8d03e' */ "@site/docs/api/specifications/responses.md"), "@site/docs/api/specifications/responses.md", require.resolveWeak("@site/docs/api/specifications/responses.md")],
+  'c35b5fdb': [() => import(/* webpackChunkName: 'c35b5fdb' */ "@site/docs/guides/french/review_classification.md"), "@site/docs/guides/french/review_classification.md", require.resolveWeak("@site/docs/guides/french/review_classification.md")],
   'd3383eb8': [() => import(/* webpackChunkName: 'd3383eb8' */ "@site/docs/guides/skills/multitask.md"), "@site/docs/guides/skills/multitask.md", require.resolveWeak("@site/docs/guides/skills/multitask.md")],
   'df8c9108': [() => import(/* webpackChunkName: 'df8c9108' */ "@site/docs/api/specifications/requests.md"), "@site/docs/api/specifications/requests.md", require.resolveWeak("@site/docs/api/specifications/requests.md")],};

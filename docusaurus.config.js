@@ -17,6 +17,10 @@ module.exports = {
   organizationName: 'LightOn', // Usually your GitHub org/user name.
   projectName: 'muse-docs', // Usually your repo name.
   themeConfig: {
+    statCounter:{
+      projectId: "12585481",
+      securityCode: "126e03ad"
+    },
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
@@ -88,5 +92,8 @@ module.exports = {
       integrity: "sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc",
       crossorigin: "anonymous",
     },
+  ],
+  plugins: [
+    "@jsplumb/docusaurus-plugin-statcounter"
   ],
 };

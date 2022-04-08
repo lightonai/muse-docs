@@ -9,6 +9,10 @@ export default {
   "organizationName": "LightOn",
   "projectName": "muse-docs",
   "themeConfig": {
+    "statCounter": {
+      "projectId": "12585481",
+      "securityCode": "126e03ad"
+    },
     "colorMode": {
       "defaultMode": "dark",
       "disableSwitch": false,
@@ -248,7 +252,7 @@ export default {
     },
     "announcementBar": {
       "id": "public_beta",
-      "content": "Muse powered by LightOn is now in public beta. Signup at <a href=\"muse.lighton.ai\">muse.lighton.ai</a>",
+      "content": "Stay tuned for the public beta release of Muse. In the meantime, have fun at <a href=\"https://muse.lighton.ai\">muse.lighton.ai</a>",
       "backgroundColor": "#31273F",
       "textColor": "#D2D6DB",
       "isCloseable": false
@@ -289,6 +293,9 @@ export default {
       "crossorigin": "anonymous"
     }
   ],
+  "plugins": [
+    "@jsplumb/docusaurus-plugin-statcounter"
+  ],
   "baseUrlIssueBanner": true,
   "i18n": {
     "defaultLocale": "en",
@@ -299,7 +306,6 @@ export default {
   },
   "onDuplicateRoutes": "warn",
   "customFields": {},
-  "plugins": [],
   "themes": [],
   "titleDelimiter": "|",
   "noIndex": false
