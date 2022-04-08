@@ -129,9 +129,8 @@ How the model will decide which token to select at each step.
 suited for applications in which there is a ground truth the model is expected to return (e.g. question answering). 
 * **Nucleus**: the model will only consider the most likely tokens with total probability mass `p`. We recommend this
     setting for most applications.
-* **Top-k**: the model will only consider the `k` most likely tokens.
+* **Top-k**: the model will only consider the `k` most likely tokens. For some models, in particular `lyra-fr`, this `mode` is a very good alternative to `nucleus` sampling.
 
-Note that the default sampling method for `lyra-fr` is `topk`.
 
 #### `temperature` <span class="param-types">float</span> <span class="param-optional">1.</span> <span class="param-warning">⚠️ only in topk/nucleus mode</span>
 
