@@ -35,5 +35,5 @@ padding: '0.3rem',
 * Features marked as <Alpha>alpha</Alpha> are **technical previews**, and not suitable for production. 
 
 ## Public release
-Coming early 2022 😊. 
+As of April 11, 2022, Muse is in public beta!
 
