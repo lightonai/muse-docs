@@ -12,11 +12,6 @@ can help you build conversational AI, copywriting tools, text classifiers, seman
 
 **🚀 What you can put in words is the only limit.**
 
-:::tip 🔒 Accessing the Muse API private beta
-The Muse API is currently in **private beta** for select customers. You can 
-**[register your interest](https://lightonmuse.typeform.com/waitlist)**, and we will keep you updated regarding
-our public launch. Stay tuned: public access is coming early 2022.
-:::
 
 ## Getting started
 * ✍️ **[Create](/api/primitives/create)**, 🔬️ **[Evaluate](/api/primitives/evaluate/select)**, 📊 **[Represent](/api/primitives/represent/embed)**, 
@@ -30,7 +25,7 @@ Or directly use **handy skills for generic tasks** such as summarization.
 In a hurry? **[Book a 30 minutes discussion with our experts](https://calendly.com/lightonmuse/demo)**.
 
 :::caution 🚧 Work in progress!
-The Muse API is currently in beta, and is actively being worked on! Pages may be incomplete, and some features 
+The Muse API is currently in public beta, and is actively being worked on! Pages may be incomplete, and some features 
 may change/break as we expand the API. 
 **The best up-to-date overview of the API is provided by the [API Reference](/api/using)**.
 :::
