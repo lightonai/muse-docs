@@ -89,7 +89,4 @@ module.exports = {
       crossorigin: "anonymous",
     },
   ],
-  plugins: [
-    "@jsplumb/docusaurus-plugin-statcounter"
-  ],
 };
