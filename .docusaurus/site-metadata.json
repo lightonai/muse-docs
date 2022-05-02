@@ -26,11 +26,6 @@
       "type": "package",
       "name": "@docusaurus/theme-classic",
       "version": "2.0.0-beta.4"
-    },
-    "docusaurus-plugin-statcounter": {
-      "type": "package",
-      "name": "@jsplumb/docusaurus-plugin-statcounter",
-      "version": "1.0.0"
     }
   }
 }

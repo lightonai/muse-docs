@@ -3,7 +3,7 @@
   "id": "guides/guides",
   "isDocsHomePage": false,
   "title": "📚 Guides and tutorials",
-  "description": "Detailed tutorials and demonstrations of what is possible with the LightOn Muse API.",
+  "description": "Find here detailed tutorials and demonstrations of what is possible with the LightOn Muse API!",
   "source": "@site/docs/guides/guides.md",
   "sourceDirName": "guides",
   "slug": "/guides/guides",

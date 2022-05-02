@@ -9,10 +9,6 @@ export default {
   "organizationName": "LightOn",
   "projectName": "muse-docs",
   "themeConfig": {
-    "statCounter": {
-      "projectId": "12585481",
-      "securityCode": "126e03ad"
-    },
     "colorMode": {
       "defaultMode": "dark",
       "disableSwitch": false,
@@ -293,9 +289,6 @@ export default {
       "crossorigin": "anonymous"
     }
   ],
-  "plugins": [
-    "@jsplumb/docusaurus-plugin-statcounter"
-  ],
   "baseUrlIssueBanner": true,
   "i18n": {
     "defaultLocale": "en",
@@ -306,6 +299,7 @@ export default {
   },
   "onDuplicateRoutes": "warn",
   "customFields": {},
+  "plugins": [],
   "themes": [],
   "titleDelimiter": "|",
   "noIndex": false
