@@ -32,7 +32,7 @@ padding: '0.3rem',
 **If you are unfamiliar with the world of large language models, let's get you started!** No expert knowledge required: it
 will just take a few minutes of your time to go through this page — and you can follow-up with one of our in-depth 📚 **[Guides](/guides/guides)**.
 
-What to see Muse in action? **Have a quick look at our 
+Want to see Muse in action? **Have a quick look at our 
 [demo notebook](https://github.com/lightonai/lightonmuse/blob/master/examples/demo_notebook.ipynb)!**
 
 ## Rationale
@@ -66,7 +66,7 @@ as well as through 🤹 **[Skills](/api/skills), an easy way to specialize our m
 **The model is the magic behind the API**. It is a large neural network with billions of parameters,
 calibrated by reading and learning from hundreds of billions of words sourced from web pages, books, scientific articles,
 and more. During this *training*, the model learns to model language accurately (i.e. to predict the next word of a text). Think about how, when sending text messages, you get suggestions trying to predict the next word you want to type. 
-The variety, quality, and sheer size of our curated training data make our models generalist out of the box, 
+The variety, quality, and sheer amount of our curated training data make our models generalist out of the box, 
 able to tackle many tasks simply by taking in natural language instructions.
 
 We offer 🤖 **[Models](/api/models)** of different capabilities in various languages; for example, if you want just want to play
@@ -92,7 +92,7 @@ use our examples as inspiration.
 
 ### Likelihood and log-probability
 
-**The likelihood of a word represents how likely is this word given previous words, according to the model**. 
+**The likelihood of a word represents how likely this word is given previous words, according to the model**. 
 For instance, the likelihood of *Paris* in *"The capital of France is Paris"* is very high, whereas the likelihood
 of *"London"* would be lower, and that of *"book"* would be even smaller. By modelling language, what the Muse API models
 are actually doing is estimating the likelihood for all possible words, given the previous context. They 
@@ -102,7 +102,7 @@ are building a conditional probability distribution of language.
 log-probability close to zero have high likelihood, whereas words with large negative log-probability (e.g. -10, -50, etc.)
 are more unlikely. Log-probabilities are also called **log-probs** or **scores** as an abbreviation. 
 
-There are useful because log-probabilities can simply be added to evaluate the log-probability of a combination of words. For instance, 
+They are useful because log-probabilities can simply be added to evaluate the log-probability of a combination of words. For instance, 
 the log-prob of *"New York"* in the sentence *"I love New York"* is the log-prob of *"New"* in *"I love New"* 
 plus the log-prob of *"York"* in *"I love New York"*. This can be used to score entire sentences, and evaluate
 multiple pre-defined options according to their likelihood.

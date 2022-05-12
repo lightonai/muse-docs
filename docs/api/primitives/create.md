@@ -156,7 +156,7 @@ We recommend playing around to find a good fit for your use case.
 
 :::tip 💡 Avoiding repetitions
 
-When generating longer samples with `biases`, the model may repeat too often positively biased words. Combine
+When generating longer samples with `biases`, the model may repeat positively biased words too often. Combine
 this option with `presence_penalty` and `frequency_penalty` to achieve best results. If you generate a first completion, and then use it as a prompt for a new completion, you probably want to turn off the word bias encouraging a certain word once it has been produced to avoid too much repetition.
 
 :::
