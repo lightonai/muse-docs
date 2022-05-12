@@ -66,8 +66,13 @@ as well as through 🤹 **[Skills](/api/skills), an easy way to specialize our m
 **The model is the magic behind the API**. It is a large neural network with billions of parameters,
 calibrated by reading and learning from hundreds of billions of words sourced from web pages, books, scientific articles,
 and more. During this *training*, the model learns to model language accurately (i.e. to predict the next word of a text). Think about how, when sending text messages, you get suggestions trying to predict the next word you want to type. 
+<<<<<<< HEAD
 The variety, quality, and sheer amount of our curated training data result in universal language models, 
 able to handle diverse tasks simply by taking in natural language instructions.
+=======
+The variety, quality, and sheer amount of our curated training data make our models generalist out of the box, 
+able to tackle many tasks simply by taking in natural language instructions.
+>>>>>>> :pencil2: Fix broken English
 
 We offer 🤖 **[Models](/api/models)** of different capabilities in various languages; for example, if you want just want to play
 around in English, use `lyra-en`, for French, use `lyra-fr`.
