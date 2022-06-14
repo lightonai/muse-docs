@@ -16,11 +16,11 @@ You will be billed for the **total number of tokens sent in your request**.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="curl" values={[{ label: 'cURL', value: 'curl', }]}>
+<Tabs defaultValue="curl" values={[{ label: 'cURL', value: 'curl'}, { label: 'Python', value: 'python'}]}>
 
 <TabItem value="curl">
 
-```bash title="Request"
+```bash
 curl -X 'POST' \
   'https://api.lighton.ai/muse/v1/select' \
   -H 'Content-Type: application/json' \
@@ -32,9 +32,25 @@ curl -X 'POST' \
 
 </TabItem>
 
+<TabItem value="python">
+
+```python
+from lightonmuse import Select
+
+selector = Select("orion-fr")
+select = selector("Je suis content", candidates=["je suis heureux", "je suis triste"])
+
+print(select)
+```
+
+</TabItem>
+
 </Tabs>
 
-```json title="Response (JSON)"
+<details>
+<summary>Response (JSON)</summary>
+
+```json
 {
     "request_id": "1f19c4d1-47f2-4c96-a8d2-314e6ed3a341",
     "outputs": [
@@ -92,59 +108,51 @@ curl -X 'POST' \
 }
 ```
 
+</details>
+
 ## Parameters
 
-#### `reference` <span class="param-types">string</span> <span class="param-warning">⚠️ required</span>
+-   `reference` <span class="param-types">string</span> <span class="param-warning">⚠️ required</span>
 
-The reference input to compute likelihood against.
+    The reference input to compute likelihood against.
 
-#### `candidates` <span class="param-types">array[string]</span> <span class="param-warning">⚠️ required</span>
+-   `candidates` <span class="param-types">array[string]</span> <span class="param-warning">⚠️ required</span>
 
-The input(s) that are compared to the reference and ranked based on likelihood.
+    The input(s) that are compared to the reference and ranked based on likelihood.
 
-#### `conjunction` <span class="param-types">string</span> <span class="param-optional">""</span>
+-   `conjunction` <span class="param-types">string</span> <span class="param-optional">""</span>
 
-Expression used to link reference and candidates to create the prompt used to compute the likelihood. The prompt will have the structure `reference`+`conjunction`+`candidate`. Finding a good `conjunction` can greatly increase the performance of `select`.
+    Expression used to link reference and candidates to create the prompt used to compute the likelihood. The prompt will have the structure `reference` + `conjunction` + `candidate`. Finding a good `conjunction` can greatly increase the performance of `select`.
 
-#### `concat_best` <span class="param-types">boolean</span> <span class="param-optional">true</span>
+-   `concat_best` <span class="param-types">boolean</span> <span class="param-optional">true</span>
 
-If `true` the response will contain a `"best"` field with the selected choice.
+    If `true` the response will contain a `best` field with the selected choice.
 
 ## Response (`outputs`)
 
 An array of outputs shaped like your batch.
 
-#### `reference` <span class="param-types">string</span>
+-   `reference` <span class="param-types">string</span>
 
-The `reference` sentence used to compute similarities.
+    The `reference` sentence used to compute similarities.
 
 ### Rankings (`rankings`)
 
 One entry for each member of `candidates`.
 
-#### `text` <span class="param-types">string</span>
+-   `text` <span class="param-types">string</span>
 
-A single entry from the `candidates` sent in the request.
+    A single entry from the `candidates` sent in the request.
 
-#### `score` <span class="param-types">float</span>
+-   `score` <span class="param-types">Score</span>
 
-Log-likelihood score computed on the concatenation of `reference`, `conjunction` and `candidate`, the higher the better.
-
-#### `normalized_score` <span class="param-types">float</span>
-
-Score normalized by the length in tokens, the higher the better.
-
-#### `token_scores` <span class="param-types">array[string:float]</span>
-
-List of [tokens](/home/concepts#tokens) of the `candidate` with associated likelihood scores, the higher the better.
+    <!-- TODO -->
 
 :::info ⚙️ Token representations
-
 Tokens are currently returned as they are represented by the tokenizer, which includes special characters such as `Ġ`
 for spaces and possible encoding oddities (such as `Ã©` for `é`).
-
 :::
 
-#### `best` <span class="param-types">string</span>
+-   `best` <span class="param-types">string</span>
 
-Best choice selected among the `candidates` in terms of likelihood.
+    Best choice selected among the `candidates` in terms of likelihood.

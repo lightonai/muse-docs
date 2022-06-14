@@ -8,7 +8,7 @@
 Authentication to Muse is based on **API keys**. You may generate as many API keys as you need, to separate
 applications or usage. You should **not** generate an API key for each of your end-user.
 
-Muse API keys have the following format: `f89d6b69-tOWf6Ppw7LEvqryEo2FGUwf8dlpz7OxVqIQEywWigLNqb50JscU8jw0`, where
+Muse API keys have the following format: `f89d6b69-tOWf6Ppw7LEvQryEo2FGUwf8dLpz7OxVqIQEywWigLNqb50JscU8jw0`, where
 `f89d6b69` is an **8-character user identifier** (shared across all your keys), followed by **55 random characters
 unique to each key**.
 

@@ -18,16 +18,11 @@ You will be billed for the **total number of tokens sent in your request**.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs
-defaultValue="curl"
-values={[
-{ label: 'cURL', value: 'curl', },
-]
-}>
+<Tabs defaultValue="curl" values={[{ label: 'cURL', value: 'curl'}, { label: 'Python', value: 'python'}]}>
 
 <TabItem value="curl">
 
-```bash title="Request"
+```bash
 curl -X 'POST' \
   'https://api.lighton.ai/muse/v1/embed' \
   -H 'Content-Type: application/json' \
@@ -39,9 +34,25 @@ curl -X 'POST' \
 
 </TabItem>
 
+<TabItem value="python">
+
+```python
+from lightonmuse import Embed
+
+embedder = Embed("orion-fr")
+embed = embedder("Il était une fois en Laponie")
+
+print(embed)
+```
+
+</TabItem>
+
 </Tabs>
 
-```json title="Response (JSON)"
+<details>
+<summary>Response (JSON)</summary>
+
+```json
 {
     "request_id": "a0b4f1e0-e1a7-48b9-8204-6567efe3957d",
     "outputs": [
@@ -77,20 +88,22 @@ curl -X 'POST' \
 }
 ```
 
+</details>
+
 ## Parameters
 
-#### `text` <span class="param-types">string/array[string]</span> <span class="param-warning">⚠️ required</span>
+-   `text` <span class="param-types">string/array[string]</span> <span class="param-warning">⚠️ required</span>
 
-The input(s) that will be represented.
+    The input(s) that will be represented.
 
 ## Response (`outputs`)
 
 An array of outputs shaped like your batch.
 
-#### `txt` <span class="param-types">string</span>
+-   `text` <span class="param-types">string</span>
 
-The text that was represented, from the provided `text` parameter.
+    The text that was represented, from the provided `text` parameter.
 
-#### `embedding` <span class="param-types">array[float]</span>
+-   `embedding` <span class="param-types">array[float]</span>
 
-Vector representation of the provided text. The size of the representation depends on the model used, see [models](/api/models) for details.
+    Vector representation of the provided text. The size of the representation depends on the model used, see [models](/api/models) for details.

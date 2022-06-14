@@ -4,13 +4,7 @@
 # 🐍 Python
 
 export const Alpha = ({children}) => (
-<span style={{
-	backgroundColor: '#68B1D0',
-	fontFamily: 'monospace',
-	borderRadius: '7px',
-	color: '#fff',
-	padding: '0.3rem',
-}}>{children}</span>);
+<span class="label alpha-label">alpha</span>);
 
 ## Availability
 

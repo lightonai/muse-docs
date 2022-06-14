@@ -1,33 +1,11 @@
 ---
 ---
 
+export const Alpha = ({ children }) => <span class="label alpha-label">alpha</span>;
+
+export const Beta = ({ children }) => <span class="label beta-label">beta</span>;
+
 # 🪐 Concepts
-
-export const Alpha = ({children}) => (
-<span
-style={{
-backgroundColor: '#68B1D0',
-fontFamily: 'monospace',
-borderRadius: '7px',
-color: '#fff',
-padding: '0.3rem',
-}}>
-{children}
-</span>
-);
-
-export const Beta = ({children}) => (
-<span
-style={{
-backgroundColor: '#419228',
-fontFamily: 'monospace',
-borderRadius: '7px',
-color: '#fff',
-padding: '0.3rem',
-}}>
-{children}
-</span>
-);
 
 **If you are unfamiliar with the world of large language models, let's get you started!** No expert knowledge required: it
 will just take a few minutes of your time to go through this page — and you can follow-up with one of our in-depth 📚 **[Guides](/guides/guides)**.
@@ -50,10 +28,10 @@ We abstract away all the fancy machine learning, and give you **a simple interfa
 We believe that all language tasks can be tackled through these simple primitives:
 
 -   **Use ✍️ [Create](/api/primitives/create) to generate text** according to natural language instructions
-    (e.g. copywriting, conversational AI, etc.);
+    (e.g. copywriting, conversational AI, etc.).
 -   **Use 🔬️ [Evaluate](/api/primitives/evaluate/select) to understand text**, and evaluate the likelihood of different options
-    (e.g. classification, automated Q&A, etc.);
--   **Use 📊 [Represent](/api/primitives/represent/embed) <Alpha>alpha</Alpha> to build rich representations of text**, to directly compare samples or use
+    (e.g. classification, automated Q&A, etc.).
+-   **Use 📊 [Represent](/api/primitives/represent/embed) <Alpha /> to build rich representations of text**, to directly compare samples or use
     in a downstream pipeline (e.g. semantic search, document clustering, etc.)
 
 These features can be combined to **⚙️ [Process](/api/primitives/process) text, achieving complex end-results**
@@ -70,7 +48,7 @@ and more. During this _training_, the model learns to model language accurately 
 The variety, quality, and sheer amount of our curated training data result in universal language models,
 able to handle diverse tasks simply by taking in natural language instructions.
 
-We offer 🤖 **[Models](/api/models)** of different capabilities in various languages; for example, if you want just want to play
+We offer 🤖 **[Models](/api/models)** of different capabilities in various languages. for example, if you want just want to play
 around in English, use `lyra-en`, for French, use `lyra-fr`.
 
 ### Prompt
@@ -116,10 +94,10 @@ increase or decrease the log-probabilities of words to see them more often or to
 with `presence_penalty` and `frequence_penalty` to generate less repetitive and more novel text. Check out our guide
 on 🎛️ **[Steering generation for SEO](/guides/english/seo)** for more.
 
-### Embeddings <Alpha>alpha</Alpha>
+### Embeddings <Alpha />
 
 **Embeddings are a numerical representation of a given text, built by the model internally to make predictions**. They
-are a vector (i.e. list) of floating point numbers; they encode information about the
+are a vector (i.e. list) of floating point numbers. they encode information about the
 input text, its context, as well as general knowledge derived from the training data in a computer-understandable format. They can be used by
 machine learning algorithms as a representation of the input text, to compare different sentences and documents,
 classify samples, or cluster texts.
@@ -128,7 +106,7 @@ classify samples, or cluster texts.
 leverage these embeddings in your machine learning pipeline (applying clustering, t-SNE, or a classifier of your choice
 on them). You can also use ⚖️ **[Compare](/api/primitives/represent/compare)** to directly compare different texts and select the most similar based on embeddings.
 
-### Skills <Beta>beta</Beta>
+### Skills <Beta />
 
 **Skills can specialize our models to specific tasks or styles**. For instance, the `summarization` skill of `orion-fr`
 enables it to generate summaries of the input text, without crafting a custom prompt. Skills make models more consistent,
