@@ -5,7 +5,7 @@
 
 Use the **Compare** endpoint to compare a reference input with some candidates based on cosine similarity scores computed on the model embeddings.
 
-Available at ```https://api.lighton.ai/muse/v1/compare```.
+Available at `https://api.lighton.ai/muse/v1/compare`.
 
 :::info 💸️ Pricing
 You will be billed for the **total number of tokens sent in your request**.
@@ -43,42 +43,44 @@ curl -X 'POST' \
 
 ```json title="Response (JSON)"
 {
-   "request_id":"36fdde13-2bf7-4952-81c0-df206c72126e",
-   "outputs":[
-      [
-         {
-            "reference":"Je suis content",
-            "similarities":[
-               {
-                  "candidate":"je suis heureux",
-                  "similarity":0.9340229034423828
-                  },
-               {
-                  "candidate":"je suis triste",
-                  "similarity":0.8432836532592773
-               }],
-            "best":"je suis heureux",
-            "execution_metadata":{
-               "cost":{
-                  "tokens_used":9,
-                  "tokens_input":9,
-                  "tokens_generated":0,
-                  "cost_type":"orion-fr@default",
-                  "batch_size":3},
-                  "finish_reason":"length"
-               }
+    "request_id": "36fdde13-2bf7-4952-81c0-df206c72126e",
+    "outputs": [
+        [
+            {
+                "reference": "Je suis content",
+                "similarities": [
+                    {
+                        "candidate": "je suis heureux",
+                        "similarity": 0.9340229034423828
+                    },
+                    {
+                        "candidate": "je suis triste",
+                        "similarity": 0.8432836532592773
+                    }
+                ],
+                "best": "je suis heureux",
+                "execution_metadata": {
+                    "cost": {
+                        "tokens_used": 9,
+                        "tokens_input": 9,
+                        "tokens_generated": 0,
+                        "cost_type": "orion-fr@default",
+                        "batch_size": 3
+                    },
+                    "finish_reason": "length"
+                }
             }
-         ]
-      ],
-   "costs":{
-      "orion-fr@default":{
-         "total_tokens_used":9,
-         "total_tokens_input":9,
-         "total_tokens_generated":0,
-         "batch_size":3
-         }
-      }
-   }
+        ]
+    ],
+    "costs": {
+        "orion-fr@default": {
+            "total_tokens_used": 9,
+            "total_tokens_input": 9,
+            "total_tokens_generated": 0,
+            "batch_size": 3
+        }
+    }
+}
 ```
 
 ## Parameters
@@ -101,7 +103,7 @@ The `reference` sentence used to compute similarities.
 
 ### Similarities (`similarities`)
 
-One entry for each member of `candidates`. 
+One entry for each member of `candidates`.
 
 #### `candidate` <span class="param-types">string</span>
 

@@ -3,13 +3,14 @@
 
 # 🔢 Embed
 
-Use the **Embed** endpoint to obtain a vector representation of a string (see [embeddings](/home/concepts#embeddings)). 
+Use the **Embed** endpoint to obtain a vector representation of a string (see [embeddings](/home/concepts#embeddings)).
 
-Available at ```https://api.lighton.ai/muse/v1/embed```.
+Available at `https://api.lighton.ai/muse/v1/embed`.
 
 :::info 💸️ Pricing
 You will be billed for the **total number of tokens sent in your request**.
 :::
+
 ---
 
 ## Example

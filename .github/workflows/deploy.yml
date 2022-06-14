@@ -1,28 +1,27 @@
 name: Documentation
 
 on:
-  push:
-    branches: [ master ]
+    push:
+        branches: [master]
 
 jobs:
-  build:
+    build:
+        runs-on: ubuntu-latest
 
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: "v12.13.1"
-    - name: Build and deploy docs
-      run: |
-        npm install
-        yarn run build
-    - uses: shimataro/ssh-key-action@v2
-      with:
-        key: ${{ secrets.SSH_PRIVATE_KEY }} 
-        known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
-    - name: Upload
-      run: |
-        ssh-keyscan -p ${{ secrets.PORT }} -H ${{ secrets.DOCS_URL }} >> ~/.ssh/known_hosts  
-        scp -o StrictHostKeyChecking=no -r -P ${{ secrets.PORT }} build/* ${{ secrets.USERNAME }}@${{ secrets.DOCS_URL }}:/home/${{ secrets.USERNAME }}/www/${{ secrets.DOCS_URL }}/public_html
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 'v12.13.1'
+            - name: Build and deploy docs
+              run: |
+                  npm install
+                  yarn run build
+            - uses: shimataro/ssh-key-action@v2
+              with:
+                  key: ${{ secrets.SSH_PRIVATE_KEY }}
+                  known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+            - name: Upload
+              run: |
+                  ssh-keyscan -p ${{ secrets.PORT }} -H ${{ secrets.DOCS_URL }} >> ~/.ssh/known_hosts  
+                  scp -o StrictHostKeyChecking=no -r -P ${{ secrets.PORT }} build/* ${{ secrets.USERNAME }}@${{ secrets.DOCS_URL }}:/home/${{ secrets.USERNAME }}/www/${{ secrets.DOCS_URL }}/public_html

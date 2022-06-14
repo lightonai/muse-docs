@@ -16,13 +16,13 @@ padding: '0.3rem',
 </span>
 );
 
-## Availability 
+## Availability
 
-Our **`lightonmuse`** Python bindings <Alpha>alpha</Alpha> can be installed from PyPi or from the 
+Our **`lightonmuse`** Python bindings <Alpha>alpha</Alpha> can be installed from PyPi or from the
 **[GitHub repository](https://github.com/lightonai/lightonmuse)**:
 
 ```bash title="Installing Python bindings with pip"
-pip install lightonmuse                                 
+pip install lightonmuse
 ```
 
 ```bash title="Installing Python bindings from source with pip"
@@ -36,10 +36,10 @@ not recommend you use the Python bindings in production**, though they are excel
 
 ## Getting started
 
-You can get a quick idea of what is possible by browsing the 
+You can get a quick idea of what is possible by browsing the
 **[demo notebook](https://github.com/lightonai/lightonmuse/blob/master/examples/demo_notebook.ipynb)**.
 
 ## Documentation
 
-The Python bindings provides classes with the same name and parameters of all Muse endpoints. 
+The Python bindings provides classes with the same name and parameters of all Muse endpoints.
 The [README](https://github.com/lightonai/lightonmuse/blob/master/README.md) provides an overview of all the functionalities available.

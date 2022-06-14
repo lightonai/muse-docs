@@ -12,20 +12,20 @@ can help you build conversational AI, copywriting tools, text classifiers, seman
 
 **🚀 What you can put in words is the only limit.**
 
-
 ## Getting started
-* ✍️ **[Create](/api/primitives/create)**, 🔬️ **[Evaluate](/api/primitives/evaluate/select)**, 📊 **[Represent](/api/primitives/represent/embed)**, 
-and **⚙️ [Process](/api/primitives/process)** text and documents. Leverage our **business-ready endpoints** to access steerable 
-content generation, text classification, deep content analysis, conversational AI, and more. 
-* Discover our multilingual 🤖 **[Models](/api/models)** and their powerful 🤹 **[Skills](/api/skills)**.
-Accomplish complex tasks out of the box, simply by providing **instructions in natural language**.
-Or directly use **handy skills for generic tasks** such as summarization.
-* **Not familiar with large language models?** Learn about key 🪐 **[Concepts](/home/concepts)** and explore our 
-📚 **[Guides](/guides/guides)** to discover what you can build with the Muse API. 
-In a hurry? **[Book a 30 minutes discussion with our experts](https://calendly.com/lightonmuse/demo)**.
+
+-   ✍️ **[Create](/api/primitives/create)**, 🔬️ **[Evaluate](/api/primitives/evaluate/select)**, 📊 **[Represent](/api/primitives/represent/embed)**,
+    and **⚙️ [Process](/api/primitives/process)** text and documents. Leverage our **business-ready endpoints** to access steerable
+    content generation, text classification, deep content analysis, conversational AI, and more.
+-   Discover our multilingual 🤖 **[Models](/api/models)** and their powerful 🤹 **[Skills](/api/skills)**.
+    Accomplish complex tasks out of the box, simply by providing **instructions in natural language**.
+    Or directly use **handy skills for generic tasks** such as summarization.
+-   **Not familiar with large language models?** Learn about key 🪐 **[Concepts](/home/concepts)** and explore our
+    📚 **[Guides](/guides/guides)** to discover what you can build with the Muse API.
+    In a hurry? **[Book a 30 minutes discussion with our experts](https://calendly.com/lightonmuse/demo)**.
 
 :::caution 🚧 Work in progress!
-The Muse API is currently in public beta, and is actively being worked on! Pages may be incomplete, and some features 
-may change/break as we expand the API. 
+The Muse API is currently in public beta, and is actively being worked on! Pages may be incomplete, and some features
+may change/break as we expand the API.
 **The best up-to-date overview of the API is provided by the [API Reference](/api/using)**.
 :::
