@@ -9,7 +9,7 @@ format.
 
 ## Using skills
 
-The skill to use for an API call can be specified using the `skill` parameter. Available skills are described below;
+The skill to use for an API call can be specified using the `skill` parameter. Available skills are described below.
 **some skills may be available only for certain models and endpoints**.
 
 :::info 💸️ Pricing

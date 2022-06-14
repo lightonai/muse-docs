@@ -60,14 +60,14 @@ We can look into the scores of the different candidates and their tokens in more
 ```python
 for candidate in out[0][0]['rankings']:
     print("Candidate | "+candidate["text"] + f' | Normalized log-prob: {candidate["score"]["normalized_logprob"]:.4f}')
-    print("Token log-probs")
+    print("Token logprobs")
     for token in candidate["score"]["token_logprobs"]:
         print(token)
 ```
 
 > Candidate | This user wants to cancel his subscription. | Normalized log-prob: -3.8278
 >
-> Token log-probs
+> Token logprobs
 >
 > {'This': -8.9375}
 >
@@ -87,7 +87,7 @@ for candidate in out[0][0]['rankings']:
 
 > Candidate | This user is giving feedback. | Normalized log-prob: -5.4385
 >
-> Token log-probs
+> Token logprobs
 >
 > {'This': -8.9375}
 >
@@ -103,7 +103,7 @@ for candidate in out[0][0]['rankings']:
 
 > Candidate | This user is asking for technical support. | Normalized log-prob: -3.7139
 >
-> Token log-probs
+> Token logprobs
 >
 > {'This': -8.9375}
 >

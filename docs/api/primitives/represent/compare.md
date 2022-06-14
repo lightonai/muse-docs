@@ -18,16 +18,11 @@ You will be billed for the **total number of tokens sent in your request**.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs
-defaultValue="curl"
-values={[
-{ label: 'cURL', value: 'curl', },
-]
-}>
+<Tabs defaultValue="curl" values={[{ label: 'cURL', value: 'curl'}, { label: 'Python', value: 'python'}]}>
 
 <TabItem value="curl">
 
-```bash title="Request"
+```bash
 curl -X 'POST' \
   'https://api.lighton.ai/muse/v1/compare' \
   -H 'Content-Type: application/json' \
@@ -39,9 +34,25 @@ curl -X 'POST' \
 
 </TabItem>
 
+<TabItem value="python">
+
+```bash
+from lightonmuse import Compare
+
+comparer = Compare("orion-fr")
+compare = comparer("Je suis content", candidates=["je suis heureux", "je suis triste"])
+
+print(compare)
+```
+
+</TabItem>
+
 </Tabs>
 
-```json title="Response (JSON)"
+<details>
+<summary>Response (JSON)</summary>
+
+```json
 {
     "request_id": "36fdde13-2bf7-4952-81c0-df206c72126e",
     "outputs": [
@@ -83,32 +94,34 @@ curl -X 'POST' \
 }
 ```
 
+</details>
+
 ## Parameters
 
-#### `reference` <span class="param-types">string</span> <span class="param-warning">⚠️ required</span>
+-   `reference` <span class="param-types">string</span> <span class="param-warning">⚠️ required</span>
 
-The reference input to compute similarity against.
+    The reference input to compute similarity against.
 
-#### `candidates` <span class="param-types">array[string]</span> <span class="param-warning">⚠️ required</span>
+-   `candidates` <span class="param-types">array[string]</span> <span class="param-warning">⚠️ required</span>
 
-The input(s) that are compared to the reference and ranked based on similarity.
+    The input(s) that are compared to the reference and ranked based on similarity.
 
 ## Response (`outputs`)
 
 An array of outputs shaped like your batch.
 
-#### `reference` <span class="param-types">string</span>
+-   `reference` <span class="param-types">string</span>
 
-The `reference` sentence used to compute similarities.
+    The `reference` sentence used to compute similarities.
 
 ### Similarities (`similarities`)
 
 One entry for each member of `candidates`.
 
-#### `candidate` <span class="param-types">string</span>
+-   `candidate` <span class="param-types">string</span>
 
-A single entry from the `candidates` sent in the request.
+    A single entry from the `candidates` sent in the request.
 
-#### `similarity` <span class="param-types">float</span>
+-   `similarity` <span class="param-types">float</span>
 
-Similarity score between `candidate` and `reference`. It ranges between 0 and 1, the higher the more similar.
+    Similarity score between `candidate` and `reference`. It ranges between 0 and 1, the higher the more similar.

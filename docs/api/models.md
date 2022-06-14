@@ -25,7 +25,7 @@ skills are models specific.
 :::tip 💡 Choosing the right class
 
 We recommend **starting your experiments with the most powerful model available**, and then optimize for the smallest
-size that still fullfills your needs. If a skill matching your task is available, it can be used to allow smaller models
+size that still fulfills your needs. If a skill matching your task is available, it can be used to allow smaller models
 to perform on-par with larger ones.
 
 :::
