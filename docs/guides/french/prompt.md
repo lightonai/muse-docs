@@ -3,7 +3,6 @@
 
 # 📜 Construction de Prompts
 
-
 **Apprenez à concevoir efficacement des prompts afin de tirer le meilleur parti de nos modèles, en utilisant ✍️ [Create](/api/primitives/create)**.
 
 :::caution ⚠️ Attention
@@ -27,6 +26,7 @@ creator = Create("lyra-fr")
 ```
 
 Nous supposons également que le lecteur est familier avec l'utilisation de Create et des Pythons Bindings : pour plus d'informations et de détails sur les paramètres, visitez la page de la primitive ✍️ [Create](/api/primitives/create) et celle des [Bindings](/api/bindings/python).
+
 ## Un texte à compléter
 
 Dans un premier temps, explorons comment utiliser le début d'un texte (article, publicité, texte littéraire) en tant que prompt. La tâche pour Muse est donc de compléter cette amorce.
@@ -35,7 +35,7 @@ Par exemple, on peut utiliser :
 
 ```python
 prompt = "Nous avions passé une bonne soirée."
-output = creator(prompt, n_tokens=18) 
+output = creator(prompt, n_tokens=18)
 print(prompt + "🤖 " + output[0][0]['completions'][0]['output_text'])
 ```
 
@@ -48,7 +48,7 @@ et notre modèle renvoie
 
 ```python
 prompt = "Nous avions passé une bonne soirée"
-output = creator(prompt, n_tokens=18) 
+output = creator(prompt, n_tokens=18)
 print(prompt + "🤖 " + output[0][0]['completions'][0]['output_text'])
 ```
 
@@ -62,17 +62,16 @@ Plutôt que d'utiliser comme prompt une amorce à compléter, on peut décrire, 
 
 Dans un premier temps, demandons à Muse de générer une publicité Instagram pour une station balnéaire que nous décrivons :
 
-
 ```python
 prompt = "Je voudrais poster une publicité Instagram pour la résidence de vacances Atmosphère, un hôtel de luxe sur l'île d'Apo, aux Philippines, qui propose des plongées à la renommée mondiale. Voici le texte : '"
-output = creator(prompt, mode="topk", 
-                temperature=0.9, n_tokens=86, 
-                word_biases={"luxe": 5, "marine": 5}, 
+output = creator(prompt, mode="topk",
+                temperature=0.9, n_tokens=86,
+                word_biases={"luxe": 5, "marine": 5},
                 frequency_penalty=0.5)
 print(output[0][0]['completions'][0]['output_text'])
 ```
 
->Atmosphere, un hôtel de luxe sur l'île d'Apo, aux Philippines, propose des plongées à la renommée mondiale. Les plongeurs peuvent explorer les eaux cristallines et profiter des plages de sable blanc. Les chambres sont décorées avec goût et comprennent une connexion Wi-Fi gratuite. Le personnel est disponible 24h/24 et 7j/7 pour vous aider à organiser un voyage inoubliable.
+> Atmosphere, un hôtel de luxe sur l'île d'Apo, aux Philippines, propose des plongées à la renommée mondiale. Les plongeurs peuvent explorer les eaux cristallines et profiter des plages de sable blanc. Les chambres sont décorées avec goût et comprennent une connexion Wi-Fi gratuite. Le personnel est disponible 24h/24 et 7j/7 pour vous aider à organiser un voyage inoubliable.
 
 La description de la tâche a donc bien conditionné le modèle pour qu'il fasse ce que l'on attend de lui. Comme mentionné plus haut, lorsque l'on désire accomplir une tâche un peu plus complexe, il peut être judicieux d'inclure quelques exemples dans le prompt pour améliorer la qualité du texte généré. Par exemple, ici, on souhaite que Muse réponde à des commentaires laissés par des clients. On inclut donc dans le prompt trois exemples de commentaires et de réponses pour préparer `lyra-fr` pour la tâche :
 
@@ -82,7 +81,7 @@ prompt = """Réponds aux avis clients suivants.
 Avis: Ça fait plusieurs fois que je viens et je n’ai jamais été déçue. L’accueil est chaleureux, les pizzas sont juste parfaites. J’ai enfin goûté un dessert et il était largement à la hauteur du reste ! Bref, au top, j’y retournerai bientôt !
 Réponse: Wow, nous sommes très touchés par votre commentaire ! Un grand merci à vous et à très bientôt !
 ###
-Avis: Décevant surtout au vu de la bonne note du resto, je m'attendais à me régaler mais pas vraiment. Le tiramisu, certes bien garni, était très liquide, on aurait dit que c'était mélangé avec de l'eau, et pas très bon. 
+Avis: Décevant surtout au vu de la bonne note du resto, je m'attendais à me régaler mais pas vraiment. Le tiramisu, certes bien garni, était très liquide, on aurait dit que c'était mélangé avec de l'eau, et pas très bon.
 Réponse: Nous sommes désolés de ne pas avoir répondu à vos attentes. Nous espérons que vous nous donnerez une autre chance bientôt.
 ###
 Avis: Super pizzeria ! Accueil sympathique. On y va souvent mais on ne s'en lasse pas !
@@ -95,8 +94,8 @@ print(out[0][0]['completions'][0]['output_text'])
 et on obtient, en réponse au dernier commentaire :
 
 > Nous sommes ravis que vous ayez pu profiter de ce bon moment ! À très bientôt !
-​
-​
+> ​
+> ​
 
 ## Expérimentez avec vos Prompts
 

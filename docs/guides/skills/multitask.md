@@ -18,7 +18,7 @@ creator_fr = Create("lyra-en")
 
 `Multitask` can be directly prompted with questions to answer
 
-```python 
+```python
 output = creator("What is the capital of Madagascar?", skill="multitask", mode="greedy")
 print(output[0][0]['completions'][0]['output_text'])
 ```
@@ -32,7 +32,7 @@ output = creator("List three countries in Asia:", skill="multitask", mode="greed
 print(output[0][0]['completions'][0]['output_text'])
 ```
 
->China, Japan and Korea
+> China, Japan and Korea
 
 ## Creative Tasks
 
@@ -43,7 +43,7 @@ output = creator("Create a sentence with the following words: [tennis, Rome, sun
 print(output[0][0]['completions'][0]['output_text'])
 ```
 
-returns 
+returns
 
 > sunset over the obelisk in Rome from a comfortable place of resting next to the tennis court .
 
@@ -54,7 +54,7 @@ output = creator("Create a sad poetry about love:", skill="multitask", n_tokens=
 print(output[0][0]['completions'][0]['output_text'])
 ```
 
-> Then I can't control myself anymore. I'm caught in a constant train of desire. My heart wishes it will never end. I feel a yearning to go back to the place I was a year ago. And I really want to see her once more. And tell her what I feel deep in my heart. 
+> Then I can't control myself anymore. I'm caught in a constant train of desire. My heart wishes it will never end. I feel a yearning to go back to the place I was a year ago. And I really want to see her once more. And tell her what I feel deep in my heart.
 
 Finally, we can also use it to find missing words in a sentence.
 
