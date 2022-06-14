@@ -18,12 +18,7 @@ You will be billed for the **total number of tokens sent in your request**.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs
-defaultValue="curl"
-values={[
-{ label: 'cURL', value: 'curl', },
-]
-}>
+<Tabs defaultValue="curl" values={[{ label: 'cURL', value: 'curl' }]}>
 
 <TabItem value="curl">
 
