@@ -8,9 +8,9 @@
 The Muse API is accessed through **`POST` HTML requests**, from the tool of your choice (`curl`, `requests`, ...).
 
 The example request below queries the ✍️ **[Create](/api/primitives/create)** endpoint of the `lyra-fr` model, with
-the prompt `"Once upon a time"`, and asks for a completion of length 25 tokens (`"n_tokens": 25`):
+the prompt `Once upon a time`, and asks for a completion of length 25 tokens (`"n_tokens": 25`).
 
-```bash title="Example request (curl)"
+```bash title="Example request (cURL)"
 curl -X 'POST' \
   'https://api.lighton.ai/muse/v1/create' \
   -H 'Content-Type: application/json' \
@@ -22,13 +22,13 @@ curl -X 'POST' \
 
 Requests should follow this format:
 
--   **Endpoint/primitive URL**: `https://api.lighton.ai/muse/v1/{endpoint}` (e.g. `create`, `select`, etc.);
+-   **Endpoint/primitive URL**: `https://api.lighton.ai/muse/v1/{endpoint}` (e.g. `create`, `select`, etc.).
 -   **Header for JSON payload**: the API works with JSON payloads only, so you should set `Content-Type: application/json`
-    and `Accept: application/json` in your requests;
+    and `Accept: application/json` in your requests.
 -   **Header for authentication**: `X-API-KEY: {YOUR_API_KEY}`, see
-    🔑 **[Authentication](/api/specifications/authentication)** for more details;
+    🔑 **[Authentication](/api/specifications/authentication)** for more details.
 -   **Header for model**: you should specify which model you want to query, see 🤖 **[Models](/api/models)**
-    for availability across languages;
+    for availability across languages.
 -   **JSON payload for the request**: the request and its parameters should be specified in JSON format. All
     endpoints usually take the main text(s) first, and then the extra parameters. **See the specific
     documentation of each primitive for details**.
@@ -36,33 +36,51 @@ Requests should follow this format:
 As an example, the request above will generate a response similar to the following (make sure to check the 💬 **[Responses](/api/specifications/responses)** page
 for more information).
 
-```json title="Response to example request (JSON)"
+<details>
+<summary>Example response (JSON)</summary>
+
+```json
 {
-    "request_id": "969718f5-d1f4-40cd-a872-a6fb7bf84329",
+    "request_id": "734e8d5a-a186-4d14-b2e4-be26f7fee6dc",
     "outputs": [
         [
             {
                 "input_text": "Il était une fois",
                 "completions": [
                     {
-                        "output_text": " une toute petite fille, qui avait une bonne voix, et chantait des chansons américaines telles que Tabernacle et We all take",
-                        "score": -82.67915979400277,
-                        "normalized_score": -3.307166391760111,
-                        "token_scores": null,
+                        "output_text": ", un pays où il faisait toujours beau.\nLes gens y vivaient heureux et en sécurité. Ils avaient de l'argent",
+                        "score": {
+                            "logprob": -42.8507080078125,
+                            "normalized_logprob": -1.7140283203125,
+                            "token_logprobs": null
+                        },
                         "execution_metadata": {
-                            "cost": 25
+                            "cost": {
+                                "tokens_used": 29,
+                                "tokens_input": 4,
+                                "tokens_generated": 25,
+                                "cost_type": "lyra-fr@default",
+                                "batch_size": 1
+                            },
+                            "finish_reason": "length"
                         }
                     }
-                ],
-                "execution_metadata": {
-                    "cost": 25
-                }
+                ]
             }
         ]
     ],
-    "total_cost": 25
+    "costs": {
+        "lyra-fr@default": {
+            "total_tokens_used": 29,
+            "total_tokens_input": 4,
+            "total_tokens_generated": 25,
+            "batch_size": 1
+        }
+    }
 }
 ```
+
+</details>
 
 ## Batching requests
 
@@ -85,55 +103,74 @@ Batching with the same parameters is as simple as providing a **list of strings 
 When used with ✍️ **[Create](/api/primitives/create)**, this will return completions of 25 tokens for both
 `"Once upon a time"` and `"Mars is a planet"`. The `outputs` list will contain one entry for each item in `text`.
 
-```json Response to batched request (JSON)
+<details>
+<summary>Batched response (JSON)</summary>
+
+```json
 {
-    "request_id": "bed0e17c-22bf-4879-af0f-eb960a11194c",
+    "request_id": "c67fbd27-7bbf-4895-816a-9c5b6b90eafb",
     "outputs": [
         [
             {
                 "input_text": "Once upon a time",
                 "completions": [
                     {
-                        "output_text": ", a galaxy far, far away was fighting its own very own Wars of the Roses-style internal struggle. In this battle",
-                        "score": -67.38218827627134,
-                        "normalized_score": -2.6952875310508535,
-                        "token_scores": null,
+                        "output_text": "... in the west » (version anglaise, interprétée par The Beach Boys). Il s'agit d'un re",
+                        "score": {
+                            "logprob": -41.53728151321411,
+                            "normalized_logprob": -1.6614912605285646,
+                            "token_logprobs": null
+                        },
                         "execution_metadata": {
-                            "cost": 25,
-                            "n_tokens": 400
+                            "cost": {
+                                "tokens_used": 31,
+                                "tokens_input": 6,
+                                "tokens_generated": 25,
+                                "cost_type": "lyra-fr@default",
+                                "batch_size": 1
+                            },
+                            "finish_reason": "length"
                         }
                     }
-                ],
-                "execution_metadata": {
-                    "cost": 25,
-                    "n_tokens": 400
-                }
+                ]
             },
             {
                 "input_text": "Mars is a planet",
                 "completions": [
                     {
-                        "output_text": "in our solar system where you can be born again. Pluto is not an object but a celestial body, a heavenly body.",
-                        "score": -63.28801938146353,
-                        "normalized_score": -2.531520775258541,
-                        "token_scores": null,
+                        "output_text": " of great importance for the planet and the universe, it is also an important element for humanity. The",
+                        "score": {
+                            "logprob": -40.30290484428406,
+                            "normalized_logprob": -1.6121161937713624,
+                            "token_logprobs": null
+                        },
                         "execution_metadata": {
-                            "cost": 25,
-                            "n_tokens": 400
+                            "cost": {
+                                "tokens_used": 30,
+                                "tokens_input": 5,
+                                "tokens_generated": 25,
+                                "cost_type": "lyra-fr@default",
+                                "batch_size": 1
+                            },
+                            "finish_reason": "length"
                         }
                     }
-                ],
-                "execution_metadata": {
-                    "cost": 25,
-                    "n_tokens": 400
-                }
+                ]
             }
         ]
     ],
-    "total_cost": 50,
-    "total_n_tokens": 800
+    "costs": {
+        "lyra-fr@default": {
+            "total_tokens_used": 61,
+            "total_tokens_input": 11,
+            "total_tokens_generated": 50,
+            "batch_size": 2
+        }
+    }
 }
 ```
+
+</details>
 
 ### Advanced batching: with different parameters
 
@@ -158,48 +195,59 @@ When used with ✍️ **[Create](/api/primitives/create)**, this will return two
 `"Once upon a time"` and `"Mars is a planet"`, one group with `greedy` sampling, and the other with `nucleus` sampling.
 The `outputs` list will contain one list for each parameters configuration, each containing one entry per item in `text`.
 
-```json title="Response to advanced batched request (JSON)"
+<details>
+<summary>Advanced batched response (JSON)</summary>
+
+```json
 {
-    "request_id": "3fd8320c-db7c-41e2-94e7-c114669f3106",
+    "request_id": "b2a6c856-7a4d-4b49-90f1-2a5c09e99a91",
     "outputs": [
         [
             {
                 "input_text": "Once upon a time",
                 "completions": [
                     {
-                        "output_text": ", there was a young man who was a bit",
-                        "score": -15.309903636574745,
-                        "normalized_score": -1.5309903636574744,
-                        "token_scores": null,
+                        "output_text": " in Hollywood, de Quentin Tarantino, avec",
+                        "score": {
+                            "logprob": -10.150981426239014,
+                            "normalized_logprob": -1.0150981426239014,
+                            "token_logprobs": null
+                        },
                         "execution_metadata": {
-                            "cost": 10,
-                            "n_tokens": 85
+                            "cost": {
+                                "tokens_used": 16,
+                                "tokens_input": 6,
+                                "tokens_generated": 10,
+                                "cost_type": "lyra-fr@default",
+                                "batch_size": 1
+                            },
+                            "finish_reason": "length"
                         }
                     }
-                ],
-                "execution_metadata": {
-                    "cost": 10,
-                    "n_tokens": 85
-                }
+                ]
             },
             {
                 "input_text": "Mars is a planet",
                 "completions": [
                     {
-                        "output_text": "that has been the subject of many scientific studies.",
-                        "score": -14.586014226078987,
-                        "normalized_score": -1.4586014226078987,
-                        "token_scores": null,
+                        "output_text": "ary habitable zone, which is the most favorable",
+                        "score": {
+                            "logprob": -20.3642578125,
+                            "normalized_logprob": -2.03642578125,
+                            "token_logprobs": null
+                        },
                         "execution_metadata": {
-                            "cost": 10,
-                            "n_tokens": 85
+                            "cost": {
+                                "tokens_used": 15,
+                                "tokens_input": 5,
+                                "tokens_generated": 10,
+                                "cost_type": "lyra-fr@default",
+                                "batch_size": 1
+                            },
+                            "finish_reason": "length"
                         }
                     }
-                ],
-                "execution_metadata": {
-                    "cost": 10,
-                    "n_tokens": 85
-                }
+                ]
             }
         ],
         [
@@ -207,43 +255,59 @@ The `outputs` list will contain one list for each parameters configuration, each
                 "input_text": "Once upon a time",
                 "completions": [
                     {
-                        "output_text": ", there was a wonderful movie that I saw as a teenager. I was the lead (young) actor. Every Saturday night",
-                        "score": -69.05768236517906,
-                        "normalized_score": -2.7623072946071625,
-                        "token_scores": null,
+                        "output_text": " in an... au foyer\nCult; Pop\nJohnny Cash\nThe Raconteurs\nBob Dylan\nMek",
+                        "score": {
+                            "logprob": -87.58248901367188,
+                            "normalized_logprob": -3.503299560546875,
+                            "token_logprobs": null
+                        },
                         "execution_metadata": {
-                            "cost": 25,
-                            "n_tokens": 400
+                            "cost": {
+                                "tokens_used": 31,
+                                "tokens_input": 6,
+                                "tokens_generated": 25,
+                                "cost_type": "lyra-fr@default",
+                                "batch_size": 1
+                            },
+                            "finish_reason": "length"
                         }
                     }
-                ],
-                "execution_metadata": {
-                    "cost": 25,
-                    "n_tokens": 400
-                }
+                ]
             },
             {
                 "input_text": "Mars is a planet",
                 "completions": [
                     {
-                        "output_text": "that many people are familiar with thanks to fiction. However, you may not know about its smaller neighboring planet. Saturn’",
-                        "score": -56.87096893019043,
-                        "normalized_score": -2.274838757207617,
-                        "token_scores": null,
+                        "output_text": " like the Sun, the Sun is like Mars and the moon is like the Moon » – James Cook. Elle a une",
+                        "score": {
+                            "logprob": -54.189552307128906,
+                            "normalized_logprob": -2.1675820922851563,
+                            "token_logprobs": null
+                        },
                         "execution_metadata": {
-                            "cost": 25,
-                            "n_tokens": 400
+                            "cost": {
+                                "tokens_used": 30,
+                                "tokens_input": 5,
+                                "tokens_generated": 25,
+                                "cost_type": "lyra-fr@default",
+                                "batch_size": 1
+                            },
+                            "finish_reason": "length"
                         }
                     }
-                ],
-                "execution_metadata": {
-                    "cost": 25,
-                    "n_tokens": 400
-                }
+                ]
             }
         ]
     ],
-    "total_cost": 70,
-    "total_n_tokens": 970
+    "costs": {
+        "lyra-fr@default": {
+            "total_tokens_used": 92,
+            "total_tokens_input": 22,
+            "total_tokens_generated": 70,
+            "batch_size": 4
+        }
+    }
 }
 ```
+
+</details>

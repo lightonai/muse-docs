@@ -133,8 +133,8 @@ Then we can generate some more text:
 
 ## Steerable text generation to include the good keywords
 
-There are plenty of online services that help you find the right keywords for a topic, in this guide we use the free [Keywordtool.io](https://keywordtool.io/).
-If we loook for _sous-vide_, we get [results](https://keywordtool.io/search/keywords/google/16031278?category=web&keyword=sous-vide&country=GLB&language=en#suggestions) like _egg bites_, _pork chops_, _cheese_, or _asparagus_, _carrots_ and _broccoli_.
+There are plenty of online services that help you find the right keywords for a topic, in this guide we use the free [keywordtool.io](https://keywordtool.io/).
+If we look for _sous-vide_, we get [results](https://keywordtool.io/search/keywords/google/16031278?category=web&keyword=sous-vide&country=GLB&language=en#suggestions) like _egg bites_, _pork chops_, _cheese_, or _asparagus_, _carrots_ and _broccoli_.
 Let's try to generate some content including these expressions:
 
 ```python
