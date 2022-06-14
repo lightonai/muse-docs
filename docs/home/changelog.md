@@ -1,5 +1,6 @@
 ---
 ---
+
 # 📝 Changelog
 
 export const Alpha = ({children}) => (
@@ -30,10 +31,10 @@ padding: '0.3rem',
 
 ## Feature status
 
-* Unless otherwise specified, most features are **production-ready**, with a **stable interface and pricing**;
-* Features marked as <Beta>beta</Beta> are ready for production, but may see **changes in their pricing**;
-* Features marked as <Alpha>alpha</Alpha> are **technical previews**, and not suitable for production. 
+-   Unless otherwise specified, most features are **production-ready**, with a **stable interface and pricing**;
+-   Features marked as <Beta>beta</Beta> are ready for production, but may see **changes in their pricing**;
+-   Features marked as <Alpha>alpha</Alpha> are **technical previews**, and not suitable for production.
 
 ## Public release
-As of April 11, 2022, Muse is in public beta!
 
+As of April 11, 2022, Muse is in public beta!

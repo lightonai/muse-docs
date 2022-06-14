@@ -32,7 +32,7 @@ padding: '0.3rem',
 **If you are unfamiliar with the world of large language models, let's get you started!** No expert knowledge required: it
 will just take a few minutes of your time to go through this page — and you can follow-up with one of our in-depth 📚 **[Guides](/guides/guides)**.
 
-Want to see Muse in action? **Have a quick look at our 
+Want to see Muse in action? **Have a quick look at our
 [demo notebook](https://github.com/lightonai/lightonmuse/blob/master/examples/demo_notebook.ipynb)!**
 
 ## Rationale
@@ -41,70 +41,69 @@ Want to see Muse in action? **Have a quick look at our
 business partners, and to learn about the world. Language is our preferred way to interact and describe our surroundings.
 
 Recently, significant breakthroughs in machine learning have enabled **computers to better understand language**. This is
-achieved using extremely large neural networks learning from processing millions of web pages, books, and more. 
-These models have wide capabilities, and **can simply be instructed in natural language to perform novel tasks**. 
+achieved using extremely large neural networks learning from processing millions of web pages, books, and more.
+These models have wide capabilities, and **can simply be instructed in natural language to perform novel tasks**.
 
-The Muse API enables you to **unlock natural language generation & understanding** through a simple application-oriented API. 
-We abstract away all the fancy machine learning, and give you **a simple interface to ✍️ [Create](/api/primitives/create), 
-🔬️ [Evaluate](/api/primitives/evaluate/select), 📊 [Represent](/api/primitives/represent/embed), and **⚙️ [Process](/api/primitives/process)** language** (upcoming). 
+The Muse API enables you to **unlock natural language generation & understanding** through a simple application-oriented API.
+We abstract away all the fancy machine learning, and give you **a simple interface to ✍️ [Create](/api/primitives/create),
+🔬️ [Evaluate](/api/primitives/evaluate/select), 📊 [Represent](/api/primitives/represent/embed), and **⚙️ [Process](/api/primitives/process)** language** (upcoming).
 We believe that all language tasks can be tackled through these simple primitives:
-* **Use ✍️ [Create](/api/primitives/create) to generate text** according to natural language instructions 
-(e.g. copywriting, conversational AI, etc.);
-* **Use 🔬️ [Evaluate](/api/primitives/evaluate/select) to understand text**, and evaluate the likelihood of different options 
-(e.g. classification, automated Q&A, etc.);
-* **Use 📊 [Represent](/api/primitives/represent/embed) <Alpha>alpha</Alpha> to build rich representations of text**, to directly compare samples or use
-in a downstream pipeline (e.g. semantic search, document clustering, etc.)
 
-These features can be combined to **⚙️ [Process](/api/primitives/process) text, achieving complex end-results** 
-(e.g. document summarization, search, etc.). We expose pre-made business-ready use cases through special endpoints, 
+-   **Use ✍️ [Create](/api/primitives/create) to generate text** according to natural language instructions
+    (e.g. copywriting, conversational AI, etc.);
+-   **Use 🔬️ [Evaluate](/api/primitives/evaluate/select) to understand text**, and evaluate the likelihood of different options
+    (e.g. classification, automated Q&A, etc.);
+-   **Use 📊 [Represent](/api/primitives/represent/embed) <Alpha>alpha</Alpha> to build rich representations of text**, to directly compare samples or use
+    in a downstream pipeline (e.g. semantic search, document clustering, etc.)
+
+These features can be combined to **⚙️ [Process](/api/primitives/process) text, achieving complex end-results**
+(e.g. document summarization, search, etc.). We expose pre-made business-ready use cases through special endpoints,
 as well as through 🤹 **[Skills](/api/skills), an easy way to specialize our models to specific tasks**.
 
-## General concepts 
+## General concepts
 
 ### Model
 
 **The model is the magic behind the API**. It is a large neural network with billions of parameters,
 calibrated by reading and learning from hundreds of billions of words sourced from web pages, books, scientific articles,
-and more. During this *training*, the model learns to model language accurately (i.e. to predict the next word of a text). Think about how, when sending text messages, you get suggestions trying to predict the next word you want to type. 
-The variety, quality, and sheer amount of our curated training data result in universal language models, 
+and more. During this _training_, the model learns to model language accurately (i.e. to predict the next word of a text). Think about how, when sending text messages, you get suggestions trying to predict the next word you want to type.
+The variety, quality, and sheer amount of our curated training data result in universal language models,
 able to handle diverse tasks simply by taking in natural language instructions.
 
 We offer 🤖 **[Models](/api/models)** of different capabilities in various languages; for example, if you want just want to play
 around in English, use `lyra-en`, for French, use `lyra-fr`.
 
-
 ### Prompt
 
-**The prompt is the input text you submit to the model in the ✍️ [Create](/api/primitives/create) endpoint**. 
-The model will generate and return text conditioned by your prompt: if your prompt is 
-*"François Mitterrand was the president of"*, the model will most likely return *"France"*. 
+**The prompt is the input text you submit to the model in the ✍️ [Create](/api/primitives/create) endpoint**.
+The model will generate and return text conditioned by your prompt: if your prompt is
+_"François Mitterrand was the president of"_, the model will most likely return _"France"_.
 
-**The prompt will *condition* the model to follow given instructions or style**. If your
-prompt is formal, it is highly likely that the model will continue in a formal way. Similarly, complex styles and 
-structures can be imposed on the model (e.g. poems, haiku, lists). You can also give literal instructions in the 
-prompt, such as *"Write an ad for Muse:"*, or *"This is a sentiment classifier."*. Following-up with a few structured
-examples can also be helpful. To learn more, read our guide about **📜 [Prompt design](/guides/english/prompt)**.  
+**The prompt will _condition_ the model to follow given instructions or style**. If your
+prompt is formal, it is highly likely that the model will continue in a formal way. Similarly, complex styles and
+structures can be imposed on the model (e.g. poems, haiku, lists). You can also give literal instructions in the
+prompt, such as _"Write an ad for Muse:"_, or _"This is a sentiment classifier."_. Following-up with a few structured
+examples can also be helpful. To learn more, read our guide about **📜 [Prompt design](/guides/english/prompt)**.
 
-**You can think of the prompting process as a way to *program* the model to achieve your desired output**. The more
-specific and the more context you can provide, the better the results. Play around to get a feel for it, and 
+**You can think of the prompting process as a way to _program_ the model to achieve your desired output**. The more
+specific and the more context you can provide, the better the results. Play around to get a feel for it, and
 use our examples as inspiration.
-
 
 ### Likelihood and log-probability
 
-**The likelihood of a word represents how likely this word is given previous words, according to the model**. 
-For instance, the likelihood of *Paris* in *"The capital of France is Paris"* is very high, whereas the likelihood
-of *"London"* would be lower, and that of *"book"* would be even smaller. By modelling language, what the Muse API models
-are actually doing is estimating the likelihood for all possible words, given the previous context. They 
+**The likelihood of a word represents how likely this word is given previous words, according to the model**.
+For instance, the likelihood of _Paris_ in _"The capital of France is Paris"_ is very high, whereas the likelihood
+of _"London"_ would be lower, and that of _"book"_ would be even smaller. By modelling language, what the Muse API models
+are actually doing is estimating the likelihood for all possible words, given the previous context. They
 are building a conditional probability distribution of language.
 
 **The log-probability is a representation of the likelihood, ranging from minus infinity to zero**. Words with
 log-probability close to zero have high likelihood, whereas words with large negative log-probability (e.g. -10, -50, etc.)
-are more unlikely. Log-probabilities are also called **log-probs** or **scores** as an abbreviation. 
+are more unlikely. Log-probabilities are also called **log-probs** or **scores** as an abbreviation.
 
-They are useful because log-probabilities can simply be added to evaluate the log-probability of a combination of words. For instance, 
-the log-prob of *"New York"* in the sentence *"I love New York"* is the log-prob of *"New"* in *"I love New"* 
-plus the log-prob of *"York"* in *"I love New York"*. This can be used to score entire sentences, and evaluate
+They are useful because log-probabilities can simply be added to evaluate the log-probability of a combination of words. For instance,
+the log-prob of _"New York"_ in the sentence _"I love New York"_ is the log-prob of _"New"_ in _"I love New"_
+plus the log-prob of _"York"_ in _"I love New York"_. This can be used to score entire sentences, and evaluate
 multiple pre-defined options according to their likelihood.
 
 **🔬️ [Evaluate](/api/primitives/evaluate/analyse) endpoints rely on likelihood to understand text**. You can access the log-probabilities
@@ -117,7 +116,6 @@ increase or decrease the log-probabilities of words to see them more often or to
 with `presence_penalty` and `frequence_penalty` to generate less repetitive and more novel text. Check out our guide
 on 🎛️ **[Steering generation for SEO](/guides/english/seo)** for more.
 
-
 ### Embeddings <Alpha>alpha</Alpha>
 
 **Embeddings are a numerical representation of a given text, built by the model internally to make predictions**. They
@@ -126,63 +124,62 @@ input text, its context, as well as general knowledge derived from the training 
 machine learning algorithms as a representation of the input text, to compare different sentences and documents,
 classify samples, or cluster texts.
 
-**📊 [Represent](/api/primitives/represent/embed) endpoints directly expose the final embeddings built by the model**. You can 
+**📊 [Represent](/api/primitives/represent/embed) endpoints directly expose the final embeddings built by the model**. You can
 leverage these embeddings in your machine learning pipeline (applying clustering, t-SNE, or a classifier of your choice
 on them). You can also use ⚖️ **[Compare](/api/primitives/represent/compare)** to directly compare different texts and select the most similar based on embeddings.
-
 
 ### Skills <Beta>beta</Beta>
 
 **Skills can specialize our models to specific tasks or styles**. For instance, the `summarization` skill of `orion-fr`
 enables it to generate summaries of the input text, without crafting a custom prompt. Skills make models more consistent,
 by focusing them on a task, and they can make smaller and cheaper models competitive with larger ones. Skills can
-also be used to imbue the model with a specific style (e.g. of an author, legalese, etc.). If you are familiar with 
+also be used to imbue the model with a specific style (e.g. of an author, legalese, etc.). If you are familiar with
 machine learning, skills are similar to fine-tuning.
 
 **We offer a number of pre-made business-ready 🤹 [Skills](/api/skills)**. You can use these out-of-the-box to address
-common business use cases, such as summarization. Skills availability varies across model size and languages. 
+common business use cases, such as summarization. Skills availability varies across model size and languages.
 
-**If you are interested in a specific skill, or if you have a dataset you think could be used for a skill, 
+**If you are interested in a specific skill, or if you have a dataset you think could be used for a skill,
 [get in touch with us](https://lightonmuse.typeform.com/skills).** We currently build and curate all skills, but we will soon enable you to build and share skills
-independently. 
-
+independently.
 
 ## Technical concepts
 
 ### Tokens
 
-**Muse models don't actually process text as a sequence of characters or words, but as a sequence of *tokens***. Tokens
-are to our models what syllables are to us: they are building blocks, which can be combined into words or sentences. 
+**Muse models don't actually process text as a sequence of characters or words, but as a sequence of _tokens_**. Tokens
+are to our models what syllables are to us: they are building blocks, which can be combined into words or sentences.
 Tokens are constructed to be sequence of characters with a useful semantic, but are sensitive to whitespace
 and capitalization.
 
 **Let's take a look at a few examples of tokenization**. In tokens, `Ġ` represents a whitespace, and in the following
 we separate tokens with dashes `-`. Common words are usually single tokens with a whitespace preceding them: `Ġword`,
-`Ġcivilization`, `ĠEarth`, etc. Complex words and uncommon proper nouns will be made of multiple tokens: `Ġhom - onym`, 
+`Ġcivilization`, `ĠEarth`, etc. Complex words and uncommon proper nouns will be made of multiple tokens: `Ġhom - onym`,
 `ĠKam - ala`, `ĠSuper - cal - if - rag - il - ist - ice - xp - ial - id - ocious`. This sentence will be tokenized as:
 `This - Ġsentence - Ġwill - Ġbe - Ġtoken - ized - Ġas - :`.
 
 **On average, a token equals 3/4 words, or 4 characters in English**. Our 🤖 **[Models](/api/models)** page provide statistics
 specific to each language, but please note this will also vary with the style of the text: "simple" writing will use less
-tokens (on average one per word), whereas complex technical writing will use more. 
+tokens (on average one per word), whereas complex technical writing will use more.
 
 **On occasion, you have to be mindful of tokens.** For instance, in ✍️ **[Create](/api/primitives/create)**, the model can only
-generate a fixed `n_tokens`, which may cause it to stop generation in the middle of a complex word. Similarly, features such as 
+generate a fixed `n_tokens`, which may cause it to stop generation in the middle of a complex word. Similarly, features such as
 `word_biases` used for complex words can only influence the first token provided: if setting `word_biases = {'ticketing': +5}`,
-this will be effectively equivalent to setting `word_biases = {'ticket': +5}`, because *"ticketing"* is tokenized
+this will be effectively equivalent to setting `word_biases = {'ticket': +5}`, because _"ticketing"_ is tokenized
 as `Ġticket - ing`.
 
 ### Sampling
 
-**Sampling is the operation that allows the model to go from modeling a probability distribution to generating actual 
+**Sampling is the operation that allows the model to go from modeling a probability distribution to generating actual
 text**. Ultimately, the model evaluates the likelihood of every possible token in its vocabulary. This probability
-distribution can then be *sampled* to generate text with ✍️ **[Create](/api/primitives/create)**. We expose three modes of
-generation: 
-* **Greedy**: picks the most likely output. Although this may seem like a natural choice, this usually results
-in poor quality and repetitions. This is only useful when there is a ground truth the model is expected to return.
-* **Nucleus**: the model will only consider the most likely tokens with total probability mass `p`. Then, temperature
-sampling is used. Lower `temperature` values will be closer to `greedy` decoding, while higher values will lead to more
-unlikely choices. 
-* **Top-k**: the model will consider the `k` most likely tokens and apply temperature sampling on them. 
+distribution can then be _sampled_ to generate text with ✍️ **[Create](/api/primitives/create)**. We expose three modes of
+generation:
+
+-   **Greedy**: picks the most likely output. Although this may seem like a natural choice, this usually results
+    in poor quality and repetitions. This is only useful when there is a ground truth the model is expected to return.
+-   **Nucleus**: the model will only consider the most likely tokens with total probability mass `p`. Then, temperature
+    sampling is used. Lower `temperature` values will be closer to `greedy` decoding, while higher values will lead to more
+    unlikely choices.
+-   **Top-k**: the model will consider the `k` most likely tokens and apply temperature sampling on them.
 
 For most creative applications, we recommend sticking to **nucleus** sampling, with a temperature in the 0.8-1.0 range.
