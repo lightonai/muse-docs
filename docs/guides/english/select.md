@@ -5,14 +5,15 @@
 
 **Use the 🔘 [Select](/api/primitives/evaluate/select) primitive to identify the needs of your customers and help answer their requests.**
 
-AI-powered chatbots have made it possible to get consistent and reliable customer support. Muse lets you identify your customer's issues easily, to minimize human involvement, making your support team much more efficient. 
+AI-powered chatbots have made it possible to get consistent and reliable customer support. Muse lets you identify your customer's issues easily, to minimize human involvement, making your support team much more efficient.
 
 ## Identifying our Customers' Problems
 
 Let us imagine that we run a subscription-based platform. One of our customers just wrote us the following message
->Hey! I let my subscription lapse last month and can't connect anymore to the platform... Can you help?
 
-We're going to see how to use `lyra-en` to help this customer. 
+> Hey! I let my subscription lapse last month and can't connect anymore to the platform... Can you help?
+
+We're going to see how to use `lyra-en` to help this customer.
 
 A naive approach might be to try and identify keywords to redirect the customer: in this case, with the word "subscription" being in the message, we might assume that the user wants to manage or cancel his subscription. However, that is not quite pertinent here.
 
@@ -28,9 +29,9 @@ selector = Select("lyra-en")
 
 It is reasonable to assume that customers' requests can usually be divided into various classes. For simplicity, we assume here that customers usually either want to:
 
-- Cancel their subscription
-- Give feedback
-- Get technical support 
+-   Cancel their subscription
+-   Give feedback
+-   Get technical support
 
 In the first two cases, the customer does not actually need human help: they could be redirected to documentation explaining the cancellation procedure, or to a feedback form. Our support team could save valuable resources by only assisting people who need actual technical support.
 
@@ -47,12 +48,15 @@ Now, using the selector let us identify what candidate class is more relevant to
 out = selector(prompt, classes)
 print(out[0][0]['best'])
 ```
->This user is asking for technical support.
+
+> This user is asking for technical support.
 
 `lyra-en` correctly identified that our user was asking for technical support! Pretty good! Note that, when using the Select endpoint, there is no need to worry about sampling since the model uses log probabilities.
 
 ## Analysing our Results
+
 We can look into the scores of the different candidates and their tokens in more detail:
+
 ```python
 for candidate in out[0][0]['rankings']:
     print("Candidate | "+candidate["text"] + f' | Normalized log-prob: {candidate["score"]["normalized_logprob"]:.4f}')
@@ -61,10 +65,9 @@ for candidate in out[0][0]['rankings']:
         print(token)
 ```
 
-
->Candidate | This user wants to cancel his subscription. | Normalized log-prob: -3.8278
+> Candidate | This user wants to cancel his subscription. | Normalized log-prob: -3.8278
 >
->Token log-probs
+> Token log-probs
 >
 > {'This': -8.9375}
 >
@@ -77,15 +80,14 @@ for candidate in out[0][0]['rankings']:
 > {' cancel': -6.77734375}
 >
 > {' his': -1.3203125}
-> 
+>
 > {' subscription': -1.01171875}
 >
 > {'.': -1.82421875}
 
-
->Candidate | This user is giving feedback. | Normalized log-prob: -5.4385
+> Candidate | This user is giving feedback. | Normalized log-prob: -5.4385
 >
->Token log-probs
+> Token log-probs
 >
 > {'This': -8.9375}
 >
@@ -99,10 +101,9 @@ for candidate in out[0][0]['rankings']:
 >
 > {'.': -3.189453125}
 
-
->Candidate | This user is asking for technical support. | Normalized log-prob: -3.7139
+> Candidate | This user is asking for technical support. | Normalized log-prob: -3.7139
 >
->Token log-probs
+> Token log-probs
 >
 > {'This': -8.9375}
 >
@@ -120,8 +121,7 @@ for candidate in out[0][0]['rankings']:
 >
 > {'.': -1.5068359375}
 
-
-As we could expect, while "This user is asking for technical support." is ranked first, its score is very close to "This user wants to cancel his subscription.". 
+As we could expect, while "This user is asking for technical support." is ranked first, its score is very close to "This user wants to cancel his subscription.".
 
 ## Using Conjunctions for Better Performances
 
@@ -141,12 +141,11 @@ for candidate in out[0][0]['rankings']:
     print("Candidate | "+candidate["text"] + f' | Normalized log-prob: {candidate["score"]["normalized_logprob"]:.4f}')
 ```
 
->Candidate | This user wants to cancel his subscription. | Normalized log-prob: -4.1542
+> Candidate | This user wants to cancel his subscription. | Normalized log-prob: -4.1542
 >
->Candidate | This user is giving feedback. | Normalized log-prob: -5.6647
+> Candidate | This user is giving feedback. | Normalized log-prob: -5.6647
 >
->Candidate | This user is asking for technical support. | Normalized log-prob: -3.9866
-
+> Candidate | This user is asking for technical support. | Normalized log-prob: -3.9866
 
 The rankings between the different candidates stayed the same, but we can see that the difference between the best class and second-best class is now a bit larger. To illustrate the critical importance of a good conjunction, let us try and do even better.
 
@@ -158,10 +157,10 @@ for candidate in out[0][0]['rankings']:
     print("Candidate | "+candidate["text"] + f' | Normalized log-prob: {candidate["score"]["normalized_logprob"]:.4f}')
 ```
 
->Candidate | This user wants to cancel his subscription. | Normalized log-prob: -3.0111
+> Candidate | This user wants to cancel his subscription. | Normalized log-prob: -3.0111
 >
->Candidate | This user is giving feedback. | Normalized log-prob: -3.9006
+> Candidate | This user is giving feedback. | Normalized log-prob: -3.9006
 >
->Candidate | This user is asking for technical support. | Normalized log-prob: -2.6310
+> Candidate | This user is asking for technical support. | Normalized log-prob: -2.6310
 
 As you can see, using a more specific conjunction gave us an even clearer ranking, with the score of the best candidate "This user is asking for technical support." being now significantly larger than the second-best choice. Now it's your turn to classify your users' requests and design the best conjunction!
