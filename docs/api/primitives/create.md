@@ -20,12 +20,7 @@ is returned in the `"costs"` entry of the response JSON as `"total_tokens_used"`
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs
-defaultValue="curl"
-values={[
-{ label: 'cURL', value: 'curl', },
-]
-}>
+<Tabs defaultValue="curl" values={[{ label: 'cURL', value: 'curl', }]}>
 
 <TabItem value="curl">
 

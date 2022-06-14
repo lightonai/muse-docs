@@ -43,33 +43,37 @@ curl -X 'POST' \
 
 ```json title="Response (JSON)"
 {
-   "request_id":"a0b4f1e0-e1a7-48b9-8204-6567efe3957d",
-   "outputs":[
-      [{
-         "execution_metadata":{
-            "cost":{
-               "tokens_used":8,
-               "tokens_input":8,
-               "tokens_generated":0,
-               "cost_type":"orion-fr@default",
-               "batch_size":1},
-            "finish_reason":"length"
-            },
-         "text":"Il était une fois en Laponie",
-         "embedding":[-0.28515625,-0.67724609375,-0.0014142990112304688,2.421875,
-         ...
-         1.488525390625,0.08782958984375]
-      }
-      ]
-   ],
-   "costs":{
-      "orion-fr@default":{
-         "total_tokens_used":8,
-         "total_tokens_input":8,
-         "total_tokens_generated":0,
-         "batch_size":1
-      }
-   }
+    "request_id": "a0b4f1e0-e1a7-48b9-8204-6567efe3957d",
+    "outputs": [
+        [
+            {
+                "execution_metadata": {
+                    "cost": {
+                        "tokens_used": 8,
+                        "tokens_input": 8,
+                        "tokens_generated": 0,
+                        "cost_type": "orion-fr@default",
+                        "batch_size": 1
+                    },
+                    "finish_reason": "length"
+                },
+                "text": "Il était une fois en Laponie",
+                "embedding": [
+                    -0.28515625, -0.67724609375, -0.0014142990112304688,
+                    //...
+                    1.488525390625, 0.08782958984375
+                ]
+            }
+        ]
+    ],
+    "costs": {
+        "orion-fr@default": {
+            "total_tokens_used": 8,
+            "total_tokens_input": 8,
+            "total_tokens_generated": 0,
+            "batch_size": 1
+        }
+    }
 }
 ```
 
