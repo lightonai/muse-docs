@@ -38,14 +38,14 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
     margin-left: 10px;
 }
 
-.param-warning {
-    color: orangered;
+.param-optional {
+    color: gray;
     font-family: monospace;
     margin-left: 10px;
 }
 
-.param-optional {
-    color: gray;
+.param-warning {
+    color: orangered;
     font-family: monospace;
     margin-left: 10px;
 }
