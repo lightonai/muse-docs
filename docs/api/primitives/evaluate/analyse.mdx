@@ -1,6 +1,13 @@
 ---
 ---
 
+import { Examples } from '@site/src/components/examples';
+import {
+    ParamType,
+    ParamDefault,
+    ParamWarning,
+} from '@site/src/components/labels';
+
 # 🧪 Analyse
 
 **Use the 🧪 Analyse endpoint to compute the logprobability of each token in a string.**
@@ -15,12 +22,7 @@ You will be billed for the **total number of tokens sent in your request**.
 
 ## Example request
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs defaultValue="curl" values={[{ label: 'cURL', value: 'curl' }, { label: 'Python', value: 'python' }]}>
-
-<TabItem value="curl">
+<Examples tabs={['cURL', 'Python']}>
 
 ```bash
 curl -X 'POST' \
@@ -32,10 +34,6 @@ curl -X 'POST' \
   -d '{"text": "Il était une fois en Laponie"}'
 ```
 
-</TabItem>
-
-<TabItem value="python">
-
 ```python
 from lightonmuse import Analyse
 
@@ -45,9 +43,7 @@ analyse = analyser("Il était une fois en Laponie")
 print(analyse)
 ```
 
-</TabItem>
-
-</Tabs>
+</Examples>
 
 <details>
 <summary>Response (JSON)</summary>
@@ -100,7 +96,7 @@ print(analyse)
 
 ## Parameters
 
--   `text` <span class="param-types">string/array[string]</span> <span class="param-warning">⚠️ required</span>
+-   `text` <ParamType type="string/array[string]"/> <ParamWarning warning="⚠️ required" />
 
     The input(s) that will be analysed.
 
@@ -108,11 +104,11 @@ print(analyse)
 
 An array of outputs shaped like your batch.
 
--   `text` <span class="param-types">string</span>
+-   `text` <ParamType type="string" />
 
     The text that was analysed, from the provided `text` parameter.
 
--   `score` <span class="param-types">float</span>
+-   `score` <ParamType type="float" />
 
     <!-- TODO -->
 

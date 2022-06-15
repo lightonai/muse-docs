@@ -32,22 +32,22 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+code {
+    white-space: pre-wrap !important;
+}
+
+.param {
+    font-family: monospace;
+    margin-left: 10px;
+}
 .param-types {
     color: dimgray;
-    font-family: monospace;
-    margin-left: 10px;
 }
-
 .param-optional {
     color: gray;
-    font-family: monospace;
-    margin-left: 10px;
 }
-
 .param-warning {
     color: orangered;
-    font-family: monospace;
-    margin-left: 10px;
 }
 
 .label {
@@ -56,15 +56,9 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
     color: #fff;
     padding: 0.3rem;
 }
-
 .alpha-label {
     background-color: #68b1d0;
 }
-
 .beta-label {
     background-color: #419228;
-}
-
-code {
-    white-space: pre-wrap !important;
 }

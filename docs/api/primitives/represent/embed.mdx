@@ -1,6 +1,9 @@
 ---
 ---
 
+import { ParamType, ParamWarning } from '@site/src/components/labels';
+import { Examples } from '@site/src/components/examples';
+
 # 🔢 Embed
 
 Use the **Embed** endpoint to obtain a vector representation of a string (see [embeddings](/home/concepts#embeddings)).
@@ -15,12 +18,7 @@ You will be billed for the **total number of tokens sent in your request**.
 
 ## Example
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs defaultValue="curl" values={[{ label: 'cURL', value: 'curl'}, { label: 'Python', value: 'python'}]}>
-
-<TabItem value="curl">
+<Examples tabs={['cURL', 'Python']}>
 
 ```bash
 curl -X 'POST' \
@@ -32,10 +30,6 @@ curl -X 'POST' \
   -d '{"text": "Il était une fois en Laponie"}'
 ```
 
-</TabItem>
-
-<TabItem value="python">
-
 ```python
 from lightonmuse import Embed
 
@@ -45,9 +39,7 @@ embed = embedder("Il était une fois en Laponie")
 print(embed)
 ```
 
-</TabItem>
-
-</Tabs>
+</Examples>
 
 <details>
 <summary>Response (JSON)</summary>
@@ -92,7 +84,7 @@ print(embed)
 
 ## Parameters
 
--   `text` <span class="param-types">string/array[string]</span> <span class="param-warning">⚠️ required</span>
+-   `text` <ParamType type="string/array[string]" /> <ParamWarning warning="⚠️ required" />
 
     The input(s) that will be represented.
 
@@ -100,10 +92,10 @@ print(embed)
 
 An array of outputs shaped like your batch.
 
--   `text` <span class="param-types">string</span>
+-   `text` <ParamType type="string" />
 
     The text that was represented, from the provided `text` parameter.
 
--   `embedding` <span class="param-types">array[float]</span>
+-   `embedding` <ParamType type="array[float]" />
 
     Vector representation of the provided text. The size of the representation depends on the model used, see [models](/api/models) for details.

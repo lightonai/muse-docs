@@ -1,6 +1,13 @@
 ---
 ---
 
+import {
+    ParamType,
+    ParamDefault,
+    ParamWarning,
+} from '@site/src/components/labels';
+import { Examples } from '@site/src/components/examples';
+
 # 🔘 Select
 
 **Use the Select endpoint to select candidates with respect to a reference according to [text likelihood](/home/concepts#likelihood).**
@@ -13,12 +20,7 @@ You will be billed for the **total number of tokens sent in your request**.
 
 ## Example
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs defaultValue="curl" values={[{ label: 'cURL', value: 'curl'}, { label: 'Python', value: 'python'}]}>
-
-<TabItem value="curl">
+<Examples tabs={['cURL', 'Python']}>
 
 ```bash
 curl -X 'POST' \
@@ -30,10 +32,6 @@ curl -X 'POST' \
   -d '{"reference": "Je suis content", "candidates": ["je suis heureux", "je suis triste"]}'
 ```
 
-</TabItem>
-
-<TabItem value="python">
-
 ```python
 from lightonmuse import Select
 
@@ -43,9 +41,7 @@ select = selector("Je suis content", candidates=["je suis heureux", "je suis tri
 print(select)
 ```
 
-</TabItem>
-
-</Tabs>
+</Examples>
 
 <details>
 <summary>Response (JSON)</summary>
@@ -112,19 +108,19 @@ print(select)
 
 ## Parameters
 
--   `reference` <span class="param-types">string</span> <span class="param-warning">⚠️ required</span>
+-   `reference` <ParamType type="string" /> <ParamWarning warning="⚠️ required" />
 
     The reference input to compute likelihood against.
 
--   `candidates` <span class="param-types">array[string]</span> <span class="param-warning">⚠️ required</span>
+-   `candidates` <ParamType type="array[string]" /> <ParamWarning warning="⚠️ required" />
 
     The input(s) that are compared to the reference and ranked based on likelihood.
 
--   `conjunction` <span class="param-types">string</span> <span class="param-optional">""</span>
+-   `conjunction` <ParamType type="string" /> <ParamDefault default='""' />
 
     Expression used to link reference and candidates to create the prompt used to compute the likelihood. The prompt will have the structure `reference` + `conjunction` + `candidate`. Finding a good `conjunction` can greatly increase the performance of `select`.
 
--   `concat_best` <span class="param-types">boolean</span> <span class="param-optional">true</span>
+-   `concat_best` <ParamType type="boolean" /> <ParamDefault default="true" />
 
     If `true` the response will contain a `best` field with the selected choice.
 
@@ -132,7 +128,7 @@ print(select)
 
 An array of outputs shaped like your batch.
 
--   `reference` <span class="param-types">string</span>
+-   `reference` <ParamType type="string" />
 
     The `reference` sentence used to compute similarities.
 
@@ -140,11 +136,11 @@ An array of outputs shaped like your batch.
 
 One entry for each member of `candidates`.
 
--   `text` <span class="param-types">string</span>
+-   `text` <ParamType type="string" />
 
     A single entry from the `candidates` sent in the request.
 
--   `score` <span class="param-types">Score</span>
+-   `score` <ParamType type="Score" />
 
     <!-- TODO -->
 
@@ -153,6 +149,6 @@ Tokens are currently returned as they are represented by the tokenizer, which in
 for spaces and possible encoding oddities (such as `Ã©` for `é`).
 :::
 
--   `best` <span class="param-types">string</span>
+-   `best` <ParamType type="string" />
 
     Best choice selected among the `candidates` in terms of likelihood.
