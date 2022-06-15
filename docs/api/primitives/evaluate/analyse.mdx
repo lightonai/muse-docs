@@ -22,7 +22,7 @@ You will be billed for the **total number of tokens sent in your request**.
 
 ## Example request
 
-<Examples tabs={['cURL', 'Python']}>
+<Examples tabs={['cURL', 'Python', 'JavaScript']}>
 
 ```bash
 curl -X 'POST' \
@@ -38,9 +38,15 @@ curl -X 'POST' \
 from lightonmuse import Analyse
 
 analyser = Analyse("orion-fr")
-analyse = analyser("Il était une fois en Laponie")
+outputs, cost, request_id = analyser("Il était une fois en Laponie")
 
-print(analyse)
+print(outputs)
+```
+
+```js
+client.query(ApiModels.OrionFr, Endpoints.Analyse, {
+    text: 'Il était une fois en Laponie',
+});
 ```
 
 </Examples>
@@ -108,9 +114,9 @@ An array of outputs shaped like your batch.
 
     The text that was analysed, from the provided `text` parameter.
 
--   `score` <ParamType type="float" />
+-   `score` <ParamType type="Score" />
 
-    <!-- TODO -->
+    A [Score](/api/specifications/responses/#score) structure
 
 :::info ⚙️ Token representations
 Tokens are currently returned as they are represented by the tokenizer, which includes special characters such as `Ġ`
