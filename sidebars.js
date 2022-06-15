@@ -22,7 +22,7 @@ module.exports = {
                 'api/specifications/errors_warnings',
             ],
         },
-        { '📟 Bindings': ['api/bindings/python'] },
+        { '📟 Bindings': ['api/bindings/python', 'api/bindings/javascript'] },
         'api/models',
         {
             '🧠 Primitives': [
