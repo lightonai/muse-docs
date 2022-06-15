@@ -39,6 +39,7 @@ module.exports = {
                         'api/primitives/represent/compare',
                     ],
                 },
+                'api/primitives/tokenize',
                 'api/primitives/process',
             ],
         },
