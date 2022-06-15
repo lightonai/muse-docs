@@ -20,7 +20,7 @@ You will be billed for the **total number of tokens sent in your request**.
 
 ## Example
 
-<Examples tabs={['cURL', 'Python']}>
+<Examples tabs={['cURL', 'Python', 'JavaScript']}>
 
 ```bash
 curl -X 'POST' \
@@ -36,9 +36,16 @@ curl -X 'POST' \
 from lightonmuse import Select
 
 selector = Select("orion-fr")
-select = selector("Je suis content", candidates=["je suis heureux", "je suis triste"])
+outputs, cost, request_id = selector("Je suis content", candidates=["je suis heureux", "je suis triste"])
 
-print(select)
+print(outputs)
+```
+
+```js
+client.query(ApiModels.OrionFr, Endpoints.Select, {
+    reference: 'Je suis content',
+    candidates: ['je suis heureux', 'je suis triste'],
+});
 ```
 
 </Examples>
@@ -142,7 +149,7 @@ One entry for each member of `candidates`.
 
 -   `score` <ParamType type="Score" />
 
-    <!-- TODO -->
+    A [Score](/api/specifications/responses/#score) structure
 
 :::info ⚙️ Token representations
 Tokens are currently returned as they are represented by the tokenizer, which includes special characters such as `Ġ`
