@@ -13,14 +13,14 @@ module.exports = {
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
-    favicon: 'img/muse-logo.svg',
+    favicon: 'favicon.ico',
     organizationName: 'LightOn', // Usually your GitHub org/user name.
     projectName: 'muse-docs', // Usually your repo name.
     themeConfig: {
         colorMode: {
             defaultMode: 'dark',
             disableSwitch: false,
-            respectPrefersColorScheme: false,
+            respectPrefersColorScheme: true,
         },
         navbar: {
             style: 'dark',
