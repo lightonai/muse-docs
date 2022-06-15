@@ -1,0 +1,110 @@
+---
+---
+
+import { Examples } from '@site/src/components/examples';
+import {
+    ParamType,
+    ParamDefault,
+    ParamWarning,
+} from '@site/src/components/labels';
+
+# 📠 Tokenize
+
+<!-- TODO: find a better emoji -->
+
+**Use the 📠 Tokenize endpoint to see how the models slices the text**.
+
+Available at `https://api.lighton.ai/muse/v1/tokenize`.
+
+---
+
+## Example request
+
+<Examples tabs={['cURL', 'Python', 'JavaScript']}>
+
+```bash
+curl -X 'POST' \
+  'https://api.lighton.ai/muse/v1/tokenize' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'X-API-KEY: YOUR_API_KEY' \
+  -H 'X-Model: orion-fr' \
+  -d '{"text": "Il était une fois"}'
+```
+
+```python
+from lightonmuse import Tokenize
+
+tokenizer = Tokenize("orion-fr")
+outputs, cost, request_id = tokenizer("Il était une fois")
+
+print(outputs)
+```
+
+```js
+client.query(ApiModels.OrionFr, Endpoints.Tokenize, {
+    text: 'Il était une fois',
+});
+```
+
+</Examples>
+
+<details>
+<summary>Response (JSON)</summary>
+
+```json
+{
+    "request_id": "46dfb88e-812f-4424-96a9-3dec57caf8da",
+    "outputs": [
+        [
+            {
+                "execution_metadata": {
+                    "cost": {
+                        "tokens_used": 0,
+                        "tokens_input": 4,
+                        "tokens_generated": 0,
+                        "cost_type": "orion-fr@default",
+                        "batch_size": 1
+                    },
+                    "finish_reason": "length"
+                },
+                "text": "Il était une fois",
+                "n_tokens": 4,
+                "tokens": [" Il", " était", " une", " fois"]
+            }
+        ]
+    ],
+    "costs": {
+        "orion-fr@default": {
+            "total_tokens_used": 0,
+            "total_tokens_input": 4,
+            "total_tokens_generated": 0,
+            "batch_size": 1
+        }
+    }
+}
+```
+
+</details>
+
+## Parameters
+
+-   `text` <ParamType type="string/array[string]" /> <ParamWarning warning="⚠️ required" />
+
+    The input(s) that will be used by the model for generation, also known as the prompt. They can be provided either as a single string or as an array of strings for [batch processing](/api/specifications/requests#batching).
+
+## Response (`outputs`)
+
+An array of outputs shaped like your batch.
+
+-   `text` <ParamType type="string" />
+
+    The input `text`.
+
+-   `n_tokens` <ParamType type="int" />
+
+    The number of tokens of the input `text`.
+
+-   `tokens` <ParamType type="array[string]" />
+
+    An array of tokens of the input `text`.
