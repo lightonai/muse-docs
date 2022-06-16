@@ -37,8 +37,6 @@ from lightonmuse import Tokenize
 
 tokenizer = Tokenize("orion-fr")
 outputs, cost, request_id = tokenizer("Il était une fois")
-
-print(outputs)
 ```
 
 ```js
@@ -96,6 +94,10 @@ client.query(ApiModels.OrionFr, Endpoints.Tokenize, {
 ## Response (`outputs`)
 
 An array of outputs shaped like your batch.
+
+-   `execution_metadata` <ParamType type="ExecutionMetadata" />
+
+    An [Execution metadata](/api/specifications/responses/#execution-metadata) structure.
 
 -   `text` <ParamType type="string" />
 
