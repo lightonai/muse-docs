@@ -37,8 +37,6 @@ from lightonmuse import Select
 
 selector = Select("orion-fr")
 outputs, cost, request_id = selector("Je suis content", candidates=["je suis heureux", "je suis triste"])
-
-print(outputs)
 ```
 
 ```js
@@ -139,23 +137,30 @@ An array of outputs shaped like your batch.
 
     The `reference` sentence used to compute similarities.
 
-### Rankings (`rankings`)
+-   `rankings` <ParamType type="array[object]" />
 
-One entry for each member of `candidates`.
+    One entry for each member of `candidates`.
 
--   `text` <ParamType type="string" />
+    -   `text` <ParamType type="string" />
 
-    A single entry from the `candidates` sent in the request.
+        A single entry from the `candidates` sent in the request.
 
--   `score` <ParamType type="Score" />
+    -   `score` <ParamType type="Score" />
 
-    A [Score](/api/specifications/responses/#score) structure
+        A [Score](/api/specifications/responses/#score) structure
 
-:::info ⚙️ Token representations
-Tokens are currently returned as they are represented by the tokenizer, which includes special characters such as `Ġ`
-for spaces and possible encoding oddities (such as `Ã©` for `é`).
-:::
+    -   `best` <ParamType type="string" />
+
+        Best choice selected among the `candidates` in terms of likelihood.
 
 -   `best` <ParamType type="string" />
 
-    Best choice selected among the `candidates` in terms of likelihood.
+    The best match.
+
+-   `execution_metadata` <ParamType type="ExecutionMetadata" />
+
+    An [Execution metadata](/api/specifications/responses/#execution-metadata) structure.
+
+:::info ⚙️ Token representations
+Tokens are currently returned as they are represented by the tokenizer, which includes special characters such as `Ġ` for spaces and possible encoding oddities (such as `Ã©` for `é`).
+:::

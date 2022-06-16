@@ -34,9 +34,14 @@ curl -X 'POST' \
 from lightonmuse import Compare
 
 comparer = Compare("orion-fr")
-compare = comparer("Je suis content", candidates=["je suis heureux", "je suis triste"])
+outputs, cost, request_id = comparer("Je suis content", candidates=["je suis heureux", "je suis triste"])
+```
 
-print(compare)
+```js
+let { response, error } = client.query(ApiModels.OrionFr, Endpoints.Compare, {
+    reference: 'Je suis content',
+    candidates: ['je suis heureux', 'je suis triste'],
+});
 ```
 
 </Examples>
@@ -106,14 +111,22 @@ An array of outputs shaped like your batch.
 
     The `reference` sentence used to compute similarities.
 
-### Similarities (`similarities`)
+-   `similarities` <ParamType type="array[object]" />
 
-One entry for each member of `candidates`.
+    One entry for each member of `candidates`.
 
--   `candidate` <ParamType type="string" />
+    -   `candidate` <ParamType type="string" />
 
-    A single entry from the `candidates` sent in the request.
+        A single entry from the `candidates` sent in the request.
 
--   `similarity` <ParamType type="float" />
+    -   `similarity` <ParamType type="float" />
 
-    Similarity score between `candidate` and `reference`. It ranges between 0 and 1, the higher the more similar.
+        Similarity score between `candidate` and `reference`. It ranges between 0 and 1, the higher the more similar.
+
+-   `best` <ParamType type="string" />
+
+    The best match
+
+-   `execution_metadata` <ParamType type="ExecutionMetadata" />
+
+    An [Execution metadata](/api/specifications/responses/#execution-metadata) structure.
