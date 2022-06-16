@@ -1,6 +1,8 @@
 ---
 ---
 
+import { Examples } from '@site/src/components/examples';
+
 # 📟 Requests
 
 ## Request format
@@ -10,7 +12,9 @@ The Muse API is accessed through **`POST` HTML requests**, from the tool of your
 The example request below queries the ✍️ **[Create](/api/primitives/create)** endpoint of the `lyra-fr` model, with
 the prompt `Once upon a time`, and asks for a completion of length 25 tokens (`"n_tokens": 25`).
 
-```bash title="Example request (cURL)"
+<Examples tabs={['cURL', 'Python', 'JavaScript']}>
+
+```bash
 curl -X 'POST' \
   'https://api.lighton.ai/muse/v1/create' \
   -H 'Content-Type: application/json' \
@@ -20,18 +24,34 @@ curl -X 'POST' \
   -d '{"text": "Il était une fois", "params": {"n_tokens": 25}}'
 ```
 
+```python
+from lightonmuse import Create
+
+create = Create("orion-fr")
+outputs, cost, request_id = create("Il était une fois", mode=nucleus, n_tokens=25, p=0.9)
+```
+
+```js
+let { response, error } = client.query(ApiModels.OrionFr, Endpoints.Create, {
+    text: 'Il était une fois',
+    params: {
+        mode: ApiMode.Nucleus,
+        n_tokens: 25,
+        p: 0.9,
+    },
+});
+```
+
+</Examples>
+
 Requests should follow this format:
 
 -   **Endpoint/primitive URL**: `https://api.lighton.ai/muse/v1/{endpoint}` (e.g. `create`, `select`, etc.).
--   **Header for JSON payload**: the API works with JSON payloads only, so you should set `Content-Type: application/json`
-    and `Accept: application/json` in your requests.
+-   **Header for JSON payload**: the API works with JSON payloads only, so you should set `Content-Type: application/json` and `Accept: application/json` in your requests.
 -   **Header for authentication**: `X-API-KEY: {YOUR_API_KEY}`, see
     🔑 **[Authentication](/api/specifications/authentication)** for more details.
--   **Header for model**: you should specify which model you want to query, see 🤖 **[Models](/api/models)**
-    for availability across languages.
--   **JSON payload for the request**: the request and its parameters should be specified in JSON format. All
-    endpoints usually take the main text(s) first, and then the extra parameters. **See the specific
-    documentation of each primitive for details**.
+-   **Header for model**: you should specify which model you want to query, see 🤖 **[Models](/api/models)** for availability across languages.
+-   **JSON payload for the request**: the request and its parameters should be specified in JSON format. All endpoints usually take the main text(s) first, and then the extra parameters. **See the specific documentation of each primitive for details**.
 
 As an example, the request above will generate a response similar to the following (make sure to check the 💬 **[Responses](/api/specifications/responses)** page
 for more information).
