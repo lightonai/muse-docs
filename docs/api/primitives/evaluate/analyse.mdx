@@ -39,12 +39,10 @@ from lightonmuse import Analyse
 
 analyser = Analyse("orion-fr")
 outputs, cost, request_id = analyser("Il était une fois en Laponie")
-
-print(outputs)
 ```
 
 ```js
-client.query(ApiModels.OrionFr, Endpoints.Analyse, {
+let { response, error } = client.query(ApiModels.OrionFr, Endpoints.Analyse, {
     text: 'Il était une fois en Laponie',
 });
 ```
@@ -109,6 +107,10 @@ client.query(ApiModels.OrionFr, Endpoints.Analyse, {
 ## Response (`outputs`)
 
 An array of outputs shaped like your batch.
+
+-   `execution_metadata` <ParamType type="ExecutionMetadata" />
+
+    An [Execution metadata](/api/specifications/responses/#execution-metadata) structure.
 
 -   `text` <ParamType type="string" />
 

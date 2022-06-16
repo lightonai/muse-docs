@@ -40,13 +40,11 @@ curl -X 'POST' \
 from lightonmuse import Create
 
 create = Create("orion-fr")
-generation = create("Il était une fois", mode=nucleus, n_tokens=25, p=0.9)
-
-print(generation)
+outputs, cost, request_id = create("Il était une fois", mode=nucleus, n_tokens=25, p=0.9)
 ```
 
 ```js
-client.query(ApiModels.OrionFr, Endpoints.Create, {
+let { response, error } client.query(ApiModels.OrionFr, Endpoints.Create, {
     text: 'Il était une fois',
     params: {
         mode: ApiMode.Nucleus,
@@ -164,19 +162,15 @@ See the [sampling](/home/concepts#sampling) entry for more details.
     values such as -100 will completely forbid a word, while values between 1-5 will make the word more likely to appear.
     We recommend playing around to find a good fit for your use case.
 
-:::tip 💡 Avoiding repetitions
-When generating longer samples with `biases`, the model may repeat positively biased words too often. Combine
-this option with `presence_penalty` and `frequency_penalty` to achieve best results. If you generate a first completion, and then use it as a prompt for a new completion, you probably want to turn off the word bias encouraging a certain word once it has been produced to avoid too much repetition.
-:::
+    :::tip 💡 Avoiding repetitions
+    When generating longer samples with `biases`, the model may repeat positively biased words too often. Combine this option with `presence_penalty` and `frequency_penalty` to achieve best results. If you generate a first completion, and then use it as a prompt for a new completion, you probably want to turn off the word bias encouraging a certain word once it has been produced to avoid too much repetition.
+    :::
 
-:::info ⚙️ Technical details
-The provided bias is directly added to the [log-likelihood](/home/concepts#likelihood) predicted by the model at a given step, before performing
-the sampling operation. You can use the `return_logprobs` option or the **Analyse** endpoint to access the [log-probabilities](/home/concepts#likelihood)
-of samples and get an idea of the range of likelihood values in your specific use case.
+    :::info ⚙️ Technical details
+    The provided bias is directly added to the [log-likelihood](/home/concepts#likelihood) predicted by the model at a given step, before performing the sampling operation. You can use the `return_logprobs` option or the **Analyse** endpoint to access the [log-probabilities](/home/concepts#likelihood) of samples and get an idea of the range of likelihood values in your specific use case.
 
-The bias is actually applied at the token level, and not at the word level. For words made of multiple tokens, the
-bias only applies to the first token (and may thus impact other words).
-:::
+    The bias is actually applied at the token level, and not at the word level. For words made of multiple tokens, the bias only applies to the first token (and may thus impact other words).
+    :::
 
 -   `presence_penalty` <ParamType type="float" /> <ParamDefault default="0.0" />
 
@@ -184,18 +178,17 @@ bias only applies to the first token (and may thus impact other words).
     This is a one-off penalty: tokens will be penalized after their first appearance, but not more if they appear repetitively.
     Use `frequency_penalty` if that's what you want instead. Use values between 0 and 1. Values closer to 1 encourage variation of the topics generated.
 
-:::info ⚙️ Technical details
-Once a token appears at least once, `presence_penalty` will be removed from its [log-likelihood](/home/concepts#likelihood) in the future.
-:::
+    :::info ⚙️ Technical details
+    Once a token appears at least once, `presence_penalty` will be removed from its [log-likelihood](/home/concepts#likelihood) in the future.
+    :::
 
 -   `frequency_penalty` <ParamType type="float" /> <ParamDefault default="0.0" />
 
     How strongly should tokens be prevented from appearing again if they have appeared repetitively. Contrary to `presence_penalty`, this penalty scales with how often the token already occurs. Use values between 0 and 1. Values closer to 1 discourage repetition, especially useful in combination with `biases`.
 
-:::info ⚙️ Technical details
-`frequency_penalty` \* $n_T$ will be removed from the [log-likelihood](/home/concepts#likelihood) of a token, where $n_T$
-is how many times it occurs in the text already.
-:::
+    :::info ⚙️ Technical details
+    `frequency_penalty` \* $n_T$ will be removed from the [log-likelihood](/home/concepts#likelihood) of a token, where $n_T$ is how many times it occurs in the text already.
+    :::
 
 -   `stop_words` <ParamType type="array[string]" /> <ParamDefault default="null" />
 
@@ -230,17 +223,21 @@ An array of outputs shaped like your batch.
 
     The `text` used to generate the text.
 
-### Completions (`completions`)
+-   `completions` <ParamType type="array[object]" />
 
-One entry for each `n_completions` requested.
+    One entry for each `n_completions` requested.
 
--   `output_text` <ParamType type="string" />
+    -   `output_text` <ParamType type="string" />
 
-    Text generated by the model. May be concatenated with the `input_text` if `concat_prompt=True`.
+        Text generated by the model. May be concatenated with the `input_text` if `concat_prompt=True`.
 
--   `score` <ParamType type="Score" />
+    -   `score` <ParamType type="Score" />
 
-    A [Score](/api/specifications/responses/#score) structure
+        A [Score](/api/specifications/responses/#score) structure.
+
+    -   `execution_metadata` <ParamType type="ExecutionMetadata" />
+
+        An [Execution metadata](/api/specifications/responses/#execution-metadata) structure.
 
 :::info ⚙️ Token representations
 Tokens are currently returned as they are represented by the tokenizer, which includes special characters such as `Ġ`

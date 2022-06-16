@@ -18,7 +18,7 @@ You will be billed for the **total number of tokens sent in your request**.
 
 ## Example
 
-<Examples tabs={['cURL', 'Python']}>
+<Examples tabs={['cURL', 'Python', 'JavaScript']}>
 
 ```bash
 curl -X 'POST' \
@@ -34,9 +34,13 @@ curl -X 'POST' \
 from lightonmuse import Embed
 
 embedder = Embed("orion-fr")
-embed = embedder("Il était une fois en Laponie")
+outputs, cost, request_id = embedder("Il était une fois en Laponie")
+```
 
-print(embed)
+```js
+let { response, error } = client.query(ApiModels.OrionFr, Endpoints.Embed, {
+    text: 'Il était une fois en Laponie',
+});
 ```
 
 </Examples>
@@ -91,6 +95,10 @@ print(embed)
 ## Response (`outputs`)
 
 An array of outputs shaped like your batch.
+
+-   `execution_metadata` <ParamType type="ExecutionMetadata" />
+
+    An [Execution metadata](/api/specifications/responses/#execution-metadata) structure.
 
 -   `text` <ParamType type="string" />
 
