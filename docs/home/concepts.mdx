@@ -150,11 +150,8 @@ text**. Ultimately, the model evaluates the likelihood of every possible token i
 distribution can then be _sampled_ to generate text with ✍️ **[Create](/api/primitives/create)**. We expose three modes of
 generation:
 
--   **Greedy**: picks the most likely output. Although this may seem like a natural choice, this usually results
-    in poor quality and repetitions. This is only useful when there is a ground truth the model is expected to return.
--   **Nucleus**: the model will only consider the most likely tokens with total probability mass `p`. Then, temperature
-    sampling is used. Lower `temperature` values will be closer to `greedy` decoding, while higher values will lead to more
-    unlikely choices.
+-   **Greedy**: picks the most likely output. Although this may seem like a natural choice, this usually results in poor quality and repetitions. This is only useful when there is a ground truth the model is expected to return.
+-   **Nucleus**: the model will only consider the most likely tokens with total probability mass `p`. Then, temperature sampling is used. Lower `temperature` values will be closer to `greedy` decoding, while higher values will lead to more unlikely choices.
 -   **Top-k**: the model will consider the `k` most likely tokens and apply temperature sampling on them.
 
 For most creative applications, we recommend sticking to **nucleus** sampling, with a temperature in the 0.8-1.0 range.
