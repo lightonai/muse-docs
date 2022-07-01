@@ -47,7 +47,7 @@ outputs, cost, request_id = create("Il était une fois", mode=nucleus, n_tokens=
 let { response, error } = client.query(ApiModels.OrionFr, Endpoints.Create, {
     text: 'Il était une fois',
     params: {
-        mode: ApiMode.Nucleus,
+        mode: ApiModes.Nucleus,
         n_tokens: 25,
         p: 0.9,
     },
@@ -142,8 +142,9 @@ let { response, error } = client.query(ApiModels.OrionFr, Endpoints.Create, {
         How the model will decide which token to select at each step.
 
         -   **Greedy**: the model will always select the most likely token. This generation mode is deterministic and only suited for applications in which there is a ground truth the model is expected to return (e.g. question answering).
+        -   **Top K**: the model will only consider the `k` most likely tokens. For some models, in particular `lyra-fr`, this `mode` is a very good alternative to `nucleus` sampling.
         -   **Nucleus**: the model will only consider the most likely tokens with total probability mass `p`. We recommend this setting for most applications.
-        -   **Top-k**: the model will only consider the `k` most likely tokens. For some models, in particular `lyra-fr`, this `mode` is a very good alternative to `nucleus` sampling.
+        -   **Typical**: the model will discard high probability tokens with low expected information content.
 
     -   `temperature` <ParamType type="float" /> <ParamDefault default="1.0" /> <ParamWarning warning="⚠️ only in topk/nucleus mode" />
 
