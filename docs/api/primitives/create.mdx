@@ -47,7 +47,7 @@ outputs, cost, request_id = create("Il était une fois", mode=nucleus, n_tokens=
 let { response, error } = client.query(ApiModel.OrionFr, Endpoint.Create, {
     text: 'Il était une fois',
     params: {
-        mode: ApiMode.Nucleus,
+        mode: ApiModes.Nucleus,
         n_tokens: 25,
         p: 0.9,
     },
