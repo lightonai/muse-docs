@@ -68,9 +68,6 @@ module.exports = {
             '@docusaurus/preset-classic',
             {
                 docs: {
-                    admonitions: {
-                        icons: 'none',
-                    },
                     sidebarPath: require.resolve('./sidebars.js'),
                     routeBasePath: '/',
                     remarkPlugins: [math],
