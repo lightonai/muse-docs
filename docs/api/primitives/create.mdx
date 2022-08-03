@@ -134,7 +134,7 @@ let { response, error } = client.query(ApiModel.OrionFr, Endpoint.Create, {
 
         See the [sampling](/home/concepts#sampling) entry for more details.
 
-    -   `mode` <ParamType type="(greedy, topk, nucleus)" /> <ParamDefault default="nucleus" />
+    -   `mode` <ParamType type="(greedy, topk, nucleus, typical)" /> <ParamDefault default="nucleus" />
 
         How the model will decide which token to select at each step.
 
@@ -147,7 +147,7 @@ let { response, error } = client.query(ApiModel.OrionFr, Endpoint.Create, {
 
         How risky will the model be in its choice of tokens. A temperature of 0 corresponds to greedy sampling. we recommend a value around 1 for most creative applications, and closer to 0 when a ground truth exists.
 
-    -   `p` <ParamType type="float" /> <ParamDefault default="0.9" /> <ParamWarning warning="⚠️ only in nu²cleus mode" />
+    -   `p` <ParamType type="float" /> <ParamDefault default="0.9" /> <ParamWarning warning="⚠️ only in nucleus mode" />
 
         Total probability mass of the most likely tokens considered when sampling in nucleus mode.
 
