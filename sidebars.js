@@ -22,7 +22,13 @@ module.exports = {
                 'api/specifications/errors_warnings',
             ],
         },
-        { '📟 Bindings': ['api/bindings/python', 'api/bindings/javascript'] },
+        {
+            '📟 Integrations': [
+                'api/integrations/python',
+                'api/integrations/javascript',
+                'api/integrations/google-sheets',
+            ],
+        },
         'api/models',
         {
             '🧠 Primitives': [
