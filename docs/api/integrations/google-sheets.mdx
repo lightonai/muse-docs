@@ -14,20 +14,20 @@ Before using the extension, you need to set your API key. Click on the `Muse` ta
 
 > You can load an example sheet from the `Muse` tab to start experimenting.
 
-To complete cells in a sheet, select an area conaining parameters as the first row and then prompts.
+A basic sheet layout for this extension:
 
-Example:
-
-| Prompt              | `n_tokens` | Completion             |
-| ------------------- | ---------- | ---------------------- |
-| TODO: Find a prompt |            | TODO: write completion |
-| TODO                |            | TODO                   |
+| `Prompt` (this is mandatory) | `n_tokens` | `seed`  | (more params) | `Completion`           |
+| ---------------------------- | ---------- | ------- | ------------- | ---------------------- |
+| TODO: Find a prompt          | `15`       | `67`    |               | TODO: write completion |
+| TODO                         | `1`        | `34885` |               | TODO                   |
 
 :::info
+To complete cells, select an area with the `prompt` keyword in the upper-left cell.
+You can add as many columns you want between the prompt column and the completion column.
 Leaving a cell empty will skip the parameter for the matching prompt.
 :::
 
-## Available Parameters
+## Available parameters
 
 -   `n_tokens` <ParamType type="number" /> <ParamDefault default="20" />
 

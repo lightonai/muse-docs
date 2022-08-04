@@ -7,15 +7,14 @@ const katex = require('rehype-katex');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-    title: 'LightOn Muse API Documentation',
+    title: 'LightOn Muse Documentation',
     tagline: 'Unlock the power of extreme-scale NLP with our Muses.',
     url: 'https://muse-docs.lighton.ai/',
     baseUrl: '/',
-    onBrokenLinks: 'throw',
-    onBrokenMarkdownLinks: 'warn',
     favicon: 'favicon.ico',
-    organizationName: 'LightOn', // Usually your GitHub org/user name.
-    projectName: 'muse-docs', // Usually your repo name.
+    organizationName: 'lightonai',
+    projectName: 'muse-docs',
+    onBrokenMarkdownLinks: 'throw',
     themeConfig: {
         colorMode: {
             defaultMode: 'dark',
@@ -34,19 +33,13 @@ module.exports = {
                     type: 'doc',
                     docId: 'home/intro',
                     position: 'left',
-                    label: '🦾 Getting started',
+                    label: '🦾 Home',
                 },
                 {
                     type: 'doc',
                     docId: 'api/using',
                     position: 'left',
                     label: '📟 API Reference',
-                },
-                {
-                    type: 'doc',
-                    docId: 'guides/guides',
-                    position: 'left',
-                    label: '📚 Guides',
                 },
             ],
         },
