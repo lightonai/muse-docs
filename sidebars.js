@@ -2,7 +2,6 @@ module.exports = {
     homeSidebar: [
         'home/intro',
         'home/concepts',
-        'home/changelog',
         {
             '🤹 Skills': [
                 'home/skills/summarization',
@@ -24,6 +23,7 @@ module.exports = {
                 'home/french/review-classification',
             ],
         },
+        'home/changelog',
     ],
     apiSidebar: [
         'api/using',
