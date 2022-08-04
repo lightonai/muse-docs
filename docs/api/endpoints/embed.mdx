@@ -15,17 +15,7 @@ You will be billed for the **total number of tokens sent in your request**.
 
 ## Example
 
-<Examples tabs={['cURL', 'Python', 'JavaScript']}>
-
-```bash
-curl -X 'POST' \
-  'https://api.lighton.ai/muse/v1/embed' \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json' \
-  -H 'X-API-KEY: YOUR_API_KEY' \
-  -H 'X-Model: orion-fr' \
-  -d '{"text": "Il était une fois en Laponie"}'
-```
+<Examples tabs={['Python', 'JavaScript', 'cURL']}>
 
 ```python
 from lightonmuse import Embed
@@ -38,6 +28,16 @@ outputs, cost, request_id = embedder("Il était une fois en Laponie")
 let { response, error } = client.query(ApiModel.OrionFr, Endpoint.Embed, {
     text: 'Il était une fois en Laponie',
 });
+```
+
+```bash
+curl -X 'POST' \
+  'https://api.lighton.ai/muse/v1/embed' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'X-API-KEY: YOUR_API_KEY' \
+  -H 'X-Model: orion-fr' \
+  -d '{"text": "Il était une fois en Laponie"}'
 ```
 
 </Examples>

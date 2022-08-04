@@ -19,17 +19,7 @@ You will be billed for the **total number of tokens sent in your request**.
 
 ## Example request
 
-<Examples tabs={['cURL', 'Python', 'JavaScript']}>
-
-```bash
-curl -X 'POST' \
-  'https://api.lighton.ai/muse/v1/analyse' \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json' \
-  -H 'X-API-KEY: YOUR_API_KEY' \
-  -H 'X-Model: orion-fr' \
-  -d '{"text": "Il était une fois en Laponie"}'
-```
+<Examples tabs={['Python', 'JavaScript', 'cURL']}>
 
 ```python
 from lightonmuse import Analyse
@@ -42,6 +32,16 @@ outputs, cost, request_id = analyser("Il était une fois en Laponie")
 let { response, error } = client.query(ApiModel.OrionFr, Endpoint.Analyse, {
     text: 'Il était une fois en Laponie',
 });
+```
+
+```bash
+curl -X 'POST' \
+  'https://api.lighton.ai/muse/v1/analyse' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'X-API-KEY: YOUR_API_KEY' \
+  -H 'X-Model: orion-fr' \
+  -d '{"text": "Il était une fois en Laponie"}'
 ```
 
 </Examples>

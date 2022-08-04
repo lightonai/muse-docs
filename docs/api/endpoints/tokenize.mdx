@@ -17,17 +17,7 @@ Available at `https://api.lighton.ai/muse/v1/tokenize`.
 
 ## Example request
 
-<Examples tabs={['cURL', 'Python', 'JavaScript']}>
-
-```bash
-curl -X 'POST' \
-  'https://api.lighton.ai/muse/v1/tokenize' \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json' \
-  -H 'X-API-KEY: YOUR_API_KEY' \
-  -H 'X-Model: orion-fr' \
-  -d '{"text": "Il était une fois"}'
-```
+<Examples tabs={['Python', 'JavaScript', 'cURL']}>
 
 ```python
 from lightonmuse import Tokenize
@@ -40,6 +30,16 @@ outputs, cost, request_id = tokenizer("Il était une fois")
 client.query(ApiModel.OrionFr, Endpoint.Tokenize, {
     text: 'Il était une fois',
 });
+```
+
+```bash
+curl -X 'POST' \
+  'https://api.lighton.ai/muse/v1/tokenize' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'X-API-KEY: YOUR_API_KEY' \
+  -H 'X-Model: orion-fr' \
+  -d '{"text": "Il était une fois"}'
 ```
 
 </Examples>

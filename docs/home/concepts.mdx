@@ -3,7 +3,7 @@ import { Alpha, Beta } from '@site/src/components/labels';
 # 🪐 Concepts
 
 **If you are unfamiliar with the world of large language models, let's get you started!** No expert knowledge required: it
-will just take a few minutes of your time to go through this page — and you can follow-up with one of our in-depth 📚 **[Guides](/guides)**.
+will just take a few minutes of your time to go through this page — and you can follow-up with one of our in-depth 📚 **[Guides](/home/english/prompt)**.
 
 Want to see Muse in action? **Have a quick look at our
 [demo notebook](https://github.com/lightonai/lightonmuse/blob/master/examples/demo_notebook.ipynb)!**
@@ -18,17 +18,17 @@ achieved using extremely large neural networks learning from processing millions
 These models have wide capabilities, and **can simply be instructed in natural language to perform novel tasks**.
 
 The Muse API enables you to **unlock natural language generation & understanding** through a simple application-oriented API.
-We abstract away all the fancy machine learning, and give you **a simple interface to ✍️ [Create](/api/primitives/create),
-🔬️ [Evaluate](/api/primitives/evaluate/select), 📊 [Represent](/api/primitives/represent/embed), and **⚙️ [Process](/api/primitives/process)** language** (upcoming).
+We abstract away all the fancy machine learning, and give you **a simple interface to ✍️ [Create](/api/endpoints/create),
+🔬️ [Evaluate](/api/endpoints/select), 📊 [Represent](/api/endpoints/embed), and **⚙️ [Process](/api/endpoints/process)** language** (upcoming).
 We believe that all language tasks can be tackled through these simple primitives:
 
--   **Use ✍️ [Create](/api/primitives/create) to generate text** according to natural language instructions
+-   **Use ✍️ [Create](/api/endpoints/create) to generate text** according to natural language instructions
     (e.g. copywriting, conversational AI, etc.).
--   **Use 🔬️ [Evaluate](/api/primitives/evaluate/select) to understand text**, and evaluate the likelihood of different options
+-   **Use 🔬️ [Evaluate](/api/endpoints/select) to understand text**, and evaluate the likelihood of different options
     (e.g. classification, automated Q&A, etc.).
--   **Use 📊 [Represent](/api/primitives/represent/embed) <Alpha /> to build rich representations of text**, to directly compare samples or use in a downstream pipeline (e.g. semantic search, document clustering, etc.)
+-   **Use 📊 [Represent](/api/endpoints/embed) <Alpha /> to build rich representations of text**, to directly compare samples or use in a downstream pipeline (e.g. semantic search, document clustering, etc.)
 
-These features can be combined to **⚙️ [Process](/api/primitives/process) text, achieving complex end-results**
+These features can be combined to **⚙️ [Process](/api/endpoints/process) text, achieving complex end-results**
 (e.g. document summarization, search, etc.). We expose pre-made business-ready use cases through special endpoints,
 as well as through 🤹 **[Skills](/api/skills), an easy way to specialize our models to specific tasks**.
 
@@ -47,7 +47,7 @@ around in English, use `lyra-en`, for French, use `lyra-fr`.
 
 ### Prompt
 
-**The prompt is the input text you submit to the model in the ✍️ [Create](/api/primitives/create) endpoint**.
+**The prompt is the input text you submit to the model in the ✍️ [Create](/api/endpoints/create) endpoint**.
 The model will generate and return text conditioned by your prompt: if your prompt is
 _"François Mitterrand was the president of"_, the model will most likely return _"France"_.
 
@@ -55,7 +55,7 @@ _"François Mitterrand was the president of"_, the model will most likely return
 prompt is formal, it is highly likely that the model will continue in a formal way. Similarly, complex styles and
 structures can be imposed on the model (e.g. poems, haiku, lists). You can also give literal instructions in the
 prompt, such as _"Write an ad for Muse:"_, or _"This is a sentiment classifier."_. Following-up with a few structured
-examples can also be helpful. To learn more, read our guide about **📜 [Prompt design](/guides/english/prompt)**.
+examples can also be helpful. To learn more, read our guide about **📜 [Prompt design](/home/english/prompt)**.
 
 **You can think of the prompting process as a way to _program_ the model to achieve your desired output**. The more
 specific and the more context you can provide, the better the results. Play around to get a feel for it, and
@@ -78,15 +78,15 @@ the log-prob of _"New York"_ in the sentence _"I love New York"_ is the log-prob
 plus the log-prob of _"York"_ in _"I love New York"_. This can be used to score entire sentences, and evaluate
 multiple pre-defined options according to their likelihood.
 
-**🔬️ [Evaluate](/api/primitives/evaluate/analyse) endpoints rely on likelihood to understand text**. You can access the log-probabilities
-associated with words in a sentence using 🧪 **[Analyse](/api/primitives/evaluate/analyse)**, to use in a downstream pipeline, or you
-can directly use 🔘 **[Select](/api/primitives/evaluate/select)** to perform likelihood-based text classification. See our guide
-about 🥇 **[reviews classification](/guides/english/review_classification)** with the Muse API to learn more.
+**🔬️ [Evaluate](/api/endpoints/analyse) endpoints rely on likelihood to understand text**. You can access the log-probabilities
+associated with words in a sentence using 🧪 **[Analyse](/api/endpoints/analyse)**, to use in a downstream pipeline, or you
+can directly use 🔘 **[Select](/api/endpoints/select)** to perform likelihood-based text classification. See our guide
+about 🥇 **[reviews classification](/home/english/review-classification)** with the Muse API to learn more.
 
-**Likelihood can be manually manipulated in ✍️ [Create](/api/primitives/create) to steer generation**. Use `word_biases` to manually
+**Likelihood can be manually manipulated in ✍️ [Create](/api/endpoints/create) to steer generation**. Use `word_biases` to manually
 increase or decrease the log-probabilities of words to see them more often or to ban them. Alter the likelihood calculations
 with `presence_penalty` and `frequence_penalty` to generate less repetitive and more novel text. Check out our guide
-on 🎛️ **[Steering generation for SEO](/guides/english/seo)** for more.
+on 🎛️ **[Steering generation for SEO](/home/english/seo)** for more.
 
 ### Embeddings <Alpha />
 
@@ -96,9 +96,9 @@ input text, its context, as well as general knowledge derived from the training 
 machine learning algorithms as a representation of the input text, to compare different sentences and documents,
 classify samples, or cluster texts.
 
-**📊 [Represent](/api/primitives/represent/embed) endpoints directly expose the final embeddings built by the model**. You can
+**📊 [Represent](/api/endpoints/embed) endpoints directly expose the final embeddings built by the model**. You can
 leverage these embeddings in your machine learning pipeline (applying clustering, t-SNE, or a classifier of your choice
-on them). You can also use ⚖️ **[Compare](/api/primitives/represent/compare)** to directly compare different texts and select the most similar based on embeddings.
+on them). You can also use ⚖️ **[Compare](/api/endpoints/compare)** to directly compare different texts and select the most similar based on embeddings.
 
 ### Skills <Beta />
 
@@ -134,7 +134,7 @@ we separate tokens with dashes `-`. Common words are usually single tokens with 
 specific to each language, but please note this will also vary with the style of the text: "simple" writing will use less
 tokens (on average one per word), whereas complex technical writing will use more.
 
-**On occasion, you have to be mindful of tokens.** For instance, in ✍️ **[Create](/api/primitives/create)**, the model can only
+**On occasion, you have to be mindful of tokens.** For instance, in ✍️ **[Create](/api/endpoints/create)**, the model can only
 generate a fixed `n_tokens`, which may cause it to stop generation in the middle of a complex word. Similarly, features such as
 `word_biases` used for complex words can only influence the first token provided: if setting `word_biases = {'ticketing': +5}`,
 this will be effectively equivalent to setting `word_biases = {'ticket': +5}`, because _"ticketing"_ is tokenized
@@ -144,7 +144,7 @@ as `Ġticket - ing`.
 
 **Sampling is the operation that allows the model to go from modeling a probability distribution to generating actual
 text**. Ultimately, the model evaluates the likelihood of every possible token in its vocabulary. This probability
-distribution can then be _sampled_ to generate text with ✍️ **[Create](/api/primitives/create)**. We expose three modes of
+distribution can then be _sampled_ to generate text with ✍️ **[Create](/api/endpoints/create)**. We expose three modes of
 generation:
 
 -   **Greedy**: picks the most likely output. Although this may seem like a natural choice, this usually results in poor quality and repetitions. This is only useful when there is a ground truth the model is expected to return.

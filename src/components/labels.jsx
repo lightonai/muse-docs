@@ -4,6 +4,8 @@ export const Alpha = () => <span className="label alpha-label">Alpha</span>;
 
 export const Beta = () => <span className="label beta-label">Beta</span>;
 
+export const Soon = () => <span className="label soon-label">Coming Soon</span>;
+
 export const ParamType = ({ type }) => (
     <span className="param param-types">{type}</span>
 );

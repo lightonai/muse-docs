@@ -6,20 +6,10 @@ import { Examples } from '@site/src/components/examples';
 
 The Muse API is accessed through **`POST` HTML requests**, from the tool of your choice (`curl`, `requests`, ...).
 
-The example request below queries the ✍️ **[Create](/api/primitives/create)** endpoint of the `lyra-fr` model, with
+The example request below queries the ✍️ **[Create](/api/endpoints/create)** endpoint of the `lyra-fr` model, with
 the prompt `Once upon a time`, and asks for a completion of length 25 tokens (`"n_tokens": 25`).
 
-<Examples tabs={['cURL', 'Python', 'JavaScript']}>
-
-```bash
-curl -X 'POST' \
-  'https://api.lighton.ai/muse/v1/create' \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json' \
-  -H 'X-API-KEY: YOUR_API_KEY' \
-  -H 'X-Model: lyra-fr' \
-  -d '{"text": "Il était une fois", "params": {"n_tokens": 25}}'
-```
+<Examples tabs={['Python', 'JavaScript', 'cURL']}>
 
 ```python
 from lightonmuse import Create
@@ -37,6 +27,16 @@ let { response, error } = client.query(ApiModel.OrionFr, Endpoint.Create, {
         p: 0.9,
     },
 });
+```
+
+```bash
+curl -X 'POST' \
+  'https://api.lighton.ai/muse/v1/create' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'X-API-KEY: YOUR_API_KEY' \
+  -H 'X-Model: lyra-fr' \
+  -d '{"text": "Il était une fois", "params": {"n_tokens": 25}}'
 ```
 
 </Examples>
@@ -117,7 +117,7 @@ Batching with the same parameters is as simple as providing a **list of strings 
 }
 ```
 
-When used with ✍️ **[Create](/api/primitives/create)**, this will return completions of 25 tokens for both
+When used with ✍️ **[Create](/api/endpoints/create)**, this will return completions of 25 tokens for both
 `"Once upon a time"` and `"Mars is a planet"`. The `outputs` list will contain one entry for each item in `text`.
 
 <details>
@@ -208,7 +208,7 @@ as demonstrated below:
 ]
 ```
 
-When used with ✍️ **[Create](/api/primitives/create)**, this will return two group of completions of 25 tokens for both
+When used with ✍️ **[Create](/api/endpoints/create)**, this will return two group of completions of 25 tokens for both
 `"Once upon a time"` and `"Mars is a planet"`, one group with `greedy` sampling, and the other with `nucleus` sampling.
 The `outputs` list will contain one list for each parameters configuration, each containing one entry per item in `text`.
 
