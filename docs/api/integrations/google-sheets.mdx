@@ -9,22 +9,36 @@ import {
 ## Quickstart
 
 :::info
-Before using the extension, you need to set your API key. Click on the `Muse` tag in the toolbar and select `Settings` > `Register API Key`.
+Before using the extension, you need to set your API key.
+Select in the toolbar `Muse` > `Settings` > `Register API Key`. Enter your API key and click on the submit button.
+
+You will find your API key in `Account` > `API Keys`.
+
+If you don't have an API key, subscribe to [muse.lighton.ai](https://muse.lighton.ai/).
 :::
 
-> You can load an example sheet from the `Muse` tab to start experimenting.
+> You can load some examples using the `Load an example sheet` button from the `Muse` tab.
 
-A basic sheet layout for this extension:
+The layout to follow is:
 
-| `Prompt` (this is mandatory) | `n_tokens` | `seed`  | (more params) | `Completion`           |
-| ---------------------------- | ---------- | ------- | ------------- | ---------------------- |
-| TODO: Find a prompt          | `15`       | `67`    |               | TODO: write completion |
-| TODO                         | `1`        | `34885` |               | TODO                   |
+| `Prompt`                                   | `n_tokens` | `mode`    | `stop_words` | ... | `Completion`                                                            |
+| ------------------------------------------ | ---------- | --------- | ------------ | --- | ----------------------------------------------------------------------- |
+| This AI-powered Google Sheets extension is | `15`       | `nucleus` |              |     | the result of hours of testing, a hefty price tag and a staff full      |
+| The AI algorithms behind Muse are          | `20`       |           | `"."`        |     | generally well-known and recognized leaders in their respective fields. |
+
+:::caution
+Having the `prompt` keyword (any case) in the upper-left corner of the selection is **mandatory**.
+:::
 
 :::info
-To complete cells, select an area with the `prompt` keyword in the upper-left cell.
 You can add as many columns you want between the prompt column and the completion column.
 Leaving a cell empty will skip the parameter for the matching prompt.
+:::
+
+:::info Selecting a model
+You can change the model used by the current sheet in `Muse` > `Settings` > `Select model`.
+
+Models are available in the `Models` tab.
 :::
 
 ## Available parameters

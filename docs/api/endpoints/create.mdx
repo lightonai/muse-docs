@@ -113,7 +113,7 @@ curl -X 'POST' \
 
         Number of [tokens](/home/concepts#tokens) to generate. This can be overridden by a list of `stop_words`, which will cause generation to halt when a word in such list is encountered.
 
-    :::caution ⚠️ Maximum content length
+    :::caution Maximum content length
     Our models can process sequences of **1,024 tokens** at most (length of prompt + `n_tokens`). Requests overflowing this
     maximum length will see their prompt truncated from the left to fit.
     :::
