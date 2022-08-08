@@ -80,6 +80,12 @@ Models are available in the `Models` tab.
 
 -   `biases` <ParamType type="Record<string, number>" /> <ParamDefault default="null" />
 
+    :::info Google Sheets format
+    You must surround each word with double quotes, add a semicolon and the weight you want to apply to this word. You need to separate them with commas.
+
+    Like: `"positive": 2, "negative": -50, "cinema": 4`.
+    :::
+
     Bias the provided words to appear more or less often in the generated text.
     Values should be comprised between -100 and +100, with negative values making words less likely to occur. Extreme
     values such as -100 will completely forbid a word, while values between 1-5 will make the word more likely to appear.
@@ -99,9 +105,15 @@ Models are available in the `Models` tab.
 
     How strongly should tokens be prevented from appearing again if they have appeared repetitively. Contrary to `presence_penalty`, this penalty scales with how often the token already occurs. Use values between 0 and 1. Values closer to 1 discourage repetition, especially useful in combination with `biases`.
 
--   `stop_words` <ParamType type="Array<string>" /> <ParamDefault default="null" />
+-   `stop_words` <ParamType type="List<string>" /> <ParamDefault default="null" />
 
     Encountering any of these words will halt generation immediately.
+
+    :::info Google Sheets format
+    You must surround each word with double quotes and separate them with commas.
+
+    Like: `"end", ".", ";"`.
+    :::
 
     **Utilities**
 
