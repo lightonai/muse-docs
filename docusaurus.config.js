@@ -7,8 +7,8 @@ const katex = require('rehype-katex');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-    title: 'LightOn Muse API Documentation',
-    tagline: 'Unlock the power of extreme-scale NLP with our Muses.',
+    title: 'LightOn Muse Documentation',
+    tagline: 'AI for natural language understanding and text generation.',
     url: 'https://muse-docs.lighton.ai/',
     baseUrl: '/',
     onBrokenLinks: 'throw',
@@ -30,7 +30,7 @@ module.exports = {
                 src: 'img/muse-logo.svg',
             },
             items: [
-                {
+                /*{
                     type: 'doc',
                     docId: 'home/intro',
                     position: 'left',
@@ -47,20 +47,12 @@ module.exports = {
                     docId: 'guides/guides',
                     position: 'left',
                     label: '📚 Guides',
-                },
+                },*/
             ],
         },
         prism: {
             theme: lightCodeTheme,
             darkTheme: darkCodeTheme,
-        },
-        announcementBar: {
-            id: 'public_beta',
-            content:
-                'Muse is now in public beta at <a href="https://muse.lighton.ai">muse.lighton.ai</a>',
-            backgroundColor: '#31273F',
-            textColor: '#D2D6DB',
-            isCloseable: false,
         },
     },
     presets: [
@@ -68,9 +60,6 @@ module.exports = {
             '@docusaurus/preset-classic',
             {
                 docs: {
-                    admonitions: {
-                        icons: 'none',
-                    },
                     sidebarPath: require.resolve('./sidebars.js'),
                     routeBasePath: '/',
                     remarkPlugins: [math],

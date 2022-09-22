@@ -11,7 +11,51 @@
 
 module.exports = {
     // By default, Docusaurus generates a sidebar from the docs folder structure
-    homeSidebar: ['home/intro', 'home/concepts', 'home/changelog'],
+    homeSidebar: [
+        {
+            type: 'category',
+            label: '👋 Introduction',
+            link: {
+              type: 'doc',
+              id: 'introduction/intro'
+            },
+            collapsed: true,
+            items: [
+                "introduction/concepts",
+                "introduction/models",
+                "introduction/prompts",
+                "introduction/outputs",
+                "introduction/skills",
+            ],
+          },
+        {
+            type: 'category',
+            label: '🔨 Build your first use case',
+            link: {
+              type: 'doc',
+              id: 'introduction/intro'
+            },
+            collapsed: true,
+            items: [
+                /*no code,
+                low code*/
+            ],
+          },
+        {
+            type: 'category',
+            label: '📟 Developer documentation',
+            link: {
+              type: 'doc',
+              id: 'introduction/intro'
+            },
+            collapsed: true,
+            items: [
+                /*specs,
+                endpoints,
+                integrations*/
+            ],
+          },  
+        ],
     apiSidebar: [
         'api/using',
         {
