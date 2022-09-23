@@ -55,11 +55,10 @@ module.exports = {
                 ],
                 '🐥 Low-code': [{
                     '🇬🇧 English': [
-                        'usecases/english/review_classification',
                         'usecases/english/seo',
                         'usecases/english/customer_support',
+                        'usecases/english/review_classification',
                         'usecases/skills/sentiment_analysis',
-                        'usecases/skills/multitask',
                         ]
                     },
                     {
