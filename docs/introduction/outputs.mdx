@@ -1,15 +1,25 @@
+import { Alpha, Beta } from '@site/src/components/labels';
+
 # 🎯 Outputs
 
-The likelihood of a word represents how likely this word is given previous words, according to the model. For instance, the likelihood of Paris in "The capital of France is Paris" is very high, whereas the likelihood of "London" would be lower, and that of "book" would be even smaller. By modelling language, what the Muse API models are actually doing is estimating the likelihood for all possible words, given the previous context. They are building a conditional probability distribution of language.
+The likelihood of a word represents how likely this word is given previous words, according to the model. For instance, the likelihood of Paris in *"The capital of France is Paris"* is very high, 
+whereas the likelihood of *"London"* would be lower, and that of *"book"* would be even smaller.
 
-The log-probability is a representation of the likelihood, ranging from minus infinity to zero. Words with log-probability close to zero have high likelihood, whereas words with large negative log-probability (e.g. -10, -50, etc.) are more unlikely. Log-probabilities are also called log-probs or scores as an abbreviation.
+The log-probability is a representation of the likelihood, ranging from minus infinity to zero. Words with log-probability close to zero have high likelihood, 
+whereas words with large negative log-probability (e.g. -10, -50, etc.) are more unlikely. Log-probabilities are also called log-probs or scores as an abbreviation.
 
-They are useful because log-probabilities can simply be added to evaluate the log-probability of a combination of words. For instance, the log-prob of "New York" in the sentence "I love New York" is the log-prob of "New" in "I love New" plus the log-prob of "York" in "I love New York". This can be used to score entire sentences, and evaluate multiple pre-defined options according to their likelihood.
+They are useful because log-probabilities can simply be added to evaluate the log-probability of a combination of words. 
+For instance, the log-prob of "New York" in the sentence "I love New York" is the log-prob of "New" in "I love New" plus the log-prob of "York" in "I love New York". 
+This can be used to score entire sentences, and evaluate multiple pre-defined options according to their likelihood.
 
-🔬️ Evaluate endpoints rely on likelihood to understand text. You can access the log-probabilities associated with words in a sentence using 🧪 Analyse, to use in a downstream pipeline, or you can directly use 🔘 Select to perform likelihood-based text classification. See our guide about 🥇 reviews classification with the Muse API to learn more.Likelihood can be manually manipulated in ✍️ Create to steer generation. Use word_biases to manually increase or decrease the log-probabilities of words to see them more often or to ban them. Alter the likelihood calculations with presence_penalty and frequence_penalty to generate less repetitive and more novel text. Check out our guide on 🎛️ Steering generation for SEO for more.
+See our entries about [❤️ Reviews Classification](/usecases/english/review_classification) or 
+[🔎️ Content Marketing and Search Engine Optimization](/usecases/english/seo) with Muse to learn more. 
+For the French version, you can visit [❤️ Classification de Critiques](usecases/french/review_classification).
 
-## Embeddings (Alpha)
+## Embeddings
 
-Embeddings are a numerical representation of a given text, built by the model internally to make predictions. They are a vector (i.e. list) of floating point numbers. they encode information about the input text, its context, as well as general knowledge derived from the training data in a computer-understandable format. They can be used by machine learning algorithms as a representation of the input text, to compare different sentences and documents, classify samples, or cluster texts.
+*Status:* <Alpha />
 
-📊 Represent endpoints directly expose the final embeddings built by the model. You can leverage these embeddings in your machine learning pipeline (applying clustering, t-SNE, or a classifier of your choice on them). You can also use ⚖️ Compare to directly compare different texts and select the most similar based on embeddings.
+Embeddings are a numerical representation of a given text, built by the model internally to make predictions. They are a vector (i.e. list) of numbers that encodes 
+information about the input text, its context, as well as general knowledge derived from the training data in a computer-understandable format. They can be used by machine learning 
+algorithms as a representation of the input text, to compare different sentences and documents, classify samples, or cluster texts.
