@@ -12,6 +12,7 @@
 module.exports = {
     // By default, Docusaurus generates a sidebar from the docs folder structure
     homeSidebar: [
+        'home',
         {
             type: 'category',
             label: '👋 Introduction',
@@ -33,80 +34,76 @@ module.exports = {
             label: '🔨 Build your first use case',
             link: {
               type: 'doc',
-              id: 'introduction/intro'
+              id: 'usecases/usecases'
             },
             collapsed: true,
-            items: [
-                /*no code,
-                low code*/
-            ],
+            items: {
+                '🥚 No-code': [{
+                    '🇬🇧 English': [
+                        'usecases/english/prompt',
+                        'usecases/english/parameters',
+                        'usecases/english/spreadsheet'
+                        ]
+                    },
+                    {
+                    '🇫🇷 French': [
+                        'usecases/french/prompt',
+                        'usecases/french/parameters',
+                        'usecases/french/spreadsheet'
+                        ]
+                    },
+                ],
+                '🐥 Low-code': [{
+                    '🇬🇧 English': [
+                        'usecases/english/review_classification',
+                        'usecases/english/seo',
+                        'usecases/english/customer_support',
+                        'usecases/skills/sentiment_analysis',
+                        'usecases/skills/multitask',
+                        ]
+                    },
+                    {
+                    '🇫🇷 French': [
+                        'usecases/french/review_classification',
+                        'usecases/skills/summarization',
+                        ]
+                    },
+                ],
+            },
           },
         {
             type: 'category',
             label: '📟 Developer documentation',
             link: {
               type: 'doc',
-              id: 'introduction/intro'
+              id: 'api/using'
             },
             collapsed: true,
             items: [
-                /*specs,
-                endpoints,
-                integrations*/
+                {
+                    '🧐 Specifications': [
+                        'api/specifications/authentication',
+                        'api/specifications/requests',
+                        'api/specifications/responses',
+                        'api/specifications/errors_warnings',
+                    ],
+                },
+                {
+                    '🧠 Endpoints': [
+                        'api/endpoints/create',
+                        'api/endpoints/analyse',
+                        'api/endpoints/select',
+                        'api/endpoints/embed',
+                        'api/endpoints/compare',
+                        'api/endpoints/tokenize',
+                        'api/endpoints/process',
+                    ],
+                },
+                { '📟 Integrations': ['api/bindings/python', 'api/bindings/javascript'] },
+                'api/models',
+                'api/skills',
             ],
-          },  
+          },
+          'changelog'  
         ],
-    apiSidebar: [
-        'api/using',
-        {
-            '🧐 Specifications': [
-                'api/specifications/authentication',
-                'api/specifications/requests',
-                'api/specifications/responses',
-                'api/specifications/errors_warnings',
-            ],
-        },
-        { '📟 Bindings': ['api/bindings/python', 'api/bindings/javascript'] },
-        'api/models',
-        {
-            '🧠 Primitives': [
-                'api/primitives/create',
-                {
-                    '🔬 Evaluate': [
-                        'api/primitives/evaluate/analyse',
-                        'api/primitives/evaluate/select',
-                    ],
-                },
-                {
-                    '📊 Represent': [
-                        'api/primitives/represent/embed',
-                        'api/primitives/represent/compare',
-                    ],
-                },
-                'api/primitives/tokenize',
-                'api/primitives/process',
-            ],
-        },
-        'api/skills',
-    ],
-    guidesSidebar: [
-        'guides/guides',
-        {
-            '🇬🇧 English': [
-                'guides/english/prompt',
-                'guides/english/seo',
-                'guides/english/review_classification',
-                'guides/english/select',
-            ],
-            '🇫🇷 French': [
-                'guides/french/prompt',
-                'guides/french/review_classification',
-            ],
-            '🤹 Skills': [
-                'guides/skills/summarization',
-                'guides/skills/sentiment_analysis',
-                'guides/skills/multitask',
-            ],
-        },
-    ],
 };
