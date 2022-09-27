@@ -1,103 +1,181 @@
 ---
 ---
 
+import { CardNoLink } from '@site/src/components/cards';
+
 # 📜 Prompt Design
 
-**Learn the ins and outs of writing great prompts to get the most out of our models with ✍️ [Create](/api/primitives/create)**.
+**Learn the ins and outs of writing great prompts to get the most out of Muse**.
 
-:::caution ⚠️ Caution
+:::caution Caution
 The use of ambiguous, disrespectful, racist, or otherwise improper vocabulary can lead to improper generations. Please use common sense when generating text. LightOn is not responsible for improper use of the Muse API.
 :::
 
-Whether you want to use the API to write an article, to answer questions, or to classify customer reviews, it all starts with a **prompt**, i.e. the input text that is submitted to the model and conditions the outputs returned. The prompt primes the model to follow given instructions or perform given tasks, and is primordial to obtain better results.
+Whether you want to write an article, answer questions, or classify customer reviews, it all starts with a **prompt**, i.e. the input text that is submitted to the model and conditions the outputs returned. The prompt primes the model to follow given instructions or perform given tasks, and is crucial to obtain better results.
 
-​In this guide, we review different types of prompts which can be used for Muse, using `lyra-en` as an example. If you're interested in designing prompt in French using `lyra-fr`, check our [Construction de Prompts](/guides/french/prompt) guide! We assume here that the reader is familiar with the use of Create, as well as with the Python Bindings: for more information, check out the ✍️ [Create](/api/primitives/create) and [Python Bindings](/api/bindings/python) documentation pages. We assume that the client has been initialized using
+​In this guide, we review different types of prompts which can be used for Muse, using `lyra-en` as an example. 
+If you're interested in designing prompt in French using `lyra-fr`, check our [Construction de Prompts](/guides/french/prompt) guide: 
+most prompt design advice transfers across languages but there are a few specificities that can help you extract every last percent of performance!
 
-```python
-from lightonmuse import Create
+## 📢 Give instructions
 
-creator = Create("lyra-en")
-```
+Write a description, in natural language, of the task you want Muse to perform.
 
+For example, we can ask Muse to generate an Instagram ad for a resort.
+
+:::tip
+
+Write a task description as detailed as possible. Muse will utilize the details to perform the task at its best.
+
+:::
+
+<div class="row list_ZO3j" style={{justifyContent: "center"}}>
+    <div class="col col--6 margin-bottom--lg">
+        <CardNoLink title={"Bad ❌"} prompt={"An Instagram ad for Atmosphere resort.\n\n\nInstagram Ad:\n\n"} 
+        output={"Beautiful post-card perfect villas, romantic atmosphere, delicious food and a magnificent view - it's like a dream come true!\ Let the Mediterranean heat of the sun and the sight of the beautiful sea and the sea of blue sky take your breath away!\n\nA little blue sky, a little blue sea and a little white sand. An atmosphere of pure tranquility and the possibility of a lovely and relaxing holiday, is what you can experience in the beautiful atmosphere of the Atmosphere resort."}></CardNoLink>
+    </div>
+    <div class="col col--6 margin-bottom--lg">
+        <CardNoLink title={"Better ✅"} prompt={"An Instagram ad for Atmosphere resort, a luxury hotel on Apo island in the Philippines with world-class diving.\nInstagram Ad:\n\n"} 
+        output={"Visit Atmosphere\n\n Atmosphere has just opened its doors and is now ready to offer an unparalleled experience in luxurious, private villas. While the resort’s restaurant is world-class, the real star of the show is the ocean itself. With five stunning dive sites around the island, there’s no better way to enjoy a vacation than with scuba diving. Check out some of our most recent Instagram posts below and get ready to be immersed in paradise!"}></CardNoLink>
+    </div>
+</div>
+
+In the first prompt, we offer little detail on the resort that we are trying to advertise. As a result, the advertisement is generic, Muse talks about the Mediterranean sea, that might not be the location of the resort, 
+and there are some repetitions of the word *atmosphere* as that is the only item Muse could pick up from the prompt. Compare this with the result from the second prompt, where we provided details on the location
+and the main selling points of the resort: the advertisement generated talks about Philippines, scuba diving and luxurious villas. The overall quality of the generation is improved.
+
+:::caution CAUTION 🇫🇷
+
+French models have a slight difference with respect to English models: they prefer full sentences instead of schematic queries. For more information see [📜 Construction de Prompts](/usecases/french/prompt).
+
+:::
+
+## 🪞 Add examples
+
+**​Adding examples to the prompt**, especially if the task is more complex, **improves the generation**. Muse will understand and mirror the behavior. For example, we can use existing answer to reviews to improve our automated customer service.
+However when adding examples, 
+
+:::tip
+
+Provide examples in your prompt on top of the task description. Adding one or more examples of how you would like the task to be carried out will help Muse perform better. You can separate examples with 
+sequences like `***` or `###`.
+
+:::
+
+<div class="row list_ZO3j" style={{justifyContent: "center"}}>
+    <div class="col col--6 margin-bottom--lg">
+        <CardNoLink title={"Bad ❌"} prompt={"Answer the following client reviews.\n\n###\nReview: I like this bar. The deco, the staff and the little bit of a mystery in finding it all adds up to a positive experience.\nAnswer:"} 
+        output={" I love the mystery of finding this bar, but I am disappointed with the food. It is all over the place. I am glad I tried it."}></CardNoLink>
+    </div>
+    <div class="col col--6 margin-bottom--lg">
+        <CardNoLink title={"Better ✅"} prompt={"Answer the following client reviews.\n\n###\nReview: Really innovative and cool vibe. Cocktails are unusual sounding, but great tasting. We loved the service too, not at all pretentious, friendly and attentive. We’ll be back!\nAnswer: Thank you for your positive review! We hope to see you again soon :).\n\n###\nReview: I like this bar. The deco, the staff and the little bit of a mystery in finding it all adds up to a positive experience.\nAnswer: "} 
+        output={"Thank you for your review. We are glad that you enjoyed your experience. We look forward to seeing you again soon."}></CardNoLink>
+    </div>
+</div>
+
+The prompt on the left offers no example of how to reply, therefore Muse is confused and generates a similar review instead of a reply. In the prompt on the right, we offer one example of answering a review. 
+Muse picks up on the key elements: thank the client for the review, and ask them to come back soon. 
+
+
+## 🍱 Add more examples with more variety
+
+In the previous example, the answer remained pretty generic, it could be usd to reply to any positive review. 
+What happens if we provide a negative review? Muse might default to the generic reply for positive reviews, and clearly that is something we want to avoid. 
+To improve the generation quality we can **add more examples with more variety** to the prompt.
+
+:::tip
+
+Provide varied examples. For example, if your task requires to respond positively or negatively, include an example of both situations in your prompt.
+
+:::
+
+<div class="row list_ZO3j" style={{justifyContent: "center"}}>
+    <div class="col col--6 margin-bottom--lg">
+        <CardNoLink title={"Bad ❌"} prompt={"Answer the following client reviews.\n\n###\nReview: Really innovative and cool vibe. Cocktails are unusual sounding, but great tasting. We loved the service too, not at all pretentious, friendly and attentive. We’ll be back!\nAnswer: Thank you for your positive review! We hope to see you again soon :).\n\n###\nReview: Nice place, the drinks though...\nAnswer: "} 
+        output={"Thank you for your positive review! We hope to see you again soon :)."}></CardNoLink>
+    </div>
+    <div class="col col--6 margin-bottom--lg">
+        <CardNoLink title={"Better ✅"} prompt={"Answer the following client reviews.\n\n###\nReview: Really innovative and cool vibe. Cocktails are unusual sounding, but great tasting. We loved the service too, not at all pretentious, friendly and attentive. We’ll be back!\nAnswer: Thank you for your positive review! We hope to see you again soon :).\n\n###\nReview: Great atmosphere. Poor service and drinks. Waited 45 minutes for our drinks. The mojito was like Sprite with mint garnish. Expensive and overrated. Go elsewhere.\nAnswer: We are sorry we didn't meet your expectations, and that you had to wait for so long. We hope you give us another chance soon.\n\n###\nReview: Nice place, the drinks though...\nAnswer: "} 
+        output={"We are sorry that you didn't like our cocktails. Your feedback is very important for us."}></CardNoLink>
+    </div>
+</div>
+
+In the prompt on the left, Muse defaults to a positive reply even if the review is negative. In the prompt on the right we now offer an additional example of reply to a negative review, and Muse is able to reply
+picking up the item that was not liked by the customer.
+
+## ⚖️ Calibrate and order the examples
+
+Imagine that we now want to utilize Muse to classify review in positive and negative. What happens when we add six examples with five positive classification and only one negative? 
+Or when the split is 50/50 but we put first the three negative ones and then the three positive ones? In both cases Muse will be biased to classify into the *positive* category. Muse picks up on
+the so-called *frequency* and *recency* bias. If a class is more frequent in the prompt or towards the end of the prompt, then it will bias the model to classify that way. To correct this, you need to make
+sure to spread different kind of examples equally in the prompt.
+
+:::tip
+
+Provide balanced examples in your prompts, with a neutral order. Avoid groups of similar examples close together or towards the end of the prompt, for example five negative classification and only a single positive one.
+
+:::
+
+<div class="row list_ZO3j" style={{justifyContent: "center"}}>
+    <div class="col col--6 margin-bottom--lg">
+        <CardNoLink title={"Bad ❌"} prompt={"This is a review sentiment classifier that classifies the reviews as \"Positive\" or \"Negative\".\n***\nReview: 'Suicide Squad was an awful movie, that's 2 hours of my life I won't get back...'\nSentiment: Negative.\n***\nReview: 'Wooh, just came out of Interstellar and it was amazing.'\nSentiment: Positive.\n***\nReview: 'The new Dune movie is great!'\nSentiment: Positive.\n***\nReview: 'Wooh, just came out of Interstellar and it was amazing.'\nSentiment: Positive.\n***\nReview: 'Smart, funny, clever, joyful, and sad. Should be required viewing for all kids. And everyone else for that matter.'\nSentiment: Positive.\n***\nReview: 'The exceptional ensemble cast brings to light, with subtlety and suspense, a well-known story and a gut-punch of an ending.'\nSentiment: Positive.\n***\nReview: 'Sentimentality I’d expect from Spielberg, not Nolan.'\nSentiment:"} 
+        output={"Positive."}></CardNoLink>
+    </div>
+    <div class="col col--6 margin-bottom--lg">
+        <CardNoLink title={"Better ✅"} prompt={"This is a review sentiment classifier that classifies the reviews as \"Positive\" or \"Negative\".\n***\nReview: 'Suicide Squad was an awful movie, that's 2 hours of my life I won't get back...'\nSentiment: Negative.\n***\nReview: 'Wooh, just came out of Interstellar and it was amazing.'\nSentiment: Positive.\n***\nReview: 'A respectable but flawed adaptation of a great musical.'\nSentiment: Negative.\n***\nReview: 'Wooh, just came out of Interstellar and it was amazing.'\nSentiment: Positive.\n***\nReview: 'Whoever’s job it was to guard good writing and acting really fell down on the job.'\nSentiment: Negative.\n***\nReview: 'The exceptional ensemble cast brings to light, with subtlety and suspense, a well-known story and a gut-punch of an ending.'\nSentiment: Positive.\n***\nReview: 'Sentimentality I’d expect from Spielberg, not Nolan.'\nSentiment:"} 
+        output={"Negative."}></CardNoLink>
+    </div>
+</div>
+
+In the left prompt we have an five examples out of six that are positive reviews, and the only negative example is at the beginning of the prompt. As a result, Muse misclassifies the last review as being positive.
+In the box on the right, we improve the prompt by using three negative and three positive examples, and alternating them regularly. Muse now classifies correctly our review!
+
+## 📚  Spelling, grammar, formatting
 ​
+Muse works by completing an input text as if it was a document to continue, and documents rarely change writing style abruptly. If your prompt contains spelling, grammar errors or inconsistent formatting, completions will also 
+have these problems. It is unlikely that a person that writes with bad grammar will just suddenly start writing with correct grammar. Grammar is very important if your generations require reasoning, as
+well-reasoned document that are poorly written are rare.
 
-## A text to complete
+:::tip
 
+Avoid spelling, grammar errors or inconsitent formatting if you do not want these issues to appear in the Muse completions. Poorly written documents are rarely well-reasoned.
+
+:::
+
+<div class="row list_ZO3j">
+    <div class="col col--6 margin-bottom--lg">
+        <CardNoLink title={"Bad ❌"} prompt={"corect to std english:\n\nShe no went to the market. ->\n\n"} output={" I wount go to the store "}></CardNoLink>
+    </div>
+    <div class="col col--6 margin-bottom--lg">
+        <CardNoLink title={"Better ✅"} prompt={"Correct to standard English:\n\nWrong: She no went to the market.\nCorrect: "} output={"She didn't go to the market."}></CardNoLink>
+    </div>
+</div>
+
+**The quality of the output depends strongly on the quality of your prompt.** In particular, the length, the vocabulary, the grammar of your prompt will have a crucial influence on your output. 🧠 Keep this in mind! 
 ​
-The first type of prompts we consider here is using the beginning of a text (article, advertisement, literary text) that we want the API to continue.
+## 🪜 Adding explanations
 
-For example, we can use
+Now you get the basics of good prompt design. If you want to go even further, adding step-by-step explanations in your examples also improves performance.
+Instead of simply providing examples of inputs and outputs of a task, you also provide the reasoning behind the output in each example. Muse will utilize this information to provide more accurate completions.
 
-```python
-prompt = "It was a nice summer evening."
-output = creator(prompt, n_tokens=20)
-print(prompt + "🤖 " + output[0][0]['completions'][0]['output_text'])
-```
+:::tip
 
-​which returns
+Provide step-by-step explanations in your examples to improve performance. As for task descriptions, the final result will be better if you provide more details.
 
-> It was a nice summer evening.🤖 The sun was setting behind my boat, casting a pink-purple tone over the calm river.
+:::
 
-**The quality of the output is strongly conditioned by the quality of your prompt.** In particular, the length, the vocabulary, the grammar of your prompt will have a crucial influence on your output. Just taking the full stop out of the previous prompts changes the text generated by our model:
-​
+<div class="row list_ZO3j">
+    <div class="col col--6 margin-bottom--lg">
+        <CardNoLink title={"Bad ❌"} prompt={"This is a review sentiment classifier that classifies the reviews as \"Positive\" or \"Negative\".\n\n***\nReview: 'Exhilarating, profound, trite, flawed, perfect, but always very meta. An exciting flight of fancy with an outstanding ensemble cast...'\nSentiment: Positive.\n***\nReview: 'A respectable but flawed adaptation of a great musical. Am I allowed to say that I’m getting tired of Meryl Streep?'\nSentiment:"} 
+        output={"Positive."}></CardNoLink>
+    </div>
+    <div class="col col--6 margin-bottom--lg">
+        <CardNoLink title={"Better ✅"} prompt={"This is a review sentiment classifier that classifies the reviews as \"Positive\" or \"Negative\".\n***\nReview: 'Exhilarating, profound, trite, flawed, perfect, but always very meta. An exciting flight of fancy with an outstanding ensemble cast...'\nThis review mentions an \"outstanding cast\" and an \"exciting flight of fancy\", therefore it is positive.\n***\nReview: 'A respectable but flawed adaptation of a great musical. Am I allowed to say that I’m getting tired of Meryl Streep?'\nThis review mentions"} 
+        output={"a \"respectable but flawed adaptation\", therefore it is negative."}></CardNoLink>
+    </div>
+</div>
 
-```python
-prompt = "It was a nice summer evening"
-output = creator(prompt, n_tokens=20)
-print(prompt + "🤖 " + output[0][0]['completions'][0]['output_text'])
-```
 
-> It was a nice summer evening🤖 . The sky was still bright with orange sun, and on the beach, the sun was fading on
-
-Keep this in mind!
-
-## The description of a task
-
-Another type of prompt that can be used is the description, in natural language, of the task you want Muse to perform. Several examples can also be included to make the generation even more pertinent.
-
-For example, we can ask `lyra-en` to generate an Instagram Ad for a resort that we describe:
-​
-
-```python
-prompt = "An Instagram ad for Atmosphere resort, a luxury hotel on Apo island in the Philippines with world-class diving.\n\nInstagram Ad:"
-output = creator(prompt, temperature=0.8, n_tokens=98, word_biases={"luxury": 5, "scuba": 5}, frequency_penalty=0.5)
-print(output[0][0]['completions'][0]['output_text'])
-```
-
-> Visit Atmosphere
->
-> Atmosphere has just opened its doors and is now ready to offer an unparalleled experience in luxurious, private villas. While the resort’s restaurant is world-class, the real star of the show is the ocean itself. With five stunning dive sites around the island, there’s no better way to enjoy a vacation than with scuba diving. Check out some of our most recent Instagram posts below and get ready to be immersed in paradise!
-
-​Adding examples to the prompt, especially if the task is more complex, improves the generation. Here, we use examples of reviews and their associated answer to prime `lyra-en` to answer customers' reviews.
-
-```python
-prompt = """Answer the following client reviews.
-
-###
-Review: Really innovative and cool vibe. Cocktails are unusual sounding, but great tasting. We loved the service too, not at all pretentious, friendly and attentive. We’ll be back!
-Answer: Thank you for your positive review! We hope to see you again soon :).
-
-###
-Review: Great atmosphere. Poor service and drinks.  Waited 45 minutes for our drinks. The mojito was like Sprite with mint garnish.  They didn’t seem to care. For a bar based on cocktails, super poor. Expensive and overrated. Go elsewhere.
-Answer: We are sorry we didn't meet your expectations, and that you had to wait for so long. We hope you give us another chance soon.
-
-###
-Review: I like this bar. The deco, the staff and the little bit of a mystery in finding it all adds up to a positive experience.
-Answer: """
-output = creator(prompt, temperature=0.8, n_tokens=25,
-                  stop_words=["\n", ".", "\n\n"])
-print(output[0][0]['completions'][0]['output_text'])
-```
-
-​generates the answer
-
-> Thank you for your kind words! We are glad you liked the ambiance and we look forward to seeing you again.
-> ​
-
-to the last review.
-
-​
-
-## Experiment with your prompts
+## 🧪 Experiment with your prompts
 
 As you can see in the examples above, a good prompt is the key to achieving quality results. The more detail you can include in the description of a task, the more examples you can provide, the better the generation. Make sure to try out various prompts to see what produces the best results for your task at hand, and check out our examples for inspiration.
