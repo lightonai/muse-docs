@@ -5,9 +5,9 @@
 
 If something goes wrong, the API will return **standard HTTP codes** to indicate a problem occurred:
 
--   Codes in the **400** range indicate something was wrong with your request. This will usually be detailed: it may be mistyped a parameter, provided an incorrect value, etc.
+-   Codes in the **400** range indicate something was wrong with your request. This will usually be detailed: it may be a mistyped parameter, provided an incorrect value, etc.
 
-    ```json title="Example response to a malformed request"
+    ```json title="Example response to a malformed request where the API key is not valid"
     {
         "detail": "Invalid api key"
     }
@@ -20,3 +20,5 @@ If something goes wrong, the API will return **standard HTTP codes** to indicate
     ```
 
 -   Codes in the **500** range indicate a problem with the Muse servers.
+
+If you suspect a 🐛 bug, you can contact our customer support.

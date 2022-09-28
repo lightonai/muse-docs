@@ -9,7 +9,7 @@ import { Examples } from '@site/src/components/examples';
 
 The Muse API is accessed through **`POST` HTML requests**, from the tool of your choice (`curl`, `requests`, ...).
 
-The example request below queries the ✍️ **[Create](/api/primitives/create)** endpoint of the `lyra-fr` model, with
+The example request below queries the ✍️ **[Create](/api/endpoints/create)** endpoint of the `lyra-fr` model, with
 the prompt `Once upon a time`, and asks for a completion of length 25 tokens (`"n_tokens": 25`).
 
 <Examples tabs={['cURL', 'Python', 'JavaScript']}>
@@ -27,17 +27,15 @@ curl -X 'POST' \
 ```python
 from lightonmuse import Create
 
-create = Create("orion-fr")
-outputs, cost, request_id = create("Il était une fois", mode=nucleus, n_tokens=25, p=0.9)
+create = Create("lyra-fr")
+outputs, cost, request_id = create("Il était une fois", n_tokens=25)
 ```
 
 ```js
-let { response, error } = client.query(ApiModels.OrionFr, Endpoints.Create, {
+let { response, error } = client.query(ApiModels.LyraFr, Endpoints.Create, {
     text: 'Il était une fois',
     params: {
-        mode: ApiMode.Nucleus,
         n_tokens: 25,
-        p: 0.9,
     },
 });
 ```
@@ -47,13 +45,13 @@ let { response, error } = client.query(ApiModels.OrionFr, Endpoints.Create, {
 Requests should follow this format:
 
 -   **Endpoint/primitive URL**: `https://api.lighton.ai/muse/v1/{endpoint}` (e.g. `create`, `select`, etc.).
--   **Header for JSON payload**: the API works with JSON payloads only, so you should set `Content-Type: application/json` and `Accept: application/json` in your requests.
--   **Header for authentication**: `X-API-KEY: {YOUR_API_KEY}`, see
+-   **JSON Payload Header**: the API works with JSON payloads only, so you should set `Content-Type: application/json` and `Accept: application/json` in your requests.
+-   **Authentication Header**: `X-API-KEY: {YOUR_API_KEY}`, see
     🔑 **[Authentication](/api/specifications/authentication)** for more details.
--   **Header for model**: you should specify which model you want to query, see 🤖 **[Models](/api/models)** for availability across languages.
+-   **Model Header**: which model you want to query, see 🤖 **[Models](/api/models)** for availability across languages.
 -   **JSON payload for the request**: the request and its parameters should be specified in JSON format. All endpoints usually take the main text(s) first, and then the extra parameters. **See the specific documentation of each primitive for details**.
 
-As an example, the request above will generate a response similar to the following (make sure to check the 💬 **[Responses](/api/specifications/responses)** page
+As an example, the request above will generate a response similar to the following (see 💬 **[Responses](/api/specifications/responses)**
 for more information).
 
 <details>
@@ -105,7 +103,7 @@ for more information).
 ## Batching requests
 
 If you are planning to process data in bulk, and/or to make many independent API calls, you may benefit from the
-Muse API ability to **batch requests to the same endpoint and model**. Batching enables lower latency, faster and simplified processing.
+Muse API ability to **batch requests to the same endpoint and model**. Batching enables lower latency and faster and simplified processing.
 
 The API supports both batching with the same parameters and with different parameters.
 
@@ -120,7 +118,7 @@ Batching with the same parameters is as simple as providing a **list of strings 
 }
 ```
 
-When used with ✍️ **[Create](/api/primitives/create)**, this will return completions of 25 tokens for both
+When used with ✍️ **[Create](/api/endpoints/create)**, this will return completions of 25 tokens for both
 `"Once upon a time"` and `"Mars is a planet"`. The `outputs` list will contain one entry for each item in `text`.
 
 <details>
@@ -195,7 +193,7 @@ When used with ✍️ **[Create](/api/primitives/create)**, this will return com
 ### Advanced batching: with different parameters
 
 The API also supports batching requests with different parameters. To do this, **your input payload should now be
-a list of dictionaries**, each dictionary representing a request. It's possible to mix this with simple batching,
+a list of dictionaries**, each dictionary representing a request. It is possible to mix this with simple batching,
 as demonstrated below:
 
 ```json title="Advanced batch request payload (JSON)"
@@ -211,7 +209,7 @@ as demonstrated below:
 ]
 ```
 
-When used with ✍️ **[Create](/api/primitives/create)**, this will return two group of completions of 25 tokens for both
+When used with ✍️ **[Create](/api/endpoints/create)**, this will return two group of completions of 25 tokens for both
 `"Once upon a time"` and `"Mars is a planet"`, one group with `greedy` sampling, and the other with `nucleus` sampling.
 The `outputs` list will contain one list for each parameters configuration, each containing one entry per item in `text`.
 
