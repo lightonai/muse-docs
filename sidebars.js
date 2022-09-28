@@ -26,6 +26,7 @@ module.exports = {
                 "introduction/models",
                 "introduction/prompts",
                 "introduction/outputs",
+                "introduction/tokens",
                 "introduction/skills",
             ],
           },

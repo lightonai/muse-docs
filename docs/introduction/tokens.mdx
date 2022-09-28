@@ -1,0 +1,30 @@
+---
+---
+
+import { Alpha, Beta } from '@site/src/components/labels';
+
+# ✂️ Tokens
+
+*Muse models don't actually process text as a sequence of characters or words, but as a sequence of tokens.**
+Tokens are to our models what syllables are to us: they are building blocks, which can be combined into words 
+or sentences. Tokens are constructed to be sequence of characters with a useful semantic, but are sensitive to 
+whitespace and capitalization.
+
+Let's take a look at a few examples of tokenization. In tokens, `Ġ` represents a whitespace, 
+and in the following we separate tokens with dashes `-`. Common words are usually single tokens with a 
+whitespace preceding them: `Ġword`, `Ġcivilization`, `ĠEarth`, etc. Complex words and uncommon proper 
+nouns will be made of multiple tokens: `Ġhom` - `onym`, `ĠKam` - `ala`, `ĠSuper` - `cal` - `if` - `rag` - 
+`il` - `ist` - `ice` - `xp` - `iral` - `id` - `ocious`. This sentence will be tokenized as: 
+`This` - `Ġsentence` - `Ġwill` - `Ġbe` - `Ġtoken` - `ized` - `Ġas` - `:`.
+
+On average, a token equals 3/4 words, or 4 characters in English. This will also vary 
+with the style of the text: "simple" writing will use less tokens (on average one per word), 
+whereas complex technical writing will use more. You can play around with the [✂️ Tokenizer on the Muse Playground 
+pricing page](https://muse.lighton.ai/pricing) to get a better feeling for how this works and 
+how it differs across languages.
+
+On occasion, you have to be mindful of tokens. For instance, in ✍️ Create, the model can only 
+generate a fixed number of tokens, which may cause it to stop generation in the middle of a complex word. 
+Similarly, features such as word biases used for complex words can only influence the first token provided: 
+if setting `word_biases = {'ticketing': +5}`, this will be effectively equivalent to setting 
+`word_biases = {'ticket': +5}`, because "ticketing" is tokenized as `Ġticket` - `ing`.
