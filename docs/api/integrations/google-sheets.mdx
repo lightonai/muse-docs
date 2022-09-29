@@ -1,0 +1,139 @@
+import {
+    ParamType,
+    ParamDefault,
+    ParamWarning,
+} from '@site/src/components/labels';
+
+# 🤖 Google Sheets
+
+## Quickstart
+
+:::info
+Before using the extension, you need to set your API key.
+Select in the toolbar `Muse` > `Settings` > `Register API Key`. Enter your API key and click on the submit button.
+
+You will find your API key in `Account` > `API Keys`.
+
+If you don't have an API key, subscribe to [muse.lighton.ai](https://muse.lighton.ai/).
+:::
+
+> You can load some examples using the `Load an example sheet` button from the `Muse` tab.
+
+The layout to follow is:
+
+| `Prompt`                                   | `n_tokens` | `mode`    | `stop_words` | ... | `Completion`                                                            |
+| ------------------------------------------ | ---------- | --------- | ------------ | --- | ----------------------------------------------------------------------- |
+| This AI-powered Google Sheets extension is | `15`       | `nucleus` |              |     | the result of hours of testing, a hefty price tag and a staff full      |
+| The AI algorithms behind Muse are          | `20`       |           | `"."`        |     | generally well-known and recognized leaders in their respective fields. |
+
+:::caution
+Having the `prompt` keyword (any case) in the upper-left corner of the selection is **mandatory**.
+:::
+
+:::info
+You can add as many columns you want between the prompt column and the completion column.
+Leaving a cell empty will skip the parameter for the matching prompt.
+:::
+
+:::info Selecting a model
+You can change the model used by the current sheet in `Muse` > `Settings` > `Select model`.
+
+Models are available in the `Models` tab.
+:::
+
+## Complete cells
+
+<video controls style={{ width: '100%' }}>
+    <source src="/img/google-sheets/complete-cells-demo.mp4" />
+</video>
+
+## Available parameters
+
+-   `n_tokens` <ParamType type="number" /> <ParamDefault default="20" />
+
+    Number of [tokens](/home/concepts#tokens) to generate. This can be overridden by a list of `stop_words`, which will cause generation to halt when a word in such list is encountered.
+
+-   `best_of` <ParamType type="number" /> <ParamDefault default="null" />
+
+    Among `n_completions`, only return the `best_of` ones. Completions are selected according to how likely they are, summing the [log-likelihood](/home/concepts#likelihood) over all tokens generated.
+
+    **Sampling**
+
+    See the [sampling](/home/concepts#sampling) entry for more details.
+
+-   `mode` <ParamType type="(greedy, topk, nucleus, typical)" /> <ParamDefault default="nucleus" />
+
+    How the model will decide which token to select at each step.
+
+    -   **Greedy**: the model will always select the most likely token. This generation mode is deterministic and only suited for applications in which there is a ground truth the model is expected to return (e.g. question answering).
+    -   **Top K**: the model will only consider the `k` most likely tokens. For some models, in particular `lyra-fr`, this `mode` is a very good alternative to `nucleus` sampling.
+    -   **Nucleus**: the model will only consider the most likely tokens with total probability mass `p`. We recommend this setting for most applications.
+    -   **Typical**: the model will discard high probability tokens with low expected information content.
+
+-   `temperature` <ParamType type="number" /> <ParamDefault default="1.0" /> <ParamWarning warning="⚠️ only in topk/nucleus mode" />
+
+    How risky will the model be in its choice of tokens. A temperature of 0 corresponds to greedy sampling. we recommend a value around 1 for most creative applications, and closer to 0 when a ground truth exists.
+
+-   `p` <ParamType type="number" /> <ParamDefault default="0.9" /> <ParamWarning warning="⚠️ only in nucleus mode" />
+
+    Total probability mass of the most likely tokens considered when sampling in nucleus mode.
+
+-   `k` <ParamType type="number" /> <ParamDefault default="5" /> <ParamWarning warning="⚠️ only in topk mode" />
+
+    Number of most likely tokens considered when sampling in top-k mode.
+
+    **Control**
+
+-   `biases` <ParamType type="Record<string, number>" /> <ParamDefault default="null" />
+
+    :::info Google Sheets format
+    You must surround each word with double quotes, add a semicolon and the weight you want to apply to this word. You need to separate them with commas.
+
+    Like: `"positive": 2, "negative": -50, "cinema": 4`.
+    :::
+
+    Bias the provided words to appear more or less often in the generated text.
+    Values should be comprised between -100 and +100, with negative values making words less likely to occur. Extreme
+    values such as -100 will completely forbid a word, while values between 1-5 will make the word more likely to appear.
+    We recommend playing around to find a good fit for your use case.
+
+    :::tip 💡 Avoiding repetitions
+    When generating longer samples with `biases`, the model may repeat positively biased words too often. Combine this option with `presence_penalty` and `frequency_penalty` to achieve best results. If you generate a first completion, and then use it as a prompt for a new completion, you probably want to turn off the word bias encouraging a certain word once it has been produced to avoid too much repetition.
+    :::
+
+-   `presence_penalty` <ParamType type="number" /> <ParamDefault default="0.0" />
+
+    How strongly should tokens be prevented from appearing again.
+    This is a one-off penalty: tokens will be penalized after their first appearance, but not more if they appear repetitively.
+    Use `frequency_penalty` if that's what you want instead. Use values between 0 and 1. Values closer to 1 encourage variation of the topics generated.
+
+-   `frequency_penalty` <ParamType type="number" /> <ParamDefault default="0.0" />
+
+    How strongly should tokens be prevented from appearing again if they have appeared repetitively. Contrary to `presence_penalty`, this penalty scales with how often the token already occurs. Use values between 0 and 1. Values closer to 1 discourage repetition, especially useful in combination with `biases`.
+
+-   `stop_words` <ParamType type="List<string>" /> <ParamDefault default="null" />
+
+    Encountering any of these words will halt generation immediately.
+
+    :::info Google Sheets format
+    You must surround each word with double quotes and separate them with commas.
+
+    Like: `"end", ".", ";"`.
+    :::
+
+    **Utilities**
+
+-   `concat_prompt` <ParamType type="boolean" /> <ParamDefault default="false" />
+
+    The original `prompt` will be concatenated with the generated text in the returned response.
+
+-   `seed` <ParamType type="number" /> <ParamDefault default="null" />
+
+    Make sampling deterministic by setting a seed used for random number generation.
+    Useful for strictly reproducing **Create** calls.
+
+    **Skills**
+
+-   `skill` <ParamType type="string" /> <ParamDefault default="null" />
+
+    Specify a 🤹 **[Skill](/api/skills)** to use to perform a specific task or to tailor the generated text.

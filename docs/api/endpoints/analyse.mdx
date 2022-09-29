@@ -1,5 +1,3 @@
----
----
 
 import { Examples } from '@site/src/components/examples';
 import {
@@ -42,7 +40,7 @@ outputs, cost, request_id = analyser("Il était une fois en Laponie")
 ```
 
 ```js
-let { response, error } = client.query(ApiModels.OrionFr, Endpoints.Analyse, {
+let { response, error } = client.query(ApiModel.OrionFr, Endpoint.Analyse, {
     text: 'Il était une fois en Laponie',
 });
 ```

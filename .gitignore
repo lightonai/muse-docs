@@ -29,8 +29,5 @@ yarn-error.log*
 
 # Env
 .env
-<<<<<<< Updated upstream
-=======
 .vercel
 .envrc
->>>>>>> Stashed changes

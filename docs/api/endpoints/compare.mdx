@@ -1,6 +1,3 @@
----
----
-
 import { ParamType, ParamWarning } from '@site/src/components/labels';
 import { Examples } from '@site/src/components/examples';
 
@@ -38,12 +35,12 @@ outputs, cost, request_id = comparer("Je suis content", candidates=["je suis heu
 ```
 
 ```js
-let { response, error } = client.query(ApiModels.OrionFr, Endpoints.Compare, {
+
+let { response, error } = client.query(ApiModel.OrionFr, Endpoint.Compare, {
     reference: 'Je suis content',
     candidates: ['je suis heureux', 'je suis triste'],
 });
 ```
-
 </Examples>
 
 <details>

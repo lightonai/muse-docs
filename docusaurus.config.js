@@ -30,24 +30,6 @@ module.exports = {
                 src: 'img/muse-logo.svg',
             },
             items: [
-                /*{
-                    type: 'doc',
-                    docId: 'home/intro',
-                    position: 'left',
-                    label: '🦾 Getting started',
-                },
-                {
-                    type: 'doc',
-                    docId: 'api/using',
-                    position: 'left',
-                    label: '📟 API Reference',
-                },
-                {
-                    type: 'doc',
-                    docId: 'guides/guides',
-                    position: 'left',
-                    label: '📚 Guides',
-                },*/
             ],
         },
         prism: {
