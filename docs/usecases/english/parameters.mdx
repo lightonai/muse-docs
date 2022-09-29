@@ -1,1 +1,57 @@
+import { CardNoLink } from '@site/src/components/cards';
+
 # ⚙️ Parameters
+
+**Learn the optimal parameter choice for your use case**.
+
+:::tip
+
+In most situations, the choice of parameters is guided by a single question: *do I want Muse to be creative or to reply with an expected ground truth?*
+
+:::
+
+For detailed parameters descriptions with allowed types and values, you can visit the [📟 Developer Documentation](/api). Here we limit ourselves to an intuitive description 
+of the parameters that appear in the [Muse Playground](https://muse.lighton.ai/).
+
+## Length of the output
+
+### 🧮 Number of tokens
+
+The maximum number of [tokens](/introduction/tokens) to generate in the completion, when you click on the `Create` button.
+
+### 🛑 Stop Words
+ 
+Sequences of characters that will cause generation to halt even before the number of tokens set has been reached. Useful if you want to stop generation at a particular point.
+
+For example, when asking for a "positive"/"negative" classification, you might want to stop at `.` or a newline, without generating anything more than "positive" and "negative".
+
+## Creativity
+
+### 🌡️ Temperature
+
+The temperature controls the creativity of the model. For open-ended generation tasks we advise to use values around `0.9 - 1.0`, for applications with a well defined answer you 
+should use instead values closer to zero. Alter this or [Top P](/usecases/english/parameters#-top-p) but not both.
+
+### 🔝 Top P
+
+Muse will consider only tokens that make up for a certain amount of probability. A value of `0.9` means that Muse will discard the least likely tokens that make up for 10% of the probability.
+It is less intuitive than Temperature, and we advise to alter this or [Temperature](/usecases/english/parameters#%EF%B8%8F-temperature) but not both.
+
+## Control
+
+### ↕️ Word Biases
+
+Allows to control the [likelihood](/introduction/outputs) of certain words to appear in the generation. Large negative values will ban words from appearing in the text. Large positive values 
+will result in the exclusive generation of such words.
+
+For example, a bias of `-100` on `"hello"` will ban such word from appearing in the text. A bias of `100` on the same word will make the generation output only "hello hello hello...".
+
+### 😶‍🌫️ Presence penalty
+
+If Muse enters in a *loop* here it keeps talking about the same topic over multiple sentence, you should increase this value. It penalizes tokens if they have already appeared in the text, 
+and increases the chance of Muse talking about new arguments.
+
+### 🚇 Frequency penalty
+
+If Muse enters in a *loop* here it keeps repeating the same sentence verbatim, you should increase this value. It penalizes tokens depending on their frequency in the text, decreasing the chances
+of verbatim repetitions. It is especially useful in combination with positive [word biases](/usecases/english/parameters#%EF%B8%8F-word-biases).

@@ -1,17 +1,17 @@
 # 😀😟 Sentiment Analysis Skill
 
-**Use the `Sentiment Analysis` skill with 🔘 [Select](/api/primitives/evaluate/select) to classify the polarity of a given text.**
+**Use the `Sentiment Analysis` skill with 🔘 [Select](/api/endpoints/select) to classify the polarity of a given text.**
 
 The `sentiment_analysis` skill is designed to classify text as negative, neutral, or positive.
 
-It uses the 🔘 [Select](/api/primitives/evaluate/select) endpoint, which requires you to specific `candidates` that are used for classification. In order to use the skill, the `candidates` need to be: `["-", "0", "+"]`,
+It uses the 🔘 [Select](/api/endpoints/select) endpoint, which requires you to specific `candidates` that are used for classification. In order to use the skill, the `candidates` need to be: `["-", "0", "+"]`,
 with
 
 -   `-` if the expressed opinion is negative,
 -   `0` if it is neutral,
 -   `+` if it is positive.
 
-In this short guide, learn how to use the `sentiment_analysis` skill with `lyra-en`. We assume here that the reader is familiar with the parameters of Select, as well as with the Python Bindings: for more information, check out the 🔘 [Select](/api/primitives/evaluate/select), and [Python Bindings](/api/bindings/python) documentation pages. We start by initializing the client with the following code.
+In this short guide, learn how to use the `sentiment_analysis` skill with `lyra-en`. We assume here that the reader is familiar with the parameters of Select, as well as with the Python Bindings: for more information, check out the 🔘 [Select](/api/endpoints/select), and [Python Bindings](/api/bindings/python) documentation pages. We start by initializing the client with the following code.
 
 ## Examples
 

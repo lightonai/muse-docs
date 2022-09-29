@@ -3,13 +3,13 @@
 
 # ❤️ Classification de Critiques
 
-**Classifiez des critiques selon si elles sont positives ou négatives en utilisant ✍️ [Create](/api/primitives/create) et 🔘 [Select](/api/primitives/evaluate/select).**
+**Classifiez des critiques selon si elles sont positives ou négatives en utilisant ✍️ [Create](/api/endpoints/create) et 🔘 [Select](/api/endpoints/select).**
 
 L'analyse des sentiments (aussi appelée _opinion mining_) consiste à analyser les différents sentiments et émotions exprimés dans un texte donné. Par exemple, ce procédé peut être utilisé pour classifier des avis de clients suivant s'ils sont satisfaits ou non.
 
 C'est un outil essentiel afin de comprendre les attitudes et les besoins de clients. Il permet d'explorer leur satisfaction, ou encore d'évaluer leurs réactions par rapport à un nouveau produit ou service, et d'ajuster ces nouveautés au ressenti de ces clients.
 
-À l'heure actuelle, le nombre de commentaires et avis laissés sur un produit donné peut très vite exploser. C'est pour cette raison qu'il est primordial d'être capable de faire de l'analyse des sentiment automatiquement. Dans ce guide, nous nous penchons sur ce sujet. Afin d'illustrer les capacités de Muse dans le domaine de l'analyse des sentiments, nous allons voir comment `lyra-fr` peut être utilisé pour classifier des critiques de films. Pour une version anglaise de ce guide, utilisant `lyra-en`, et qui inclue l'utilisation de la [Skill](/api/skills) `sentiment_analysis`, jetez un œil au guide [Review Classification](/guides/english/review_classification). Notez que ce guide utilise les [Python Bindings](/api/bindings/python) de l'API.
+À l'heure actuelle, le nombre de commentaires et avis laissés sur un produit donné peut très vite exploser. C'est pour cette raison qu'il est primordial d'être capable de faire de l'analyse des sentiment automatiquement. Dans ce guide, nous nous penchons sur ce sujet. Afin d'illustrer les capacités de Muse dans le domaine de l'analyse des sentiments, nous allons voir comment `lyra-fr` peut être utilisé pour classifier des critiques de films. Pour une version anglaise de ce guide, utilisant `lyra-en`, et qui inclue l'utilisation de la [Skill](/api/skills) `sentiment_analysis`, jetez un œil au guide [Review Classification](/usecases/english/review_classification). Notez que ce guide utilise les [Python Bindings](/api/bindings/python) de l'API.
 
 Par la suite, nous partons du principe que le client a été initialisé à l'aide de la commande suivante :
 
@@ -22,7 +22,7 @@ creator = Create("lyra-fr")
 
 ## Classifier des Critiques avec Select
 
-La primitive Select utilise des probabilités afin de sélectionner le candidat le plus adéquat en comparaison avec une phrase de référence. Par conséquent, c'est un bon point de départ pour faire de la classification de critiques ! Dans la suite, nous allons supposer que le lecteur est familier avec l'utilisation de Select. Pour plus d'informations, visitez notre [guide Select](/guides/english/select) ou encore la [page de documentation](/api/primitives/evaluate/select) de la primitive.
+La primitive Select utilise des probabilités afin de sélectionner le candidat le plus adéquat en comparaison avec une phrase de référence. Par conséquent, c'est un bon point de départ pour faire de la classification de critiques ! Dans la suite, nous allons supposer que le lecteur est familier avec l'utilisation de Select. Pour plus d'informations, visitez notre [guide Select](/usecases/english/customer_support) ou encore la [page de documentation](/api/endpoints/select) de la primitive.
 
 Afin de classifier des critiques avec Select, nous utilisons les paramètres suivants :
 
@@ -46,7 +46,7 @@ ce qui produit
 
 ## Classifier des Critiques avec Create
 
-La primitive Create peut être utilisée à la place de Select pour classifier des critiques ! Nous supposons ici aussi que le lecteur est familier avec l'utilisation de Create : pour plus d'informations et de détails sur les paramètres, visitez la page de la primitive ✍️ [Create](/api/primitives/create). En revanche, pour s'assurer que les résultats sont pertinents, `lyra-fr` a besoin de voir au moins un exemple pour comprendre ce qui est attendu. Nous l'avons précisé dans notre guide sur la [construction de prompts](/guides/french/prompt) : pour ce genre de tâches, donner plus d'exemples permet d'obtenir de meilleurs résultats, et c'est effectivement ce que l'on va voir ici.
+La primitive Create peut être utilisée à la place de Select pour classifier des critiques ! Nous supposons ici aussi que le lecteur est familier avec l'utilisation de Create : pour plus d'informations et de détails sur les paramètres, visitez la page de la primitive ✍️ [Create](/api/endpoints/create). En revanche, pour s'assurer que les résultats sont pertinents, `lyra-fr` a besoin de voir au moins un exemple pour comprendre ce qui est attendu. Nous l'avons précisé dans notre guide sur la [construction de prompts](/usecases/french/prompt) : pour ce genre de tâches, donner plus d'exemples permet d'obtenir de meilleurs résultats, et c'est effectivement ce que l'on va voir ici.
 
 ### Classification One-shot
 

@@ -1,5 +1,72 @@
 import { Alpha, Beta } from '@site/src/components/labels';
 
-# 📋 Spreasheet
+# 📋 Spreadsheet
 
 *Status:* <Alpha />
+
+import {
+    ParamType,
+    ParamDefault,
+    ParamWarning,
+} from '@site/src/components/labels';
+
+## 🔓 Requesting access
+
+If you want to test the Muse integration in Google Sheets in private beta, contact us at muse@lighton.ai.
+
+## 🚀 Quickstart
+
+:::info
+Before using the extension, you need to set your API key.
+Select in the toolbar `Muse` > `Settings` > `Register API Key`. Enter your API key and click on the submit button.
+
+You will find your API key in `Account` > `API Keys`.
+
+If you don't have an API key, subscribe to [muse.lighton.ai](https://muse.lighton.ai/).
+:::
+
+> You can load some examples using the `Load an example sheet` button from the `Muse` tab.
+
+The layout to follow is:
+
+| `Prompt`                                   | `n_tokens` | `mode`    | `stop_words` | ... | `Completion`                                                            |
+| ------------------------------------------ | ---------- | --------- | ------------ | --- | ----------------------------------------------------------------------- |
+| This AI-powered Google Sheets extension is | `15`       | `nucleus` |              |     | the result of hours of testing, a hefty price tag and a staff full      |
+| The AI algorithms behind Muse are          | `20`       |           | `"."`        |     | generally well-known and recognized leaders in their respective fields. |
+
+:::caution
+Having the `prompt` keyword (any case) in the upper-left corner of the selection is **mandatory**.
+:::
+
+:::info
+You can add as many columns you want between the prompt column and the completion column.
+Leaving a cell empty will skip the parameter for the matching prompt.
+:::
+
+:::info Selecting a model
+You can change the model used by the current sheet in `Muse` > `Settings` > `Select model`.
+
+Models are available in the `Models` tab.
+:::
+
+## 📹 Demo Video
+
+<video controls style={{ width: '100%' }}>
+    <source src="/img/google-sheets/complete-cells-demo.mp4" />
+</video>
+
+## ⚙️ Available parameters
+
+All the [Create](/api/endpoints/create) parameters are exposed, with some format differences for Word Biases and Stop Words.
+
+:::info Word Biases - Google Sheets format
+You must surround each word with double quotes, add a semicolon and the weight you want to apply to this word. You need to separate them with commas.
+
+Like: `"positive": 2, "negative": -50, "cinema": 4`.
+:::
+
+:::info Stop Words - Google Sheets format
+You must surround each word with double quotes and separate them with commas.
+
+Like: `"end", ".", ";"`.
+:::
