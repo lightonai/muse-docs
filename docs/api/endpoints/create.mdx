@@ -129,9 +129,9 @@ let { response, error } = client.query(ApiModels.OrionFr, Endpoints.Create, {
     You will be charged for the _total_ number of tokens generated: `n_completions` \* `n_tokens`, stay reasonable!
     :::
 
-    -   `best_of` <ParamType type="int" /> <ParamDefault default="null" /> <ParamWarning warning="⚠️ smaller than n_completions" />
+    -   `n_best` <ParamType type="int" /> <ParamDefault default="null" /> <ParamWarning warning="⚠️ smaller than n_completions" />
 
-        Among `n_completions`, only return the `best_of` ones. Completions are selected according to how likely they are, summing the [log-likelihood](/introduction/outputs) over all [tokens](/introduction/tokens) generated.
+        Among `n_completions`, only return the `n_best` ones. Completions are selected according to how likely they are, summing the [log-likelihood](/introduction/outputs) over all [tokens](/introduction/tokens) generated.
 
         **Sampling**
 
